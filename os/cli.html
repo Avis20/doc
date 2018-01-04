@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/monokai-sublime.css">
+</head>
+<body>
+
+    <header>
+        <ul class="breadcrumbs">
+            <li><a href="/">Home</a></li>
+            <li><a href="/os">OS</a></li>
+            <li class="active">CLI</li>
+        </ul>
+        <div class="container">
+            <h1>Test1</h1>
+            <h2>test2</h2>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="toc"></div>
+        <hr>
+        <section id="main_content">
+
+            <h3 id="gpart">gpart</h3>
+            <p>gpart [действие] [опции] [диск]</p>
+
+            <p>Программа для разметки дисков</p>
+            <p>gpart - “guess PC-type hard disk partitions” - “угадай тип раздела жесткого диска”</p>
+
+                <pre><code class="bash">
+todo
+                </code></pre>
+                
+                <hr>
+                
+                <h3 id="mkfile">mkfile</h3>
+                <p>mkfile [опции] [размер][ед. измерения] [путь до файла]</p>
+                <p>Создание файла указанного размера</p>
+
+                <h4>опции:</h4>
+                TODO
+
+                <h4>ед. измерения:</h4>
+                <ul>
+                    <li>e</li>
+                    <li>p</li>
+                    <li>t</li>
+                    <li>g</li>
+                    <li>m - мегабайты</li>
+                    <li>k</li>
+                    <li>b</li>
+                </ul>
+
+                <h4>Пример:</h4>
+                <p>Создать файл /test/foo, размером 100 мб.</p>
+
+                <pre><code class="bash">
+mkfile 100m /test/foo
+                </code></pre>
+
+        </section>
+    </div>
+
+<script src="../src/js/jquery-3.2.1.min.js"></script>
+<script src="../src/js/highlight.pack.js"></script>
+<script src="../src/js/main.js"></script>
+</body>
+</html>
