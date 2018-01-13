@@ -1,10 +1,10 @@
 ul.multi {
-    width: 400px;
-    padding: 0;
+    width: 100%;
+    padding: 0px;
     overflow: auto;
     -moz-column-count: 6; /* Firefox */
     -webkit-column-count: 6; /* Safari and Chrome */
-    column-count: 6;
+    column-count: 10;
 }
 
 .breadcrumbs > li + li:before {

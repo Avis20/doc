@@ -48,6 +48,252 @@
 
     <!-- ------------------------------------------------------------- -->
 
+            <h2 id="chroot">chroot</h2>
+            <p>chroot [ключи] </p>
+            <p></p>
+
+            <h3>ключи:</h3>
+            <table><tr><th>Ключ</th><th>Описание</th></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <h3>Пример:</h3>
+            <p></p>
+
+            <pre><code class="bash">
+
+            </code></pre>
+
+            <hr>
+
+    <!-- ------------------------------------------------------------- -->
+
+            <h2 id="kldload">kldload</h2>
+            <p>kldload [ключи] [модуль] </p>
+            <p><a href="https://www.freebsd.org/cgi/man.cgi?kldload(8)">kldload</a></p>
+
+            <h3>ключи:</h3>
+            <table><tr><th>Ключ</th><th>Описание</th></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <h3>Пример:</h3>
+            <p></p>
+
+            <pre><code class="bash">
+
+            </code></pre>
+
+            <hr>
+
+    <!-- ------------------------------------------------------------- -->
+
+            <h2 id="zpool">zpool</h2>
+            <p>zpool [действие] [ключи]</p>
+            <p></p>
+
+            <h3>ключи:</h3>
+            <table><tr><th>Ключ</th><th>Описание</th></tr>
+                <tr>
+                    <td>-f, --force</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>-d</td>
+                    <td>Отключить все фичи по умолчанию</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>-o property=value</td>
+                    <td>включить <a href="#features">фичу</a></td>
+                </tr>
+                <tr>
+                    <td>-O file-system-property=value</td>
+                    <td><a href="#settings_fs">Настройки файловой системы</a></td>
+                </tr>
+                <tr>
+                    <td>-m</td>
+                    <td><p>точка монторования<p>Если ее нет, то нужно выбрать legacy или none</p>
+                        <ol>
+                            <li>none - без монтирования</li>
+                            <li>legacy - как я понимаю это наследование уровневых путей. например /export/stuff, то pool/home/user путем наследования получает значение /export/stuff/user
+                                <p>Старые точки монтирования. Управление файловыми системами ZFS можно осуществлять при помощи старых средств. Для этого свойство mountpoint должно иметь значение legacy. Управление старыми файловыми системами должно осуществляться с помощью команд mount и umount и файла /etc/vfstab. ZFS не выполняет автоматическое монтирование старых файловых систем при начальной загрузке, и для наборов данных этого типа команды ZFS mount и umount не используются. В следующих примерах демонстрируется настройка и администрирование набора данных ZFS в режиме "legacy":</p></li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+
+            <ol>
+                <li>create - создает пул из 1 или нескольких жеских дисков (страйп режим)</li>
+                <pre><code class="bash">
+# создаем пул с разделенным методом т.е. часть на 1 диск часть на другой
+root@freebsd11:~ # zpool create test01 /dev/ada1 /dev/ada2 
+root@freebsd11:~ # zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test01  1.97G    93K  1.97G         -     0%     0%  1.00x  ONLINE  -
+
+# создание зеркального пула. Все данные зеркалируются на оба диска
+root@freebsd11:/ # zpool create test02 mirror /dev/ada1 /dev/ada2 
+root@freebsd11:/ # zpool status
+  pool: test02
+ state: ONLINE
+  scan: none requested
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+        ada1    ONLINE       0     0     0
+        ada2    ONLINE       0     0     0
+
+errors: No known data errors
+                </code></pre>
+
+                <li>add - добавляет новый диск в пул в страйп режим</li>
+                <pre><code class="bash">
+root@freebsd11:~ # zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test01  1008M   522K  1007M         -     0%     0%  1.00x  ONLINE  -
+root@freebsd11:~ # zpool add test01 /dev/ada2
+root@freebsd11:~ # zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test01  1.97G   104K  1.97G         -     0%     0%  1.00x  ONLINE  -
+                </code></pre>
+
+                <li>detach - отсоединяет диск от пула. Работает в mirror режиме</li>
+                <pre><code class="bash">
+root@freebsd11:/ # zpool detach test02 /dev/ada1 
+root@freebsd11:/ # zpool status
+  pool: test02
+ state: ONLINE
+  scan: none requested
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      ada2      ONLINE       0     0     0
+
+errors: No known data errors
+                </code></pre>
+
+                <li>attach - присоединяет диск от пула. Работает в mirror режиме</li>
+                <pre><code class="bash">
+root@freebsd11:/ # zpool attach test02 /dev/ada2 /dev/ada1 
+root@freebsd11:/ # zpool status
+  pool: test02
+ state: ONLINE
+  scan: resilvered 78.5K in 0h0m with 0 errors on Wed Jan  3 02:21:44 2018
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+        ada2    ONLINE       0     0     0
+        ada1    ONLINE       0     0     0
+
+errors: No known data errors
+</code></pre>
+                <li>replace - заменяет диски</li>
+                <pre><code class="bash">
+root@freebsd11:/test01 # zpool replace test01 /dev/ada1 /dev/ada3 
+root@freebsd11:/test01 # zpool status
+  pool: test01
+ state: ONLINE
+  scan: resilvered 58.5K in 0h0m with 0 errors on Wed Jan  3 02:11:23 2018
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test01      ONLINE       0     0     0
+      ada3      ONLINE       0     0     0
+      ada2      ONLINE       0     0     0
+
+errors: No known data errors
+                </code></pre>
+
+                <li>status - выводит подробный статус пула</li>
+                <pre><code class="bash">
+root@freebsd11:~ # zpool status
+  pool: test01
+ state: ONLINE
+  scan: none requested
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test01      ONLINE       0     0     0
+      ada1      ONLINE       0     0     0
+                </code></pre>
+
+                <li>list - выводит список пулов</li>
+                <pre><code class="bash">
+root@freebsd11:~ # zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test01  1008M    86K  1008M         -     0%     0%  1.00x  ONLINE  -
+test02  1008M   500K  1008M         -     0%     0%  1.00x  ONLINE  -
+                </code></pre>
+
+                <li>destroy - удалить пул. При удалении пула, удаляется и фс !</li>
+                <pre><code class="bash">
+root@freebsd11:~ # zpool destroy test01
+root@freebsd11:~ # zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test02  1008M   500K  1008M         -     0%     0%  1.00x  ONLINE  -
+                </code></pre>
+            </ol>
+
+            <li>set - установка параметров пулу</li>
+                <pre><code class="bash">
+todo
+                </code></pre>
+
+                <li>destroy - удалить пул. При удалении пула, удаляется и фс !</li>
+                <pre><code class="bash">
+root@freebsd11:~ # zpool destroy test01
+root@freebsd11:~ # zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test02  1008M   500K  1008M         -     0%     0%  1.00x  ONLINE  -
+                </code></pre>
+            </ol>
+
+            <h3 id="features">Фичи</h3>
+            <table>
+                <tr>
+                    <th>Опция</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td>feature@lz4_compress=enabled</td>
+                    <td>Компрессия сжатия данных</td>
+                </tr>
+                <tr>
+                    <td>ashift=12</td>
+                    <td>?</td>
+                </tr>
+            </table>
+
+            <h3 id="settings_fs">Настройки фс</h3>
+            <table>
+                <tr>
+                    <th>Опция</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td>compression=lz4</td>
+                    <td>Установка способа сжатия</td>
+                </tr>
+            </table>
+
+
+            <hr>
+
+    <!-- ------------------------------------------------------------- -->
+
+
             <h2 id="zfs">zfs</h2>
             <p>zfs [действие] [диск] [ключи]</p>
             <p>Утилита использование zfs системы</p>
@@ -66,12 +312,12 @@
 
             <ol>
                 <li>list - список файловых систем</li>
-            <pre><code class="bash">
+                <pre><code class="bash">
 root@freebsd11:~ # zfs list
 NAME     USED  AVAIL  REFER  MOUNTPOINT
 test01    74K   880M    23K  /test01
 test02   293K   880M    23K  /test02
-            </code></pre>
+                </code></pre>
 
                 <li>create - создание новой файловой системы</li>
                 <pre><code class="bash">
@@ -101,7 +347,7 @@ test01/data        46K   880M    23K  /test01/data
 test01/data/www    23K   880M    23K  /test01/data/www
 test02            293K   880M    23K  /test02
 
-# Удаление рекурсивно
+# Удаление рекурсивно, в случае если фс содержит вложенные фс
 root@freebsd11:~ # zfs destroy -r test01/data
 root@freebsd11:~ # zfs list
 NAME     USED  AVAIL  REFER  MOUNTPOINT
@@ -109,14 +355,7 @@ test01  87.5K   880M    23K  /test01
 test02   293K   880M    23K  /test02
                 </code></pre>
 
-            </ol>            
-
-            <h3>Пример:</h3>
-            <p></p>
-
-            <pre><code class="bash">
-
-            </code></pre>
+            </ol>
 
             <hr>
 
@@ -182,16 +421,6 @@ Filesystem     Size    Used   Avail Capacity  Mounted on
             <p>Программа для разметки дисков</p>
             <p>gpart - “guess PC-type hard disk partitions” - “угадай тип раздела жесткого диска”</p>
 
-            <h3>Действия</h3>
-
-            <ol>
-                <li>create - создает таблицу разделов</li>
-                <li>add - добавляет новый раздел</li>
-                <li>bootcode - загрузочный код ?</li>
-                <li>delete - удаляет раздел</li>
-                <li>destroy - очищает файловую систему</li>
-            </ol>
-
             <h3>Ключи:</h3>
             <table><tr><th>Ключ</th><th>Описание</th></tr>
                 <tr>
@@ -199,6 +428,9 @@ Filesystem     Size    Used   Avail Capacity  Mounted on
                     <td>тип:
                         <ul>
                             <li>gpt</li>
+                            <li>freebsd-boot</li>
+                            <li>freebsd-swap</li>
+                            <li>freebsd-zfs</li>
                         </ul>
                     </td>
                 </tr>
@@ -206,25 +438,83 @@ Filesystem     Size    Used   Avail Capacity  Mounted on
                 <tr><td>-s</td><td>размер в килобайтах</td></tr>
                 <tr><td>-i</td><td>порядковый номер</td></tr>
                 <tr><td>-F</td><td> </td></tr>
-                <tr><td>-b</td><td> </td></tr>
+                <tr><td>-b</td><td>параметр смещения</td></tr>
                 <tr><td>-p</td><td> </td></tr>
                 <tr><td>-i</td><td>индекс удаляемого раздела</td></tr>
             </table>
 
+            <h3>Действия</h3>
+
+            <ol>
+                <li>create - создает таблицу разделов</li>
                 <pre><code class="bash">
-todo
+gpart create -s gpt ada0
                 </code></pre>
-                
+
+                <li>add - добавляет новый раздел</li>
+                <pre><code class="bash">
+# Создаем загрузочный раздел
+gpart add -b 40 -t freebsd-boot -l gpboot -s 64k ada0
+
+
+# если разметка ufs то создаем:
+# свап
+gpart add -t freebsd-swap -l gpswap -s 128M ada0
+
+# подсистемы
+# основной раздел
+gpart add -t freebsd-ufs -l gproot -s 256M ada0 
+
+# для логи
+gpart add -t freebsd-ufs -l gpvar -s 256M ada0
+
+# для временных файлов
+gpart add -t freebsd-ufs -l gptmp -s 256M ada0
+
+# для общих файлов
+gpart add -t freebsd-ufs -l gpusr ada0
+
+# если zfs, то достаточно
+gpart add -t freebsd-zfs -l disk ada0
+
+                </code></pre>
+
+                <li>show - показать таблицу разделов</li>
+                <p><img src="../src/img/gpart_show.png" alt=""></p>
+
+                <li>bootcode - загрузочный код ?</li>
+                <pre><code class="bash">
+gpart bootcode -b /boot/pmbr -p /boot/gptboot -i 1 ada0
+                </code></pre>
+                <ol>
+                    <li>-p partcode</li>
+                    <li>-p bootcode</li>
+                </ol>
+                <li>delete - удаляет раздел</li>
+                <li>destroy - очищает файловую систему</li>
+            </ol>
+
                 <hr>
 
     <!-- ------------------------------------------------------------- -->
 
                 <h2 id="mount">mount</h2>
                 <p>mount [ключи] [от куда] [куда]</p>
-                <p>Монтирование дисков</p>
+                <p>Монтирование файловых систем</p>
 
-                <h3>ключи:</h3>
-                TODO
+                
+                <h3>Ключи:</h3>
+                <table><tr><th>Ключ</th><th>Описание</th></tr>
+                    <tr>
+                        <td>-t, --types</td>
+                        <td>тип файловой системы:
+                            <ul>
+                                <li>nullfs - можно использовать как симлинки на диры. Работает только в FreeBSD</li>
+                                <li>zfs</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
 
                 <h3>Пример:</h3>
                 <p>TODO</p>
@@ -387,136 +677,6 @@ GB =1000*1000*1000, G =1024*1024*1024 и так далее для T, P, E, Z, Y.
 <h3>TODO</h3>
 
 
-# zpool [действие] [ключи]
-
-## create - создает пул из 1 или нескольких жеских дисков
-~~~
-
-# создаем пул с разделенным методом т.е. часть на 1 диск часть на другой
-root@freebsd11:~ # zpool create test01 /dev/ada1 /dev/ada2 
-root@freebsd11:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test01  1.97G    93K  1.97G         -     0%     0%  1.00x  ONLINE  -
-
-# создание зеркального пула. Все данные зеркалируются на оба диска
-root@freebsd11:/ # zpool create test02 mirror /dev/ada1 /dev/ada2 
-root@freebsd11:/ # zpool status
-  pool: test02
- state: ONLINE
-  scan: none requested
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        ada1    ONLINE       0     0     0
-        ada2    ONLINE       0     0     0
-
-errors: No known data errors
-
-~~~
-
-## add - добавляет новый диск в пул
-~~~
-
-root@freebsd11:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test01  1008M   522K  1007M         -     0%     0%  1.00x  ONLINE  -
-root@freebsd11:~ # zpool add test01 /dev/ada2
-root@freebsd11:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test01  1.97G   104K  1.97G         -     0%     0%  1.00x  ONLINE  -
-
-~~~
-
-## detach - отсоединяет диск от пула. Работает в mirror режиме
-~~~
-
-root@freebsd11:/ # zpool detach test02 /dev/ada1 
-root@freebsd11:/ # zpool status
-  pool: test02
- state: ONLINE
-  scan: none requested
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      ada2      ONLINE       0     0     0
-
-errors: No known data errors
-
-~~~
-
-## attach - присоединяет диск от пула. Работает в mirror режиме
-~~~
-
-root@freebsd11:/ # zpool attach test02 /dev/ada2 /dev/ada1 
-root@freebsd11:/ # zpool status
-  pool: test02
- state: ONLINE
-  scan: resilvered 78.5K in 0h0m with 0 errors on Wed Jan  3 02:21:44 2018
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        ada2    ONLINE       0     0     0
-        ada1    ONLINE       0     0     0
-
-errors: No known data errors
-
-~~~
-
-## replace - заменяет диски
-~~~
-
-root@freebsd11:/test01 # zpool replace test01 /dev/ada1 /dev/ada3 
-root@freebsd11:/test01 # zpool status
-  pool: test01
- state: ONLINE
-  scan: resilvered 58.5K in 0h0m with 0 errors on Wed Jan  3 02:11:23 2018
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test01      ONLINE       0     0     0
-      ada3      ONLINE       0     0     0
-      ada2      ONLINE       0     0     0
-
-errors: No known data errors
-
-~~~
-
-## status - выводит подробный статус пула
-~~~
-root@freebsd11:~ # zpool status
-  pool: test01
- state: ONLINE
-  scan: none requested
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test01      ONLINE       0     0     0
-      ada1      ONLINE       0     0     0
-~~~
-
-## list - выводит список пулов
-~~~
-root@freebsd11:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test01  1008M    86K  1008M         -     0%     0%  1.00x  ONLINE  -
-test02  1008M   500K  1008M         -     0%     0%  1.00x  ONLINE  -
-~~~
-
-
-## destroy - удалить пул. ! При удалении пула, удаляется и фс !
-~~~
-
-root@freebsd11:~ # zpool destroy test01
-root@freebsd11:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test02  1008M   500K  1008M         -     0%     0%  1.00x  ONLINE  -
-
-~~~
 
 
 ## dd if=[откуда] of=[куда] [ключи]
