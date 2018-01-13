@@ -8,7 +8,7 @@ $(document).ready(function() {
 var ToC =
 "<nav role='navigation' class='table-of-contents'>" +
     "<h2>On this page:</h2>" +
-"<ul>";
+"<ul class=\"multi\">";
 
 var newLine, self, title, link;
 

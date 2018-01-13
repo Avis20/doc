@@ -1,3 +1,12 @@
+ul.multi {
+    width: 400px;
+    padding: 0;
+    overflow: auto;
+    -moz-column-count: 6; /* Firefox */
+    -webkit-column-count: 6; /* Safari and Chrome */
+    column-count: 6;
+}
+
 .breadcrumbs > li + li:before {
     color: #cccccc;
     content: "/";
