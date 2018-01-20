@@ -25,42 +25,163 @@
         <hr>
         <section id="main_content">
 
+<!-- template -->
+            
+            <h2 id="header">header</h2>
+            <p></p>
+            <p></p>
+
+            <h3>опции:</h3>
+            <table>
+                <tr>
+                    <th>Опция</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+            </table>
+
+            <h3>Пример:</h3>
+            <p></p>
+
+            <pre><code class="bash">
+todo
+            </code></pre>
+
+            <hr>
+<!-- template -->
             <h2 id="gpart">gpart</h2>
             <p>gpart [действие] [опции] [диск]</p>
 
             <p>Программа для разметки дисков</p>
             <p>gpart - “guess PC-type hard disk partitions” - “угадай тип раздела жесткого диска”</p>
 
-                <pre><code class="bash">
+            <pre><code class="bash">
 todo
-                </code></pre>
-                
-                <hr>
-                
-                <h2 id="mkfile">mkfile</h2>
-                <p>mkfile [опции] [размер][ед. измерения] [путь до файла]</p>
-                <p>Создание файла указанного размера</p>
+            </code></pre>
 
-                <h3>опции:</h3>
-                TODO
+            <hr>
+            
+            <h2 id="mkfile">mkfile</h2>
+            <p>mkfile [опции] [размер][ед. измерения] [путь до файла]</p>
+            <p>Создание файла указанного размера</p>
 
-                <h3>ед. измерения:</h3>
-                <ul>
-                    <li>e</li>
-                    <li>p</li>
-                    <li>t</li>
-                    <li>g</li>
-                    <li>m - мегабайты</li>
-                    <li>k</li>
-                    <li>b</li>
-                </ul>
+            <h3>опции:</h3>
+            TODO
 
-                <h3>Пример:</h3>
-                <p>Создать файл /test/foo, размером 100 мб.</p>
+            <h3>ед. измерения:</h3>
+            <ul>
+                <li>e</li>
+                <li>p</li>
+                <li>t</li>
+                <li>g</li>
+                <li>m - мегабайты</li>
+                <li>k</li>
+                <li>b</li>
+            </ul>
 
-                <pre><code class="bash">
+            <h3>Пример:</h3>
+            <p>Создать файл /test/foo, размером 100 мб.</p>
+
+            <pre><code class="bash">
 mkfile 100m /test/foo
-                </code></pre>
+            </code></pre>
+
+            <h3>Установка</h3>
+
+            <h4>FreeBSD</h4>
+
+            <pre><code class="bash">
+root@freebsd11:~ # pkg search mkfile
+mkfile-1.1.3_1                 Create files suitable for use as swap files
+root@freebsd11:~ # pkg install mkfile-1.1.3_1
+            </code></pre>
+
+            <hr>
+            
+            <h2 id="dd">dd</h2>
+            <p>dd if=[откуда] of=[куда] [опции]</p>
+            <p>Копирование данных побайтово</p>
+
+            <h3>опции:</h3>
+            TODO
+
+            <h3>Пример:</h3>
+            <p>Скопировать из /dev/urandom в /dev/null 5 раз по 100Мб</p>
+
+            <pre><code class="bash">
+dd if=/dev/urandom of=/dev/null bs=100M count=5
+            </code></pre>
+            
+            <h2 id="shutdown">shutdown</h2>
+            <p>shutdown [опции] [время] [сообщение]</p>
+            <p>Выключение в заданное время</p>
+
+            <h3>опции:</h3>
+            <table>
+                <tr>
+                    <th>Опция</th>
+                    <th>Описание</th>
+                </tr>
+                    <tr>
+                        <td>--help</td>
+                        <td>вывести справку по программе</td>
+                    </tr>
+                    <tr>
+                        <td>-H, -halt</td>
+                        <td>отключить питание, не завершая процессы и не перемонтируя файловые системы</td>
+                    </tr>
+                    <tr>
+                        <td>-P, -poweroff</td>
+                        <td>нормальное выключение</td>
+                    </tr>
+                    <tr>
+                        <td>-r, -reboot</td>
+                        <td>перезагрузка</td>
+                    </tr>
+                    <tr>
+                        <td>-k</td>
+                        <td>не выполнять реальных действий, а только вывести сообщение</td>
+                    </tr>
+                    <tr>
+                        <td>-no-wall</td>
+                        <td>выключить компьютер, но не выводить сообщение</td>
+                    </tr>
+                    <tr>
+                        <td>-c</td>
+                        <td>отменить запланированное выключение linux из командной строки</td>
+                    </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>Время</th>
+                    <th>Описание</th>
+                </tr>
+                <tr>
+                    <td>now</td>
+                    <td>сейчас</td>
+                </tr>
+                <tr>
+                    <td>+5</td>
+                    <td>через 5 минут</td>
+                </tr>
+                <tr>
+                    <td>21:00</td>
+                    <td>в 21:00</td>
+                </tr>
+            </table>
+
+            <h3>Пример:</h3>
+            <p>Перезагрузить систему сейчас</p>
+
+            <pre><code class="bash">
+shutdown -r now
+            </code></pre>
+
+            <hr>
 
         </section>
     </div>
