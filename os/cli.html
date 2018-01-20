@@ -48,6 +48,121 @@
 
     <!-- ------------------------------------------------------------- -->
 
+            <h2 id="host">host</h2>
+            <p>host [ключи] </p>
+            <p></p>
+
+            <h3>ключи:</h3>
+            <table><tr><th>Ключ</th><th>Описание</th></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <h3>Пример:</h3>
+            <p>Узнать ip</p>
+
+            <pre><code class="bash">
+avis@PC:~$ host ko4ergin.ru
+ko4ergin.ru has address 92.53.96.30
+ko4ergin.ru has IPv6 address 2a03:6f00:1::5c35:601e
+ko4ergin.ru mail is handled by 10 mx1.timeweb.ru.
+ko4ergin.ru mail is handled by 20 mx2.timeweb.ru.
+            </code></pre>
+
+            <p>Узнать кому принаджелит ip</p>
+
+            <pre><code class="bash">
+avis@PC:~$ host 92.53.96.30
+30.96.53.92.in-addr.arpa domain name pointer vh44.timeweb.ru.
+            </code></pre>
+
+            <hr>
+
+    <!-- ------------------------------------------------------------- -->
+            <h2 id="ss">ss</h2>
+            <p>ss [ключи] [фильтр]</p>
+            <p></p>
+
+            <h3>ключи:</h3>
+            <table><tr><th>Ключ</th><th>Описание</th></tr>
+                <tr>
+                    <td>-s, --summary</td>
+                    <td>Итого</td>
+                </tr>
+                <tr>
+                    <td>-p, --processes</td>
+                    <td>Вывести процессы</td>
+                </tr>
+                <tr>
+                    <td>-l</td>
+                    <td>Слушающие</td>
+                </tr>
+                    <td>-a</td>
+                    <td>Ожидающие</td>
+                </tr>
+                <tr>
+                    <td>-t</td>
+                    <td>TCP</td>
+                </tr>
+                <tr>
+                    <td>-u</td>
+                    <td>UDP</td>
+                </tr>
+                <tr>
+                    <td>-x</td>
+                    <td><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%B5%D1%82_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%B0_UNIX" target="blank">Unix</a></td>
+                </tr>
+            </table>
+
+            <h3>Фильтры:</h3>
+            <table><tr><th>Фильтр</th><th>Описание</th></tr>
+<tr><td>all</td><td>все состояния</td></tr>
+<tr><td>established</td><td></td></tr>
+<tr><td>syn-sent</td><td></td></tr>
+<tr><td>syn-recv</td><td></td></tr>
+<tr><td>fin-wait-1</td><td></td></tr>
+<tr><td>fin-wait-2</td><td></td></tr>
+<tr><td>time-wait</td><td></td></tr>
+<tr><td>closed</td><td></td></tr>
+<tr><td>close-wait</td><td></td></tr>
+<tr><td>last-ack</td><td></td></tr>
+<tr><td>listening</td><td></td></tr>
+<tr><td>closing</td><td></td></tr>
+<tr><td>connected</td><td>все состояния, кроме ожидающих соединения и закрытых</td></tr>
+<tr><td>synchronized</td><td>все состояния, соответствующие установленным соединениям, за исключением syn-sent</td></tr>
+<tr><td>bucket</td><td>состояния, представляющие собой минисокеты, например — time-wait и syn-recv</td></tr>
+<tr><td>big</td><td>всё кроме того, что соответствует идентификатору bucket</td></tr>
+</table>
+
+            <h3>Пример:</h3>
+            <p>Все ожидающие TCP соединения с IPv4</p>
+
+            <pre><code class="bash">
+avis@PC:~$ ss -t4 state listening
+Recv-Q Send-Q                                      Local Address:Port                                                       Peer Address:Port                
+0      50                                                      *:microsoft-ds                                                          *:*                    
+0      80                                              127.0.0.1:mysql                                                                 *:*                    
+0      50                                                      *:netbios-ssn                                                           *:*                    
+0      128                                             127.0.0.1:11211                                                                 *:*                    
+0      10                                              127.0.0.1:2222                                                                  *:*                    
+0      5                                               127.0.1.1:domain                                                                *:*                    
+0      100                                                     *:smtp                                                                  *:*                    
+
+            </code></pre>
+
+            <p>Информация о подключенном IP</p>
+
+            <pre><code class="bash">
+root@host0:~# ss dst 192.168.33.1
+Netid  State      Recv-Q Send-Q                                           Local Address:Port                                               Peer Address:Port   
+tcp    ESTAB      0      0                                                192.168.33.10:ssh                                                192.168.33.1:58484   
+</code></pre>
+            <hr>
+
+    <!-- ------------------------------------------------------------- -->
+
             <h2 id="chroot">chroot</h2>
             <p>chroot [ключи] </p>
             <p></p>
