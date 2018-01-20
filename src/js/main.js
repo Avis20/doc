@@ -7,7 +7,6 @@ $(document).ready(function() {
 
 var ToC =
 "<nav role='navigation' class='table-of-contents'>" +
-    "<h2>On this page:</h2>" +
 "<ul class=\"multi\">";
 
 var newLine, self, title, link;
@@ -38,7 +37,7 @@ for( var i = 0; i < here.length; i++ ) {
 
     var link = '/' + here.slice( 0, i + 1 ).join('/');
 
-    if ( /HTML$/.test(text) ){
+    if ( /(HTML)$/.test(text) ){
         text = text.split('.')[0];
     }
 
