@@ -9,11 +9,7 @@
 <body>
 
     <header>
-        <ul class="breadcrumbs">
-            <li><a href="../">Home</a></li>
-            <li><a href="../os">OS</a></li>
-            <li class="active">CLI</li>
-        </ul>
+        <ul class="breadcrumbs"></ul>
         <div class="container">
             <h1>Test1</h1>
             <h2>test2</h2>
@@ -47,6 +43,30 @@
             <hr>
 
     <!-- ------------------------------------------------------------- -->
+
+            <h2 id="tr">tr</h2>
+            <p>tr [ключи] </p>
+            <p></p>
+
+            <h3>ключи:</h3>
+            <table><tr><th>Ключ</th><th>Описание</th></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <h3>Пример:</h3>
+            <p></p>
+
+            <pre><code class="bash">
+
+            </code></pre>
+
+            <hr>
+
+    <!-- ------------------------------------------------------------- -->
+
 
             <h2 id="host">host</h2>
             <p>host [ключи] </p>
@@ -159,6 +179,23 @@ root@host0:~# ss dst 192.168.33.1
 Netid  State      Recv-Q Send-Q                                           Local Address:Port                                               Peer Address:Port   
 tcp    ESTAB      0      0                                                192.168.33.10:ssh                                                192.168.33.1:58484   
 </code></pre>
+<p>Узнать, кто занял порт, можно одной из следующих команд:</p>
+            <pre><code class="bash">
+ss -p state listening '( sport = :443 )'
+ss -tlp '( sport = :443 )'
+ss -p state listening '( sport = :http or sport = :https )'
+            </code></pre>
+
+<p>Процесс:</p>
+            <pre><code class="bash">
+ss -4tlp | grep nginx
+            </code></pre>
+
+<p>Можно ещё добавить, если на дисплее не помещается:</p>
+            <pre><code class="bash">
+ss -tlp '( sport = :443 )' | tr -d '\t'
+            </code></pre>
+
             <hr>
 
     <!-- ------------------------------------------------------------- -->
