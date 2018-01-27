@@ -11,7 +11,7 @@ var ToC =
 
 var newLine, self, title, link;
 
-$("#main_content h2").each(function() {
+$(".site-main h3").each(function() {
 
     self = $(this);
     title = self.text();

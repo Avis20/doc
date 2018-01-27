@@ -102,19 +102,12 @@ figure {
     margin: 0
 }
 
-pre {
-    overflow: auto
-}
-
 code,
 kbd,
 pre,
 samp {
     font-family: 'Roboto Mono', monospace, serif;
-    background: #22b3eb;
-    color: #fff;
-    padding: 1px 5px;
-    font-size: 90%
+    font-size: 95%
 }
 
 blockquote,
@@ -300,18 +293,6 @@ p {
     margin: 0 0 24px
 }
 
-pre {
-    background: #22b3eb;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    padding: 10px 10px 10px 10px;
-    position: relative;
-    overflow: auto;
-    color: #fff
-}
-
 blockquote {
     border-left: 3px solid #55c5f0;
     color: #3d3d3d;
@@ -364,7 +345,7 @@ li>ol {
 }
 
 table {
-    border-bottom: 1px solid #ededed;
+    border: 1px solid #c0c0c0;
     font-size: 16px;
     line-height: 1.5;
     margin: 0 0 24px;
@@ -382,8 +363,10 @@ caption {
 
 th,
 td {
-    border-top: 1px solid #ededed;
-    padding: 8px 10px
+    color: #333333;
+    border: 1px solid #c0c0c0;
+    padding: 8px 10px;
+    max-width: 0;
 }
 
 th {
@@ -1021,7 +1004,7 @@ a {
 
 .alert pre,
 .alert code {
-    background-color: #818181
+    background-color: #818181;
 }
 
 .alert.alert-success {
@@ -1037,10 +1020,6 @@ a {
 .alert.alert-danger {
     color: white;
     background-color: #ed6b39
-}
-
-pre {
-    box-shadow: 1px 1px 1px #c6c6c6
 }
 
 body:after {
@@ -4125,7 +4104,7 @@ body.lb-disable-scrolling {
 
 .inner {
     margin: 0 auto;
-    max-width: 1200px
+    max-width: 95%;
 }
 
 .site-main {
@@ -4201,7 +4180,6 @@ body.lb-disable-scrolling {
 
 .site-header {
     padding-bottom: 70px;
-    padding-top: 70px
 }
 
 .site-title {
@@ -4243,7 +4221,6 @@ body.lb-disable-scrolling {
 .comments-inner,
 .post-navigation .nav-inside {
     margin: 0 auto;
-    max-width: 800px;
     padding-left: 30px;
     padding-right: 30px
 }
@@ -4830,9 +4807,6 @@ form.search-box input[type="submit"] {
     .post+.post-navigation {
         margin-top: -10px
     }
-    .widget {
-        text-align: center
-    }
     .widget-title:after {
         content: " —"
     }
@@ -5073,4 +5047,14 @@ form.search-box input[type="submit"] {
     height:100%;
     width:100%;
     position: absolute;
+}
+
+.breadcrumbs > li + li:before {
+    color: #cccccc;
+    content: "/";
+    padding: 0 5px;
+}
+
+.breadcrumbs > li {
+    display: inline;
 }
