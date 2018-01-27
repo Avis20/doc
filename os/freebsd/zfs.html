@@ -74,26 +74,38 @@
                                 </td>
                             </tr>
                         </table>
+
                         <h3 id="shortcuts">Шпаргалка по командам</h3>
+
                         <table>
-                            <tr>
-                                <td>Справка по командам</td>
-                                <td>
-                                    <pre><code class="shell">man zpool
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
+    <p>Справка по командам</p>
+
+</td><td>
+
+<pre><code class="shell">man zpool
 man zfs
 </code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool create">zpool create</h5>
-                                    <p>Создать пул и посмотреть информацию о нём.</p>
-                                    <p>Интересная особенность в *nix системах - <a href="http://linux.yaroslavl.ru/docs/setup/mandrake/cl/ch09s02.html">Все является файлом</a>. В том числе и диски. Поэтому, пул дисков можно эмулировать с помощью создания файлов</p>
-                                    <p>Единственное ограничение, диск (или файл) должен быть не менее 64m для самого zfs</p>
-                                    <p>При создании пула, создается фс от корня по названию пула</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># cd /
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
+    <h5 id="zpool create">zpool create</h5>
+    <p>Создать пул и посмотреть информацию о нём.</p>
+    <p>Интересная особенность в *nix системах - <a href="http://linux.yaroslavl.ru/docs/setup/mandrake/cl/ch09s02.html">Все является файлом</a>. В том числе и диски. Поэтому, пул дисков можно эмулировать с помощью создания файлов</p>
+    <p>Единственное ограничение, диск (или файл) должен быть не менее 64m для самого zfs</p>
+    <p>При создании пула, создается фс от корня по названию пула</p>
+
+</td><td>
+
+<pre><code class="shell"># cd /
 # mkfile 100m disk1 disk2 disk3
 # ls -l disk*
 -rw-------  1 root  wheel  104857600 Jan 27 14:42 disk1
@@ -105,16 +117,20 @@ man zfs
 NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
 test01   160M    62K   160M         -     1%     0%  1.00x  ONLINE  -
 </code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool status">zpool status</h5>
-                                    <p>Подробная информация о пуле</p>
-                                    <p>Пока не увидел разницу от ключа -v</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool status -v
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
+    <h5 id="zpool status">zpool status</h5>
+    <p>Подробная информация о пуле</p>
+    <p>Пока не увидел разницу от ключа -v</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool status -v
   pool: test01
  state: ONLINE
   scan: none requested
@@ -126,50 +142,66 @@ config:
       /disk2    ONLINE       0     0     0
 
 errors: No known data errors</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool destroy">zpool destroy</h5>
-                                    <p>Уничтожить пул</p>
-                                    <p>При уничтожении пула, уничтожается и фс!</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool destroy test01</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool create mirror">zpool create mirror</h5>Создать зеркалированный пул
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool create test02 mirror /disk1 /disk2 
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
+    <h5 id="zpool destroy">zpool destroy</h5>
+    <p>Уничтожить пул</p>
+    <p>При уничтожении пула, уничтожается и фс!</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool destroy test01
+</code></pre>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+        <h5 id="zpool create mirror">zpool create mirror</h5>
+        <p>Создать зеркалированный пул</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool create test02 mirror /disk1 /disk2 
 # zpool list
 NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
 test02    80M   242K  79.8M         -     1%     0%  1.00x  ONLINE  -
 </code></pre>
-                                    <pre><code class="shell"># mkfile 70m disk4
+
+<pre><code class="shell"># mkfile 70m disk4
 # zpool create test03 mirror /disk3 /disk4 
 invalid vdev specification
 use '-f' to override the following errors:
 mirror contains devices of different sizes
 </code></pre>
-                                    <p>При создании зеркала разного размера, выдется ошибка</p>
-                                    <pre><code class="shell"># zpool create -f test03 mirror /disk3 /disk4 
+
+<p>При создании зеркала разного размера, выдется ошибка</p>
+<p>В этом случае можно указать ключ -f для принудительного создания. Тогда размер пула будет наименьшим из дисков</p>
+
+<pre><code class="shell"># zpool create -f test03 mirror /disk3 /disk4 
 # zpool list
 NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
 test03    64M    62K  63.9M         -     1%     0%  1.00x  ONLINE  -
 </code></pre>
-                                    <p>В этом случае можно указать ключ -f для принудительного создания. Тогда размер пула будет наименьшим из дисков</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool detach">zpool detach</h5>
-                                    <p>Отключить диск от зеркала</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool status
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
+    <h5 id="zpool detach">zpool detach</h5>
+    <p>Отключить диск от зеркала</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool status
   pool: test02
  state: ONLINE
   scan: resilvered 70K in 0h0m with 0 errors on Sat Jan 20 18:18:35 2018
@@ -198,16 +230,20 @@ config:
 
 errors: No known data errors
 </code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool attach">zpool attach</h5>
-                                    <p>Добавить диск к зеркалу</p>
-                                    <p>Нужно передовать 2 диска, с какого на какой скопируются данные для дальнейшего зеркалирования</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool attach test02 /disk2 /disk1
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
+    <h5 id="zpool attach">zpool attach</h5>
+    <p>Добавить диск к зеркалу</p>
+    <p>Нужно передовать 2 диска, с какого на какой скопируются данные для дальнейшего зеркалирования</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool attach test02 /disk2 /disk1
 # zpool status
   pool: test02
  state: ONLINE
@@ -222,15 +258,61 @@ config:
 
 errors: No known data errors
 </code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool add spare">zpool add spare</h5>
-                                    <p>Добавить запасное устройство горячей замены</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool add test02 spare /disk4
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr>
+    <td>
+        
+        <h5 id="zpool replace">zpool replace</h5>
+        <p>Заменить диск</p>
+</td><td>
+        <pre><code class="shell"># zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test01   160M   256K   160M         -     1%     0%  1.00x  ONLINE  -
+# zpool status
+  pool: test01
+ state: ONLINE
+  scan: none requested
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test01      ONLINE       0     0     0
+      /disk1    ONLINE       0     0     0
+      /disk2    ONLINE       0     0     0
+
+errors: No known data errors
+# zpool replace test01 /disk1 /disk3 
+# zpool status
+  pool: test01
+ state: ONLINE
+  scan: resilvered 27K in 0h0m with 0 errors on Sat Jan 27 16:15:06 2018
+config:
+
+    NAME        STATE     READ WRITE CKSUM
+    test01      ONLINE       0     0     0
+      /disk3    ONLINE       0     0     0
+      /disk2    ONLINE       0     0     0
+
+errors: No known data errors
+        </code></pre>
+
+    </td>
+</tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
+    <h5 id="zpool add spare">zpool add spare</h5>
+    <p>Добавить запасное устройство</p>
+    <p>Автоматическая замена вышедшего из строя устройства</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool add test02 spare /disk4
 # zpool status
   pool: test02
  state: ONLINE
@@ -247,19 +329,25 @@ config:
 
 errors: No known data errors
 </code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 id="zpool remove">zpool remove</h5>
-                                    <p>Удалить запасное устройство горячей замены</p>
-                                </td>
-                                <td>
-                                    <pre><code class="shell"># zpool remove test01 /disk4
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
+    <h5 id="zpool remove">zpool remove</h5>
+    <p>Удалить запасное устройство</p>
+
+</td><td>
+
+<pre><code class="shell"># zpool remove test01 /disk4
 </code></pre>
-                                </td>
-                            </tr>
-                        </table>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+</table>
                         <h3 id="reference">Reference</h3>
                         <ul>
                             <li>

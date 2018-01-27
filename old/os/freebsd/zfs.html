@@ -21,172 +21,12 @@
         <hr>
         <section id="main_content">
 
-            <h2 id="zpool create">zpool create</h2>
-            <h3>Создать пул и посмотреть информацию о нём.</h3>
-            <p>Интересная особенность в *nix системах - <a href="http://linux.yaroslavl.ru/docs/setup/mandrake/cl/ch09s02.html">Все является файлом</a>. В том числе и диски</p>
-            <p>Поэтому, пул дисков можно эмулировать с помощью создания файлов:</p>
-            <pre><code class="bash">
-root@freebsd2:~ # cd /
-root@freebsd2:/ # mkfile 100m disk1 disk2 disk3
-root@freebsd2:/ # zpool create test01 /disk1 /disk2 /disk3
-root@freebsd2:/ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test01   240M  81.5K   240M         -     1%     0%  1.00x  ONLINE  -
-            </code></pre>
-
-            <p>Единственное ограничение, диск (или файл) должен быть не менее 64m для самого zfs</p>
-            <p>При создании пула, создается фс от корня по названию пула</p>
-
-            <h2 id="zpool status">zpool status</h2>
-            <h3>Посмотреть развернутую информацию о пуле</h3>
-            <p>Ну тут все достаточно просто. Пока не увидел разницу от ключа -v</p>
-            <pre><code class="bash">
-root@freebsd2:/ # zpool status -v
-  pool: test01
- state: ONLINE
-  scan: none requested
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test01      ONLINE       0     0     0
-      /disk1    ONLINE       0     0     0
-      /disk2    ONLINE       0     0     0
-      /disk3    ONLINE       0     0     0
-
-errors: No known data errors
-root@freebsd2:/ # 
-
-</code></pre>
-
-            <h2 id="zpool destroy">zpool destroy</h2>
-            <h3>Уничтожить пул</h3>
-            <p>При уничтожении пула, уничтожается и фс!</p>
-
-            <pre><code class="bash">
-root@freebsd2:/ # zpool destroy test01
-root@freebsd2:/ # 
-</code></pre>
-
-            <h2 id="zpool create mirror">zpool create mirror</h2>
-            <h3>Создать зеркалированный пул</h3>
-
-            <pre><code class="bash">
-root@freebsd2:~ # zpool create test02 mirror /disk1 /disk2 
-root@freebsd2:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test02    80M   242K  79.8M         -     1%     0%  1.00x  ONLINE  -
-            </code></pre>
-
-            <p>При создании зеркала разного размера, выдется ошибка</p>
-            <pre><code class="bash">
-root@freebsd2:/ # mkfile 70m disk4
-root@freebsd2:/ # zpool create test03 mirror /disk3 /disk4 
-invalid vdev specification
-use '-f' to override the following errors:
-mirror contains devices of different sizes
-            </code></pre>
-
-            <p>В этом случае можно указать ключ -f для принудительного создания. Тогда размер пула будет наименьшим из дисков</p>
-            <pre><code class="bash">
-root@freebsd2:/ # zpool create -f test03 mirror /disk3 /disk4 
-root@freebsd2:/ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test03    64M    62K  63.9M         -     1%     0%  1.00x  ONLINE  -
-</code></pre>
-
-        <h2 id="zpool detach">zpool detach</h2>
-        <h3>Отключить диск от зеркала</h3>
-
-        <pre><code class="bash">
-root@freebsd2:~ # zpool status
-  pool: test02
- state: ONLINE
-  scan: resilvered 70K in 0h0m with 0 errors on Sat Jan 20 18:18:35 2018
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        /disk2  ONLINE       0     0     0
-        /disk1  ONLINE       0     0     0
-
-errors: No known data errors
-root@freebsd2:~ # zpool detach test02 /disk1
-root@freebsd2:~ # zpool list
-NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
-test02    80M   124K  79.9M         -     1%     0%  1.00x  ONLINE  -
-root@freebsd2:~ # zpool status
-  pool: test02
- state: ONLINE
-  scan: none requested
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      /disk2    ONLINE       0     0     0
-
-errors: No known data errors
-        </code></pre>
-
-        <h2 id="zpool attach">zpool attach</h2>
-        <h3>Добавить диск к зеркалу</h3>
-        
-        <p>Нужно передовать 2 диска, с какого на какой скопируются данные для дальнейшего зеркалирования</p>
-        <pre><code class="bash">
-root@freebsd2:~ # zpool attach test02 /disk2 /disk1
-root@freebsd2:~ # zpool status
-  pool: test02
- state: ONLINE
-  scan: resilvered 70K in 0h0m with 0 errors on Sat Jan 20 18:18:35 2018
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        /disk2  ONLINE       0     0     0
-        /disk1  ONLINE       0     0     0
-
-errors: No known data errors
-        </code></pre>
-
-        <h2 id="zpool add spare">zpool add spare</h2>
-        <h3>Добавить запасное устройство горячей замены</h3>
-        
-        <p></p>
-        <pre><code class="bash">
-root@freebsd2:/ # zpool add test02 spare /disk4
-root@freebsd2:/ # zpool status
-  pool: test02
- state: ONLINE
-  scan: none requested
-config:
-
-    NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        /disk1  ONLINE       0     0     0
-        /disk2  ONLINE       0     0     0
-    spares
-      /disk4    AVAIL   
-
-errors: No known data errors
-        </code></pre>
-
-        <h2 id="zpool remove">zpool remove</h2>
-        <h3>Удалить запасное устройство горячей замены</h3>
-        
-        <p></p>
-        <pre><code class="bash">
-root@freebsd2:/ # zpool remove test01 /disk4
-        </code></pre>
-
 
         <h2 id="zpool offline">zpool offline</h2>
         <h3>Вывести указанное устройство из эксплуатации</h3>
         
         <p>После этого попыток писать и читать это устройство не будет до тех пор, пока оно не будет переведено в online. Если использовать ключ -t, устройство будет переведено в offline временно. После перезагрузки устройство опять будет в работе (online).</p>
-        <pre><code class="bash">
-root@freebsd2:/ # zpool status
+        <pre><code class="shell">/ # zpool status
   pool: test01
  state: ONLINE
   scan: none requested
@@ -199,8 +39,8 @@ config:
         /disk2  ONLINE       0     0     0
 
 errors: No known data errors
-root@freebsd2:/ # zpool offline test01 /disk2
-root@freebsd2:/ # zpool status
+/ # zpool offline test01 /disk2
+/ # zpool status
   pool: test01
  state: DEGRADED
 status: One or more devices has been taken offline by the administrator.
@@ -223,9 +63,8 @@ errors: No known data errors
         <h2 id="zpool online">zpool online</h2>
         <h3>Включить диск</h3>
         
-        <pre><code class="bash">
-root@freebsd2:/ # zpool online test01 /disk1
-root@freebsd2:/ # zpool status
+        <pre><code class="shell">/ # zpool online test01 /disk1
+/ # zpool status
   pool: test01
  state: ONLINE
   scan: resilvered 4.50K in 0h0m with 0 errors on Sat Jan 20 18:49:21 2018
@@ -240,39 +79,20 @@ config:
 errors: No known data errors
         </code></pre>
 
-        <h2 id="zpool replace">zpool replace</h2>
-        <h3>Заменить диск</h3>
-        
-        <pre><code class="bash">
-root@freebsd2:/ # zpool status
-  pool: test01
- state: ONLINE
-  scan: resilvered 73K in 0h0m with 0 errors on Sat Jan 20 18:51:15 2018
-config:
 
-    NAME        STATE     READ WRITE CKSUM
-    test01      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        /disk3  ONLINE       0     0     0
-        /disk2  ONLINE       0     0     0
-
-errors: No known data errors
-        </code></pre>
 
         <h2 id="zpool scrub">zpool scrub</h2>
         <h3>Выполнить скраббинг</h3>
         
         <p>Для того чтобы знать, что там все контрольные суммы верны. Если используется зеркало или RAIDZ автоматически восстанавливаются сбойные блоки.</p>
-        <pre><code class="bash">
-root@freebsd2:/test01 # zpool scrub test01
+        <pre><code class="shell">/test01 # zpool scrub test01
         </code></pre>
 
         <h2 id="zpool export">zpool export</h2>
         <h3>Экспортировать пул</h3>
         
-        <pre><code class="bash">
-root@freebsd2:~ # zpool export test01
-root@freebsd2:~ # zpool list
+        <pre><code class="shell">~ # zpool export test01
+~ # zpool list
 no pools available
         </code></pre>
 
@@ -280,15 +100,13 @@ no pools available
         <h3>Импортировать пул</h3>
         
         <p>Если ключ -d не указан, команда ищет /dev/dsk.</p>
-        <pre><code class="bash">
-root@freebsd2:~ # zpool import test01
+        <pre><code class="shell">~ # zpool import test01
 cannot import 'test01': no such pool available
         </code></pre>
 
         <p> Поскольку в нашем примере используются файлы, нужно указать каталог, используемый пулом:</p>
-        <pre><code class="bash">
-root@freebsd2:~ # zpool import -d / test01
-root@freebsd2:~ # zpool list
+        <pre><code class="shell">~ # zpool import -d / test01
+~ # zpool list
 NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
 test01    80M   273K  79.7M         -    23%     0%  1.00x  ONLINE  -
         </code></pre>
@@ -297,8 +115,7 @@ test01    80M   273K  79.7M         -    23%     0%  1.00x  ONLINE  -
         <h3>Показать версию формата пулов</h3>
         
         <p>У меня не работает :(</p>
-        <pre><code class="bash">
-root@freebsd2:~ # zpool upgrade
+        <pre><code class="shell">~ # zpool upgrade
 This system supports ZFS pool feature flags.
 
 All pools are formatted using feature flags.
@@ -307,8 +124,7 @@ Every feature flags pool has all supported features enabled.
         </code></pre>
 
         <p>Ключ -v говорит, что нужно показать какие функции поддерживаются текущей версией.</p>
-        <pre><code class="bash">
-root@freebsd2:~ # zpool upgrade -v
+        <pre><code class="shell">~ # zpool upgrade -v
 This system supports ZFS pool feature flags.
 
 The following features are supported:
@@ -331,14 +147,12 @@ VER  DESCRIPTION
 
         <p>Ключ -a говорит, что нужно обновить до последней версии.</p>
 
-        <pre><code class="bash">
-        </code></pre>
+        <pre><code class="shell">        </code></pre>
 
         <h2 id="zpool iostat">zpool iostat</h2>
         <p>Посмотреть статистику ввода/вывода</p>
 
-        <pre><code class="bash">
-root@freebsd2:/ # zpool iostat 1
+        <pre><code class="shell">/ # zpool iostat 1
                capacity     operations    bandwidth
 pool        alloc   free   read  write   read  write
 ----------  -----  -----  -----  -----  -----  -----
@@ -350,16 +164,15 @@ test01       234K  79.8M      0      0      0      0
         <p>Создать файловую систему</p>
         
         <p>Проверить её с помощью df -h. Файловая система автоматически монтируется в /test01.</p>
-        <pre><code class="bash">
-root@freebsd2:/ # zfs list
+        <pre><code class="shell">/ # zfs list
 NAME     USED  AVAIL  REFER  MOUNTPOINT
 test01  68.5K   128M    19K  /test01
-root@freebsd2:/ # zfs create test01/test02
-root@freebsd2:/ # zfs list
+/ # zfs create test01/test02
+/ # zfs list
 NAME            USED  AVAIL  REFER  MOUNTPOINT
 test01           92K   128M    19K  /test01
 test01/test02    19K   128M    19K  /test01/test02
-root@freebsd2:/ # df -h
+/ # df -h
 Filesystem       Size    Used   Avail Capacity  Mounted on
 /dev/ada0p2      9.0G    4.5G    3.8G    55%    /
 devfs            1.0K    1.0K      0B   100%    /dev
@@ -368,8 +181,7 @@ test01/test02    128M     19K    128M     0%    /test01/test02
         </code></pre>
         
         <p>Создание ещё одной файловой системы. Обратите внимание, что обе файловые системы как будто бы имеют 128M свободных, ибо квоты не установлены. Каждая может расти до тех пор, пока не заполнит пул:</p>
-        <pre><code class="bash">
-root@freebsd2:/ # zfs list
+        <pre><code class="shell">/ # zfs list
 NAME            USED  AVAIL  REFER  MOUNTPOINT
 test01          112K   128M    19K  /test01
 test01/test02    19K   128M    19K  /test01/test02
@@ -379,9 +191,8 @@ test01/test03    19K   128M    19K  /test01/test03
         <h2 id="zfs set reservation">zfs set reservation</h2>
         <p>Установка резервирования фс</p>
 
-        <pre><code class="bash">
-root@freebsd2:/ # zfs set reservation=20m test01/test02
-root@freebsd2:/ # zfs list -o reservation
+        <pre><code class="shell">/ # zfs set reservation=20m test01/test02
+/ # zfs list -o reservation
 RESERV
   none
    20M
@@ -389,17 +200,16 @@ RESERV
         </code></pre>
 
         <p>Проверка:</p>
-        <pre><code class="bash">
-root@freebsd2:/test01/test03 # df -h
+        <pre><code class="shell">/test01/test03 # df -h
 Filesystem       Size    Used   Avail Capacity  Mounted on
 /dev/ada0p2      9.0G    4.5G    3.8G    55%    /
 devfs            1.0K    1.0K      0B   100%    /dev
 test01           108M     19K    108M     0%    /test01
 test01/test02    128M     19K    128M     0%    /test01/test02
 test01/test03    108M     19K    108M     0%    /test01/test03
-root@freebsd2:/test01/test03 # cat /dev/urandom > test
+/test01/test03 # cat /dev/urandom > test
 cat: stdout: No space left on device
-root@freebsd2:/test01/test03 # df -h
+/test01/test03 # df -h
 Filesystem       Size    Used   Avail Capacity  Mounted on
 /dev/ada0p2      9.0G    4.5G    3.8G    55%    /
 devfs            1.0K    1.0K      0B   100%    /dev
