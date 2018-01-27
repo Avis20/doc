@@ -37,7 +37,7 @@ for( var i = 0; i < here.length; i++ ) {
 
     var link = '/' + here.slice( 0, i + 1 ).join('/');
 
-    if ( /(HTML)$/.test(text) ){
+    if ( /(HTML)*$/.test(text) ){
         text = text.split('.')[0];
     }
 

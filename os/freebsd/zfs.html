@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-    <title>zfs</title> 
-    
-    <link rel="stylesheet" href="../../src/css/fonts.css">
-    <link media="screen" rel="stylesheet" href="../../src/css/main.css">
-    <link rel="stylesheet" href="../../src/css/monokai-sublime.css">
-
-    <script src="../../src/js/jquery-3.2.1.min.js"></script>
-    <script src="../../src/js/highlight.pack.js"></script>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>zfs</title>
+    <link href="../../src/css/fonts.css" rel="stylesheet">
+    <link href="../../src/css/main.css" media="screen" rel="stylesheet">
+    <link href="../../src/css/monokai-sublime.css" rel="stylesheet">
+    <script src="../../src/js/jquery-3.2.1.min.js">
+    </script>
+    <script src="../../src/js/highlight.pack.js">
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -17,114 +18,103 @@
             <h1 class="site-title"><a class="logo-text" href="https://avis20.github.io/doc/">avis notes</a></h1>
             <p class="site-description">Thoughts, stories and ideas.</p>
         </div><!-- .inner -->
-
-
     </header>
     <div class="site-content">
-    <div class="inner">
-        <main class="site-main">
-            <article class="post format-standard hentry">
-                <header class="entry-header"> 
-                    <div class="entry-header-wrap">
-                        <h2 class="entry-title">zfs</h2>
-                    </div><!-- .entry-header-wrap -->
-                    <div class="entry-meta"> by <span class="post-author author vcard"><span class="fn">Orlov Yaroslav</span></span> on
-                        <time class="published" datetime="27-01-2018">27-01-2018</time>
-                    </div><!-- .entry-meta -->
-                </header><!-- .entry-header -->
-                <div class="entry-content">
-
-            <h3 id="zpool">zpool</h3>
-            <p>zpool [действие] [ключи]</p>
-            <p></p>
-
-            <table><tr><th>Ключ</th><th>Описание</th></tr>
-                <tr>
-                    <td>-f, --force</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>-d</td>
-                    <td>Отключить все фичи по умолчанию</td>
-                </tr>
-                </tr>
-                <tr>
-                    <td>-o property=value</td>
-                    <td>включить <a href="#features">фичу</a></td>
-                </tr>
-                <tr>
-                    <td>-O file-system-property=value</td>
-                    <td><a href="#settings_fs">Настройки файловой системы</a></td>
-                </tr>
-                <tr>
-                    <td>-m</td>
-                    <td><p>точка монторования<p>Если ее нет, то нужно выбрать legacy или none</p>
-                        <ol>
-                            <li>none - без монтирования</li>
-                            <li>legacy - как я понимаю это наследование уровневых путей. например /export/stuff, то pool/home/user путем наследования получает значение /export/stuff/user
-                                <p>Старые точки монтирования. Управление файловыми системами ZFS можно осуществлять при помощи старых средств. Для этого свойство mountpoint должно иметь значение legacy. Управление старыми файловыми системами должно осуществляться с помощью команд mount и umount и файла /etc/vfstab. ZFS не выполняет автоматическое монтирование старых файловых систем при начальной загрузке, и для наборов данных этого типа команды ZFS mount и umount не используются. В следующих примерах демонстрируется настройка и администрирование набора данных ZFS в режиме "legacy":</p></li>
-                        </ol>
-                    </td>
-                </tr>
-            </table>
-
-<h3 id="shortcuts">Шпаргалка по командам</h3>
-
-<table>
-<tr>
-    <td>Справка по командам</td>
-    <td>
-
-<pre><code class="shell">man zpool
+        <div class="inner">
+            <main class="site-main">
+                <article class="post format-standard hentry">
+                    <header class="entry-header">
+                        <div class="entry-header-wrap">
+                            <h2 class="entry-title">zfs</h2>
+                        </div><!-- .entry-header-wrap -->
+                        <div class="entry-meta">
+                            by <span class="post-author author vcard"><span class="fn">Orlov Yaroslav</span></span> on <time class="published" datetime="27-01-2018">27-01-2018</time>
+                        </div><!-- .entry-meta -->
+                    </header><!-- .entry-header -->
+                    <div class="entry-content">
+                        <h3 id="zpool">zpool</h3>
+                        <p>zpool [действие] [ключи]</p>
+                        <p></p>
+                        <table>
+                            <tr>
+                                <th>Ключ</th>
+                                <th>Описание</th>
+                            </tr>
+                            <tr>
+                                <td>-f, --force</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>-d</td>
+                                <td>Отключить все фичи по умолчанию</td>
+                            </tr>
+                            <tr>
+                                <td>-o property=value</td>
+                                <td>
+                                    включить <a href="#features">фичу</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>-O file-system-property=value</td>
+                                <td>
+                                    <a href="#settings_fs">Настройки файловой системы</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>-m</td>
+                                <td>
+                                    <p>точка монторования</p>
+                                    <p>Если ее нет, то нужно выбрать legacy или none</p>
+                                    <ol>
+                                        <li>none - без монтирования</li>
+                                        <li>legacy - как я понимаю это наследование уровневых путей. например /export/stuff, то pool/home/user путем наследования получает значение /export/stuff/user
+                                            <p>Старые точки монтирования. Управление файловыми системами ZFS можно осуществлять при помощи старых средств. Для этого свойство mountpoint должно иметь значение legacy. Управление старыми файловыми системами должно осуществляться с помощью команд mount и umount и файла /etc/vfstab. ZFS не выполняет автоматическое монтирование старых файловых систем при начальной загрузке, и для наборов данных этого типа команды ZFS mount и umount не используются. В следующих примерах демонстрируется настройка и администрирование набора данных ZFS в режиме "legacy":</p>
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+                        <h3 id="shortcuts">Шпаргалка по командам</h3>
+                        <table>
+                            <tr>
+                                <td>Справка по командам</td>
+                                <td>
+                                    <pre><code class="shell">man zpool
 man zfs
 </code></pre>
-
-    </td>
-</tr>
-<tr>
-
-    <td>Создать пул и посмотреть информацию о нём.
-        <p>Интересная особенность в *nix системах - <a href="http://linux.yaroslavl.ru/docs/setup/mandrake/cl/ch09s02.html">Все является файлом</a>. В том числе и диски</p>
-    <p>Поэтому, пул дисков можно эмулировать с помощью создания файлов</p>
-    <p>Единственное ограничение, диск (или файл) должен быть не менее 64m для самого zfs</p>
-    <p>При создании пула, создается фс от корня по названию пула</p>
-
-    </td>
-    <td>
-
-<pre><code class="shell"># cd /
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool create">zpool create</h5>
+                                    <p>Создать пул и посмотреть информацию о нём.</p>
+                                    <p>Интересная особенность в *nix системах - <a href="http://linux.yaroslavl.ru/docs/setup/mandrake/cl/ch09s02.html">Все является файлом</a>. В том числе и диски. Поэтому, пул дисков можно эмулировать с помощью создания файлов</p>
+                                    <p>Единственное ограничение, диск (или файл) должен быть не менее 64m для самого zfs</p>
+                                    <p>При создании пула, создается фс от корня по названию пула</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># cd /
 # mkfile 100m disk1 disk2 disk3
 # ls -l disk*
 -rw-------  1 root  wheel  104857600 Jan 27 14:42 disk1
 -rw-------  1 root  wheel  104857600 Jan 27 14:42 disk2
 -rw-------  1 root  wheel  104857600 Jan 27 14:42 disk3
 -rw-------  1 root  wheel   73400320 Jan 20 19:58 disk4
-</code></pre>
-
-    </td>
-
-</tr>
-
-<tr>
-    <td>
-        <p>Создать пулл устройств и посмотреть информацию о нем</p>
-    </td>
-
-    <td>
-<pre><code class="shell" id="zpool create"># zpool create test01 /disk1 /disk2
+# zpool create test01 /disk1 /disk2
 # zpool list
 NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
 test01   160M    62K   160M         -     1%     0%  1.00x  ONLINE  -
 </code></pre>
-
-    </td>
-
-</tr>
-
-<tr>
-    <td>Подробная информация о пуле</td>
-    <td>
-        <pre><code class="shell"># zpool status -v
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool status">zpool status</h5>
+                                    <p>Подробная информация о пуле</p>
+                                    <p>Пока не увидел разницу от ключа -v</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool status -v
   pool: test01
  state: ONLINE
   scan: none requested
@@ -136,44 +126,183 @@ config:
       /disk2    ONLINE       0     0     0
 
 errors: No known data errors</code></pre>
-    </td>
-</tr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool destroy">zpool destroy</h5>
+                                    <p>Уничтожить пул</p>
+                                    <p>При уничтожении пула, уничтожается и фс!</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool destroy test01</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool create mirror">zpool create mirror</h5>Создать зеркалированный пул
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool create test02 mirror /disk1 /disk2 
+# zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test02    80M   242K  79.8M         -     1%     0%  1.00x  ONLINE  -
+</code></pre>
+                                    <pre><code class="shell"># mkfile 70m disk4
+# zpool create test03 mirror /disk3 /disk4 
+invalid vdev specification
+use '-f' to override the following errors:
+mirror contains devices of different sizes
+</code></pre>
+                                    <p>При создании зеркала разного размера, выдется ошибка</p>
+                                    <pre><code class="shell"># zpool create -f test03 mirror /disk3 /disk4 
+# zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test03    64M    62K  63.9M         -     1%     0%  1.00x  ONLINE  -
+</code></pre>
+                                    <p>В этом случае можно указать ключ -f для принудительного создания. Тогда размер пула будет наименьшим из дисков</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool detach">zpool detach</h5>
+                                    <p>Отключить диск от зеркала</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool status
+  pool: test02
+ state: ONLINE
+  scan: resilvered 70K in 0h0m with 0 errors on Sat Jan 20 18:18:35 2018
+config:
 
-tr>td+td>pre>code.shell
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+        /disk2  ONLINE       0     0     0
+        /disk1  ONLINE       0     0     0
 
-</table>
+errors: No known data errors
+# zpool detach test02 /disk1
+# zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+test02    80M   124K  79.9M         -     1%     0%  1.00x  ONLINE  -
+# zpool status
+  pool: test02
+ state: ONLINE
+  scan: none requested
+config:
 
-<h3 id="reference">Reference</h3>
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      /disk2    ONLINE       0     0     0
 
-<ul>
-<li><a href="https://docs.oracle.com/cd/E19253-01/820-0836/zfsover-2/index.html">Что такое ZFS</a></li>
-<li><a href="https://docs.oracle.com/cd/E19253-01/820-0836/gaztn/index.html">Точки монторивания</a></li>
-<li><a href="https://www.youtube.com/watch?v=ZhlkwTNkh58&list=PLFHbPE9PGy7UNZb0IkpJc8KB_drOIL64M&t=1221s&index=10">ZFS на Linux Debian 8. Часть 1</a></li>
-<li><a href="https://www.youtube.com/watch?v=j06efTacH3E&t=36s">Установка FreeBSD+ZFS</a></li>
-<li><a href="https://confluence.prototypes.ru/x/C4-/">confluence</a></li>
-<li><a href="https://deathstar.name/ustanovka-freebsd-na-zfs-vklyuchaya-kornevoj-razdel/">Установка FreeBSD на ZFS включая корневой раздел</a></li>
-<li><a href="1 http://www.lissyara.su/articles/freebsd/file_system/root_zfs_gpt/">Установка FreeBSD на ZFS/root или Пособие себе на память</a></li>
-<li><a href="http://dreamcatcher.ru/2010/01/10/%D0%A8%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0-%D0%BF%D0%BE-zfs/">Шпаргалка-по-zfs</a></li>
-<li><a href="http://xgu.ru/wiki/ZFS">Пример использования ZFS</a></li>
-</ul>
+errors: No known data errors
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool attach">zpool attach</h5>
+                                    <p>Добавить диск к зеркалу</p>
+                                    <p>Нужно передовать 2 диска, с какого на какой скопируются данные для дальнейшего зеркалирования</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool attach test02 /disk2 /disk1
+# zpool status
+  pool: test02
+ state: ONLINE
+  scan: resilvered 70K in 0h0m with 0 errors on Sat Jan 20 18:18:35 2018
+config:
 
-        </main>
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+        /disk2  ONLINE       0     0     0
+        /disk1  ONLINE       0     0     0
 
-    <aside class="sidebar">
+errors: No known data errors
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool add spare">zpool add spare</h5>
+                                    <p>Добавить запасное устройство горячей замены</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool add test02 spare /disk4
+# zpool status
+  pool: test02
+ state: ONLINE
+  scan: none requested
+config:
 
-        <section class="widget widget-recent-posts">
+    NAME        STATE     READ WRITE CKSUM
+    test02      ONLINE       0     0     0
+      mirror-0  ONLINE       0     0     0
+        /disk1  ONLINE       0     0     0
+        /disk2  ONLINE       0     0     0
+    spares
+      /disk4    AVAIL   
 
-            <h2 class="widget-title">Toc</h2>
-            <div class="toc"></div>
-
-            <h2 class="widget-title">Notes</h2>
-            
-<iframe src="../../tree.html" frameborder="0" height="500px" target="_parent"></iframe>
-
-        </section><!-- .widget-recent-posts -->
-
-    </aside>
-
-    <script src="../../src/js/main.js"></script>
+errors: No known data errors
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 id="zpool remove">zpool remove</h5>
+                                    <p>Удалить запасное устройство горячей замены</p>
+                                </td>
+                                <td>
+                                    <pre><code class="shell"># zpool remove test01 /disk4
+</code></pre>
+                                </td>
+                            </tr>
+                        </table>
+                        <h3 id="reference">Reference</h3>
+                        <ul>
+                            <li>
+                                <a href="https://docs.oracle.com/cd/E19253-01/820-0836/zfsover-2/index.html">Что такое ZFS</a>
+                            </li>
+                            <li>
+                                <a href="https://docs.oracle.com/cd/E19253-01/820-0836/gaztn/index.html">Точки монторивания</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=ZhlkwTNkh58&list=PLFHbPE9PGy7UNZb0IkpJc8KB_drOIL64M&t=1221s&index=10">ZFS на Linux Debian 8. Часть 1</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=j06efTacH3E&t=36s">Установка FreeBSD+ZFS</a>
+                            </li>
+                            <li>
+                                <a href="https://confluence.prototypes.ru/x/C4-/">confluence</a>
+                            </li>
+                            <li>
+                                <a href="https://deathstar.name/ustanovka-freebsd-na-zfs-vklyuchaya-kornevoj-razdel/">Установка FreeBSD на ZFS включая корневой раздел</a>
+                            </li>
+                            <li>
+                                <a href="1%20http://www.lissyara.su/articles/freebsd/file_system/root_zfs_gpt/">Установка FreeBSD на ZFS/root или Пособие себе на память</a>
+                            </li>
+                            <li>
+                                <a href="http://dreamcatcher.ru/2010/01/10/%D0%A8%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0-%D0%BF%D0%BE-zfs/">Шпаргалка-по-zfs</a>
+                            </li>
+                            <li>
+                                <a href="http://xgu.ru/wiki/ZFS">Пример использования ZFS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </main>
+            <aside class="sidebar">
+                <section class="widget widget-recent-posts">
+                    <h2 class="widget-title">Toc</h2>
+                    <div class="toc"></div>
+                    <h2 class="widget-title">Notes</h2><iframe frameborder="0" height="500px" src="../../tree.html"></iframe>
+                </section><!-- .widget-recent-posts -->
+            </aside>
+            <script src="../../src/js/main.js">
+            </script> 
+        </div>
+    </div>
 </body>
 </html>

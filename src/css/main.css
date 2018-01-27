@@ -262,7 +262,8 @@ h4 {
 }
 
 h5 {
-    font-size: 18px
+    font-size: 18px;
+    margin-top: 0 !important;
 }
 
 h6 {
@@ -363,6 +364,7 @@ caption {
 
 th,
 td {
+    vertical-align: top;
     color: #333333;
     border: 1px solid #c0c0c0;
     padding: 8px 10px;
