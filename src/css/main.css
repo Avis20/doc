@@ -37,6 +37,8 @@ html {
 
 body {
     margin: 0
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 a {
@@ -1042,7 +1044,6 @@ pre {
 }
 
 body:after {
-    content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
     display: none
 }
 
@@ -1117,7 +1118,6 @@ body.lb-disable-scrolling {
     width: 32px;
     height: 32px;
     margin: 0 auto;
-    background: url(../images/loading.gif) no-repeat
 }
 
 .lb-nav {
@@ -4135,7 +4135,7 @@ body.lb-disable-scrolling {
 }
 
 .sidebar {
-    float: right;
+    float: left;
     font-size: 16px;
     margin-bottom: 30px;
     width: 21.666%
@@ -4750,8 +4750,6 @@ form.search-box input[type="submit"] {
 }
 
 .widget-recent-posts ul {
-    list-style: none;
-    padding: 0
 }
 
 .widget-recent-posts li {
@@ -5066,4 +5064,13 @@ form.search-box input[type="submit"] {
         margin: 30px auto 0;
         position: static
     }
+}
+
+.main_iframe {
+    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    height:100%;
+    width:100%;
+    position: absolute;
 }
