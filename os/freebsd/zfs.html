@@ -28,7 +28,7 @@
                             <h2 class="entry-title">zfs</h2>
                         </div><!-- .entry-header-wrap -->
                         <div class="entry-meta">
-                            by <span class="post-author author vcard"><span class="fn">Orlov Yaroslav</span></span> on <time class="published" datetime="27-01-2018">27-01-2018</time>
+                            by <span class="post-author author vcard"><span class="fn">Orlov Yaroslav</span></span> on ...-27-01-2018
                         </div><!-- .entry-meta -->
                     </header><!-- .entry-header -->
                     <div class="entry-content">
@@ -312,20 +312,19 @@ errors: No known data errors
 
 </td><td>
 
-<pre><code class="shell"># zpool add test02 spare /disk4
+<pre><code class="shell">zpool add test01 spare /disk3 
 # zpool status
-  pool: test02
+  pool: test01
  state: ONLINE
   scan: none requested
 config:
 
     NAME        STATE     READ WRITE CKSUM
-    test02      ONLINE       0     0     0
-      mirror-0  ONLINE       0     0     0
-        /disk1  ONLINE       0     0     0
-        /disk2  ONLINE       0     0     0
+    test01      ONLINE       0     0     0
+      /disk1    ONLINE       0     0     0
+      /disk2    ONLINE       0     0     0
     spares
-      /disk4    AVAIL   
+      /disk3    AVAIL   
 
 errors: No known data errors
 </code></pre>
