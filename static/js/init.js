@@ -1,12 +1,13 @@
 
 $(function() {
+    
     $("#wrapper").load("/doc/source/templates/header.html", function() {
         var template    = Handlebars.compile( $("#entry-template").html() ),
             content     = $("#content").html(),
             date        = $("#date").html(),
             html        = template({ title: "Hello", author: "Orlov Yaroslav", date: date, content: content });
         $("#content").html(html);
-        $("#preloader").fadeOut("slow");
+        $("#date").remove();
     });
 
     $('pre code').each(function(i, block) {
