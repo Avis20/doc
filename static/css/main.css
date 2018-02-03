@@ -328,7 +328,7 @@ dt {
 
 ul,
 ol {
-    padding: 0 0 0 30px
+    padding: 0 0 0 15px
 }
 
 ul {
@@ -4732,7 +4732,6 @@ form.search-box input[type="submit"] {
 }
 
 .widget-recent-posts li {
-    margin-bottom: 12px;
     line-height: 1.5
 }
 
