@@ -5,15 +5,14 @@ $(function() {
             content     = $("#content").html(),
             date        = $("#date").html(),
             html        = template({ title: "Hello", author: "Orlov Yaroslav", date: date, content: content });
-        $("#wrapper").css("background-color", "");
-        $("#wrapper").css("position", "");
         $("#content").html(html);
+        $("#preloader").fadeOut("slow");
     });
 
     $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
-
+        
     var ToC =
     "<nav role='navigation' class='table-of-contents'>" +
     "<ul class=\"multi\">";
@@ -37,3 +36,4 @@ $(function() {
     $(".toc").prepend(ToC);
 
 });
+
