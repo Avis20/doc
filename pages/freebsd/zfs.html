@@ -2,82 +2,67 @@
 <html lang="en">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>zfs</title>
-    <link href="/doc/static/css/fonts.css" rel="stylesheet">
-    <link href="/doc/static/css/main.css" media="screen" rel="stylesheet">
-    <link href="/doc/static/css/monokai-sublime.css" rel="stylesheet">
-    <script src="/doc/static/js/jquery-3.2.1.min.js">
-    </script>
-    <script src="/doc/static/js/highlight.pack.js">
-    </script>
+    <title>hi</title>
+    <style>
+        wrapper:{
+            
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
-        <ul class="breadcrumbs"></ul>
-        <div class="inner">
-            <h1 class="site-title"><a class="logo-text" href="https://avis20.github.io/doc/">avis notes</a></h1>
-            <p class="site-description">Thoughts, stories and ideas.</p>
-        </div><!-- .inner -->
-    </header>
-    <div class="site-content">
-        <div class="inner">
-            <main class="site-main">
-                <article class="post format-standard hentry">
-                    <header class="entry-header">
-                        <div class="entry-header-wrap">
-                            <h2 class="entry-title">zfs</h2>
-                        </div><!-- .entry-header-wrap -->
-                        <div class="entry-meta">
-                            by <span class="post-author author vcard"><span class="fn">Orlov Yaroslav</span></span> on ...-27-01-2018
-                        </div><!-- .entry-meta -->
-                    </header><!-- .entry-header -->
-                    <div class="entry-content">
-                        <h3 id="zpool">zpool</h3>
-                        <p>zpool [действие] [ключи]</p>
-                        <p></p>
-                        <table>
-                            <tr>
-                                <th>Ключ</th>
-                                <th>Описание</th>
-                            </tr>
-                            <tr>
-                                <td>-f, --force</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>-d</td>
-                                <td>Отключить все фичи по умолчанию</td>
-                            </tr>
-                            <tr>
-                                <td>-o property=value</td>
-                                <td>
-                                    включить <a href="#features">фичу</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>-O file-system-property=value</td>
-                                <td>
-                                    <a href="#settings_fs">Настройки файловой системы</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>-m</td>
-                                <td>
-                                    <p>точка монторования</p>
-                                    <p>Если ее нет, то нужно выбрать legacy или none</p>
-                                    <ol>
-                                        <li>none - без монтирования</li>
-                                        <li>legacy - как я понимаю это наследование уровневых путей. например /export/stuff, то pool/home/user путем наследования получает значение /export/stuff/user
-                                            <p>Старые точки монтирования. Управление файловыми системами ZFS можно осуществлять при помощи старых средств. Для этого свойство mountpoint должно иметь значение legacy. Управление старыми файловыми системами должно осуществляться с помощью команд mount и umount и файла /etc/vfstab. ZFS не выполняет автоматическое монтирование старых файловых систем при начальной загрузке, и для наборов данных этого типа команды ZFS mount и umount не используются. В следующих примерах демонстрируется настройка и администрирование набора данных ZFS в режиме "legacy":</p>
-                                        </li>
-                                    </ol>
-                                </td>
-                            </tr>
-                        </table>
 
-                        <h3 id="shortcuts">Шпаргалка по командам</h3>
+<div id="wrapper" style="background-color:#333;width:100%;height:100%;left:0;top:0;z-index:1;position:absolute"></div>
 
-                        <table>
+<div id="content">
+
+<div id="date">27-01-2018</div>
+
+<h3 id="zpool">zpool</h3>
+<p>zpool [действие] [ключи]</p>
+<p></p>
+<table>
+    <tr>
+        <th>Ключ</th>
+        <th>Описание</th>
+    </tr>
+    <tr>
+        <td>-f, --force</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>-d</td>
+        <td>Отключить все фичи по умолчанию</td>
+    </tr>
+    <tr>
+        <td>-o property=value</td>
+        <td>
+            включить <a href="#features">фичу</a>
+        </td>
+    </tr>
+    <tr>
+        <td>-O file-system-property=value</td>
+        <td>
+            <a href="#settings_fs">Настройки файловой системы</a>
+        </td>
+    </tr>
+    <tr>
+        <td>-m</td>
+        <td>
+            <p>точка монторования</p>
+            <p>Если ее нет, то нужно выбрать legacy или none</p>
+            <ol>
+                <li>none - без монтирования</li>
+                <li>legacy - как я понимаю это наследование уровневых путей. например /export/stuff, то pool/home/user путем наследования получает значение /export/stuff/user
+                    <p>Старые точки монтирования. Управление файловыми системами ZFS можно осуществлять при помощи старых средств. Для этого свойство mountpoint должно иметь значение legacy. Управление старыми файловыми системами должно осуществляться с помощью команд mount и umount и файла /etc/vfstab. ZFS не выполняет автоматическое монтирование старых файловых систем при начальной загрузке, и для наборов данных этого типа команды ZFS mount и umount не используются. В следующих примерах демонстрируется настройка и администрирование набора данных ZFS в режиме "legacy":</p>
+                </li>
+            </ol>
+        </td>
+    </tr>
+</table>
+
+<h3 id="shortcuts">Шпаргалка по командам</h3>
+
+<table>
 
 <!-- ------------------------------------------------------------- -->
 
@@ -1078,57 +1063,15 @@ test01/test04    128M     50M     78M    39%    /test01/test04
         <a href="http://xgu.ru/wiki/ZFS">Пример использования ZFS</a>
     </li>
 </ul>
-                    </div>
-                </article>
-            </main>
-            <aside class="sidebar">
-                <section class="widget widget-recent-posts">
-                    <h2 class="widget-title">Toc</h2>
-                    <div class="toc"></div>
-                    <h2 class="widget-title">Notes</h2><iframe frameborder="0" height="500px" src="../../tree.html"></iframe>
-                </section><!-- .widget-recent-posts -->
-            </aside>
-            <script src="/doc/static/js/main.js">
-            </script> 
-        </div>
-    </div>
+
+</div><!-- .content -->
+
+<div id="footer"></div>
+
+<script src="/doc/static/js/highlight.pack.js"></script>
+<script src="/doc/static/js/jquery-3.2.1.min.js"></script>
+<script src="/doc/static/js/handlebars-v4.0.11.js"></script>
+<script src="/doc/static/js/init.js"></script>
+
 </body>
 </html>
-
-
-zpool destroy test02
-
-zpool create -f test01 /disk1 /disk2; \
-zpool scrub test01; \
-zfs create test01/test02; \
-
-zpool create -f test02 /disk3 /disk4; \
-zpool scrub test02; \
-zfs set compression=on test02/test03
-
-zfs set reservation=30m test02/test03
-zfs set reservation=30m test02; \
-cd /test02
-cat /dev/urandom > file1
-ls -lh /test02/test03/
-
-
-cd / \
-test
-
-dd if=/dev/urandom of=/test01/test02/file1 bs=10M count=5
-
-cp big_file /test01/test02/file1
-
-cp big_file /test01/test04/ /test02/test03/
-
-# ls -lh /test01/test04/ /test02/test03/
-/test01/test04/:
-total 51240
--rw-r--r--  1 root  wheel    50M Jan 27 20:36 big_file
-
-/test02/test03/:
-total 51240
--rw-r--r--  1 root  wheel    50M Jan 27 20:36 big_file
-
-zfs set sharenfs=on test02/test03
