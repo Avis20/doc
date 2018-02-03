@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi</title>
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="stylesheet" href="../../src/css/monokai-sublime.css">
+</head>
+<body>
+
+    <header>
+        <ul class="breadcrumbs"></ul>
+        <div class="container">
+            <h1>ZFS</h1>
+            <h2>Пример использования ZFS</h2>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="toc"></div>
+        <hr>
+        <section id="main_content">
+
+
+        <p>Проверка:</p>
+        <pre><code class="shell">/test01/test03 # df -h
+Filesystem       Size    Used   Avail Capacity  Mounted on
+/dev/ada0p2      9.0G    4.5G    3.8G    55%    /
+devfs            1.0K    1.0K      0B   100%    /dev
+test01           108M     19K    108M     0%    /test01
+test01/test02    128M     19K    128M     0%    /test01/test02
+test01/test03    108M     19K    108M     0%    /test01/test03
+/test01/test03 # cat /dev/urandom > test
+cat: stdout: No space left on device
+/test01/test03 # df -h
+Filesystem       Size    Used   Avail Capacity  Mounted on
+/dev/ada0p2      9.0G    4.5G    3.8G    55%    /
+devfs            1.0K    1.0K      0B   100%    /dev
+test01            19K     19K      0B   100%    /test01
+test01/test02     20M     19K     20M     0%    /test01/test02
+test01/test03    108M    108M      0B   100%    /test01/test03
+        </code></pre>
+
+        </section>
+    </div>
+<script src="../../src/js/jquery-3.2.1.min.js"></script>
+<script src="../../src/js/highlight.pack.js"></script>
+<script src="../../src/js/main.js"></script>
+</body>
+</html>

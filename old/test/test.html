@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hi</title>
+</head>
+<body>
+
+    <div id="tree"></div>
+
+    <div class="test"></div>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+            {{#> content-block}}
+              Default content
+            {{/content-block}}
+            {{> myPartial }}
+        </div>
+    </script>
+
+
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/handlebars-v4.0.11.js"></script>
+
+    <script>
+
+    $(function(){ $("#tree").load("/tree.html") });
+
+Handlebars.registerPartial('myPartial', '{{name}}')
+
+var template = Handlebars.compile( $("#entry-template").html() );
+var html = template({ title: "Собаке Качалова", name: "cxz" });
+$(".test").html(html);
+
+    </script>
+</body>
+</html>
+
