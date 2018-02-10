@@ -4327,6 +4327,10 @@ body.lb-disable-scrolling {
     text-decoration: none
 }
 
+.entry-meta p {
+    margin: 0;
+}
+
 .read-more {
     margin-top: 40px
 }
