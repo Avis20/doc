@@ -8,11 +8,8 @@ kramdown:
   input:  GFM
   syntax_highlighter: rouge
 
-
 paginate: 10
 paginate_path: ":num"
-baseurl: ""
-
 
 
 defaults:
@@ -25,8 +22,6 @@ defaults:
       styles : [highlight.css,post.css]
       scripts : [post.js]
 
-
-
 title: Avis notes
 description: "Thoughts, stories and ideas."
 email: orlov.avis@yandex.ru
@@ -36,10 +31,7 @@ github_username: avis20
 swiftype_searchId: "ncwR9a8S9CTx2q9SgsJm"
 disqus_shortname: "rainyalley"
 
-imgrepo: "http://blog.rainyalley.com/static/img"
-
-# baseurl: /doc
-# url: "https://avis20.github.io"
-url: "http://127.0.0.1:4000"
+baseurl: /doc
+url: "https://avis20.github.io"
 #imgrepo: "http://127.0.0.1:4000/static/img"
 
