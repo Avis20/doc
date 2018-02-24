@@ -4,6 +4,48 @@ layout: null
 
 /* NEW STYLE START */
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+table {
+    border: 1px solid #c0c0c0;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 24px;
+    text-align: left;
+    width: 100%
+}
+
+th,
+td {
+    vertical-align: top;
+    color: #333333;
+    border: 1px solid #c0c0c0;
+    padding: 8px 10px;
+    max-width: 0;
+}
+
+th {
+    background: #fafafa;
+    color: #3d3d3d;
+    font-weight: bold
+}
+
+hr {
+    background: #ededed;
+    border: 0;
+    height: 2px;
+    margin: 24px 0
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 95% !important;
+    }
+}
+
 .entry-meta {
     background-color: #ed6b39;
     clear: both;
@@ -44,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .inner {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 90%;
 }
 
 a {

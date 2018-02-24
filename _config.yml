@@ -1,4 +1,6 @@
-permalink: /:year-:month-:day/:title/
+permalink: /:day-:month-:year/:title/
+
+exclude:              ["Gemfile", "Gemfile.lock"]
 
 highlighter: rouge
 markdown: kramdown
@@ -36,8 +38,8 @@ disqus_shortname: "rainyalley"
 
 imgrepo: "http://blog.rainyalley.com/static/img"
 
-baseurl: /doc
-url: "https://avis20.github.io"
-# url: "http://127.0.0.1:4000"
-# imgrepo: "http://127.0.0.1:4000/static/img"
+# baseurl: /doc
+# url: "https://avis20.github.io"
+url: "http://127.0.0.1:4000"
+#imgrepo: "http://127.0.0.1:4000/static/img"
 

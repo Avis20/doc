@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="row">
-    <div class="content col-lg-9">
+    <div class="content col-lg-9 cont-right">
         <div class="sheet post">
           <header>
             <h2>{{ page.title }}</h2>
@@ -42,6 +42,18 @@ layout: default
                     <li>
                         <a href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}#{{ tag }}"><span class="octicon octicon-tag"></span>&nbsp;{{ tag }}</a>
                     </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="content-navigation-related">
+            <div class="content-navigation-header">
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Reference
+            </div>
+            <div class="content-navigation-list">
+                <ul>
+                    {% for a in page.reference %}
+                        <li><a href="{{ a.link }}" target="_blank">{{ a.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
