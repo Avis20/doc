@@ -1,3 +1,9 @@
+
+pre {
+    border: none !important;
+    background-color: transparent;
+}
+
 .cont-right {
     float: right !important;
 }
