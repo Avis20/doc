@@ -1,6 +1,6 @@
 ---
-title: "Разное : handlebars"
-categories: tech frontend
+title: "Разное : Front : handlebars"
+categories: frontend templates
 reference:
   -
 ---
