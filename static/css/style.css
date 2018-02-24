@@ -42,7 +42,7 @@ hr {
 
 @media (min-width: 1200px){
     .container {
-        width: 95% !important;
+        width: 90% !important;
     }
 }
 
@@ -140,7 +140,7 @@ a {
 }
 */
 .navbar-tiffany{
-    /*background-color: #2ca6cb;*/
+    /*background-color: #22b3eb;*/
     border-top: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.1);
     box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
@@ -156,7 +156,7 @@ a {
 }
 .footnote-tiffany{
     background-color: #333333;
-    border-color: #2ca6cb;
+    border-color: #22b3eb;
     box-shadow: 2px -4px 5px rgba(3,-3,3,0.2);
 }
 
@@ -208,7 +208,7 @@ a {
 }
 
 .footnote .foot-item:hover{
-    background-color: #2ca6cb;
+    background-color: #22b3eb;
     -webkit-transition: background .4s ease-in-out;
     -moz-transition: background .4s ease-in-out;
     -ms-transition: background .4s ease-in-out;
@@ -372,7 +372,7 @@ a:active {text-decoration: none}	/* 选定的链接 */
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #2ca6cb;
+    background-color: #22b3eb;
     display: none;
 }
 
