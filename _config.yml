@@ -28,8 +28,6 @@ defaults:
 title: Avis notes
 description: "Thoughts, stories and ideas."
 email: orlov.avis@yandex.ru
-# baseurl: /doc
-# url: "https://avis20.github.io"
 github_username: avis20
 
 # undef
@@ -38,7 +36,8 @@ disqus_shortname: "rainyalley"
 
 imgrepo: "http://blog.rainyalley.com/static/img"
 
-
-url: "http://127.0.0.1:4000"
-#imgrepo: "http://127.0.0.1:4000/static/img"
+baseurl: /doc
+url: "https://avis20.github.io"
+# url: "http://127.0.0.1:4000"
+# imgrepo: "http://127.0.0.1:4000/static/img"
 
