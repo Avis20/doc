@@ -1,5 +1,5 @@
 ---
-title: "Разное : Front : handlebars"
+title: "Front : handlebars"
 categories: frontend templates
 reference:
   -
