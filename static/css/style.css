@@ -4,6 +4,10 @@ layout: null
 
 /* NEW STYLE START */
 
+h1 {
+    font-size: 26px !important;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0
@@ -249,6 +253,7 @@ body,code,pre{
 
 body,.sheet,pre,code{
     font-size: 14px;
+    word-break: normal;
 }
 
 
