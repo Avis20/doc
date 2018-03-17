@@ -65,6 +65,7 @@ scripts: [category.js]
 
 
             {% for category in site.categories %}
+            {{category | first}}
             <section class="category-slice" post-cate="{{category | first}}">
                 {% for posts in category  %}
                 {% for post in posts %}

@@ -4,7 +4,7 @@ categories: os
 tags: ubuntu
 reference:
   -
-    title: Баг с дубликатом сорсов
+    title: Баг с дубликатом сорсов при api-get update
     link: https://askubuntu.com/questions/380330/duplicate-source-error-on-apt-get-update
 
 ---
@@ -27,7 +27,7 @@ reference:
 
 ```sudo apt-get upgrade && sudo apt-get update```
 
-## Отключить запрос пароля
+#### Отключить запрос пароля
 
 При входе в систему:  
 ```Параметры системы... -> Защита и приватность -> Требовать ввод пароля -> выбираем нужное```
@@ -35,10 +35,12 @@ reference:
 При запуске хрома:  
 ```В консоле seahorse -> ПКМ Вход -> Изменить пароль -> Старый -> Новый(пустой) -> Готово```
 
-## Настройка автозапуска приложений
+#### Настройка автозапуска приложений
 
 Актуально только после установки всех программ!
-```gnome-session-properties```
+```
+gnome-session-properties
+```
 
 ## Установка программ
 
@@ -62,6 +64,8 @@ vi programm_list
 
 ### По одному
 
+### Часто используемые
+
 #### git
 
 git есть в стандартной репе, так что просто
@@ -70,12 +74,13 @@ sudo apt-get install git
 ```
 
 #### vim
+
 Обычно:
 ```
 sudo apt-get install vim
 ```
 
-Но если нет в стандартных репах, то добавить сторонюю
+Но если какаята хрень то - 
 
 ```
 sudo add-apt-repository ppa:fcwu-tw/ppa
@@ -83,7 +88,7 @@ sudo apt-get update
 sudo apt-get install vim 
 ```
 
-- для ubuntu 14.X по умолчанию установлена vim-tiny
+- для > ubuntu 14... по умолчанию установлена vim-tiny   
 
 #### sshfs
 
@@ -92,24 +97,32 @@ sudo apt-get install vim
 sudo apt-get install sshfs
 ```
 
-#### unrar
-```
-sudo apt-get install unrar
-```
-
 #### mc
 
 ```
 sudo apt-get install mc
 ```
 
+#### htop
+
+```
+sudo apt-get install htop
+```
+
 #### perl модули
-```
-```
-
-#### catalyst
+##### uni::perl
 
 ```
+curl -L cpanmin.us | perl - -l $HOME/perl5 App::cpanminus uni::perl
+```
+
+##### lib::abs
+```
+apt search lib-abs
+liblib-abs-perl/xenial,xenial,now 0.93-1 all [установлен]
+  module to make relative path absolute to caller
+
+avis@avis-PC:~$ sudo apt-get install liblib-abs-perl/xenial
 ```
 
 #### nodejs + browser-sync
@@ -156,6 +169,13 @@ sudo apt-get install sublime-text
 sudo apt-get update && sudo apt-get install vlc browser-plugin-vlc
 ```
 
+### Редко используемые
+
+#### unrar
+```
+sudo apt-get install unrar
+```
+
 #### playonlinux
 
 ```
@@ -166,6 +186,10 @@ sudo apt-get update && sudo apt-get install vlc browser-plugin-vlc
 ```
 
 #### steam
+
+```
+```
+#### telegram
 
 ```
 ```
@@ -180,16 +204,40 @@ sudo apt-get update
 sudo apt-get install skypeforlinux -y 
 ```
 
+#### catalyst
+
+```
+```
+
+#### mojo
+
+Перловый веб фреймворк.
+```
+sudo su
+curl -L https://cpanmin.us | perl - -M https://cpan.metacpan.org -n Mojolicious
+cpan Mojolicious
+
+```
+
+#### ansible
+
+TODO:
+ansible --version
+ansible 2.3.0.0
+
+```
+```
+
 #### clip
 
-Для копирования STDOUT сразу в буфер. Редко пользуюсь
+Для копирования STDOUT сразу в буфер.
 ```
 sudo apt-get install xclip
 ```
 
 #### mocp
 
-Консольный аудио плеер. Редко пользуюсь
+Консольный аудио плеер.
 ```
 sudo apt-get install moc
 zcat /usr/share/doc/moc/examples/config.example.gz > ~/.moc/config
@@ -198,19 +246,20 @@ chmod g-w ~/.moc/config
 
 ```
 
-#### mojo
+#### preload
 
-Перловый веб фреймворк. Редко пользуюсь
+Говорят помоает быстрее работать программам
 ```
-sudo su
-curl -L https://cpanmin.us | perl - -M https://cpan.metacpan.org -n Mojolicious
-cpan Mojolicious
+```
 
+#### screen
+
+```
 ```
 
 #### virtualBox + WinXP + EMS
 1. sudo apt-get install virtualbox
-2. Скачать WinXP *TODO link*
+2. Скачать WinXP. [Дистрибутив WinXP](http://windows64.net/windows-xp-x64-skachat-torrent/originalnye-obrazy-xp/14-skachat-windows-xp-sp3-originalnyy-obraz-aktivator.html)
 3. Установить и настроить
     1. Устройства -> Общий буфер обмена -> Двунаправленный
     2. Устройства -> Drag'n'Drop -> Двунаправленный
@@ -221,7 +270,7 @@ cpan Mojolicious
         - Путь /home/avis/Folder
         - Авто-подключение +
         - Создать постоянную папку +
-    5 Выключить
+    5. Выключить
     6. Настроить -> Сеть
         - Включить сетевой адаптер
         - Тип подключения - Сетевой мост
