@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+.site-description {
+    color: #818181;
+}
+
 .site-title a {
     color: #fff;
     display: block;
@@ -237,7 +241,7 @@ html{
 
 body {
     background-color: #333;
-    color: #818181;
+    color: #444;
 }
 
 body {
