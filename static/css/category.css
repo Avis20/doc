@@ -16,13 +16,6 @@ section.category-slice{
     -moz-transition:0.4s ease;
     -o-transition:0.4s ease;
 }
-.categories-item:hover .categories-badge{
-    -webkit-transform:rotate(360deg) scale(1.2);
-    -moz-transform:rotate(360deg) scale(1.2);
-    -o-transform:rotate(360deg) scale(1.2);
-    -ms-transform:rotate(360deg) scale(1.2);
-    transform:rotate(360deg) scale(1.2);
-}
 
 .dropdown .btn,
 .dropdown .dropdown-menu{

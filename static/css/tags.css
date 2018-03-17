@@ -26,11 +26,13 @@
 .tag-box a {
     padding: 4px 6px;
     margin: 2px;
-    background-color: #e6e6e6;
+    color: #fff;
+    background-color: #ed6b39;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 2px;
     text-decoration: none;
+    border: 1px solid #ed6b39;
 }
 
 .tag-box a span {
