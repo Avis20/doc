@@ -55,7 +55,8 @@ hr {
     clear: both;
     color: #fff;
     font-size: 12px;
-    float: left;
+    width: fit-content;
+    margin-bottom: 15px;
     letter-spacing: 1px;
     line-height: 1.5;
     padding: 16px 30px;

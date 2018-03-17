@@ -4,14 +4,7 @@ categories: perl
 tags: courses 
 reference:
   -
-    title: ДЗ-1
-    link: todo
-  -
-    title: ДЗ-2
-    link: todo
-  -
-    title: ДЗ-3
-    link: todo
+
 ---
 
 * TOC 
@@ -19,6 +12,26 @@ reference:
 
 Начало не записывал, так что начну с 3 лекции
 # Массивы массивов
+
+## Пример массива содежашего в сибе другие массивы
+
+<pre><code class="perl">
+my @array1 = (
+    [1, 2, 3 ],
+    [4, 5, 6 ],
+    [7, 8, 9 ]
+);
+
+my $array2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+];
+
+warn $array1[1][1]; # 5
+warn $array2->[1][1]; # 5
+</code></pre>
+
 # Манипуляции: дереференс
 # Сложные структуры
 # Автооживление (autovivification)
