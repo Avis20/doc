@@ -36,3 +36,7 @@ pdfposter -p 2x1a4 input.pdf out.pdf
 <pre><code class="shell">vim $HOME/.local/share/applications/google-chrome.desktop
 # Exec=/opt/google/chrome/chrome -> Exec=/opt/google/chrome/chrome %U
 </code></pre>
+
+## Hotkeys для deadbeef
+
+<img src="/doc/static/img/deadbeef.png" alt="">
