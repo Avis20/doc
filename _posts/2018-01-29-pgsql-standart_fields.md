@@ -147,8 +147,39 @@ VOLATILE
 CALLED ON NULL INPUT
 SECURITY INVOKER
 COST 100;
+</code></pre>
 
+## check функции
+<pre><code class="shell">
+CREATE OR REPLACE FUNCTION chat.check_item (
+  chat_id integer,
+  params json = '{}'::json
+)
+RETURNS chat.items AS
+$body$
+DECLARE
+    r_chat      "chat"."items";
+BEGIN
+   IF chat_id IS NULL THEN
+        RAISE WARNING '{"success":0,"error":428,"error_field":"chat_id","params":%}', params;
+        RETURN NULL;
+    END IF;
 
+    SELECT * INTO r_chat FROM "chat"."items" 
+        WHERE id = chat_id;
+    IF r_chat.id IS NULL THEN
+        RAISE WARNING '{"success":0,"error":424,"error_field":"chat_id","params":%}', params;
+        RETURN NULL;
+    END IF;
+     
+    RETURN r_chat;
+END;
+$body$
+LANGUAGE 'plpgsql'
+VOLATILE
+CALLED ON NULL INPUT
+SECURITY INVOKER
+COST 10;
 </code></pre>
 
 
