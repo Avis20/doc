@@ -42,6 +42,115 @@ COMMENT ON COLUMN schema.table.modify_user_id
 IS 'Пользователь изменивший запись';
 </code></pre>
 
+## Триггеры
+
+### insert
+<pre><code class="shell">
+CREATE OR REPLACE FUNCTION schema._items_insert_before (
+)
+RETURNS trigger AS
+$body$
+DECLARE
+    r_user          "public"."users";
+BEGIN
+    IF NEW._trigger_off IS TRUE THEN
+        NEW._trigger_off := NULL;
+        RETURN NEW;
+    END IF;
+ 
+    NEW.ts_create       := now();
+    NEW.ts_modify       := now();
+    
+-- check user
+    SELECT * INTO r_user
+        FROM "public".check_user(NEW.user_id, row_to_json(NEW), 'user_id');
+    IF r_user.id IS NULL THEN
+        RETURN NULL;
+    END IF;
+    
+    NEW.modify_user_id := NEW.user_id;
+ 
+    RETURN NEW;
+END;
+$body$
+LANGUAGE 'plpgsql'
+VOLATILE
+CALLED ON NULL INPUT
+SECURITY INVOKER
+COST 100;
+
+CREATE TRIGGER items_insert_before
+  BEFORE INSERT 
+  ON schema.items
+  
+FOR EACH ROW 
+  EXECUTE PROCEDURE schema._items_insert_before();
+</code></pre>
+
+### update
+<pre><code class="shell">shema
+CREATE OR REPLACE FUNCTION schema._items_update_before (
+)
+RETURNS trigger AS
+$body$
+DECLARE
+    r_user      "public"."users";
+BEGIN
+    IF NEW._trigger_off IS TRUE THEN
+        NEW._trigger_off := NULL;
+        RETURN NEW;
+    END IF;
+ 
+-- blocked update fields
+    NEW.user_id        := OLD.user_id;
+    
+    NEW.ts_modify       := now(); 
+    NEW._trigger_off    := NULL;
+
+-- check modify user
+    SELECT * INTO r_user
+        FROM "public".check_user(NEW.modify_user_id, row_to_json(NEW), 'modify_user_id');
+    IF r_user.id IS NULL THEN
+        RETURN NULL;
+    END IF;
+
+    RETURN NEW;
+END;
+$body$
+LANGUAGE 'plpgsql'
+VOLATILE
+CALLED ON NULL INPUT
+SECURITY INVOKER
+COST 100;
+
+
+CREATE TRIGGER items_update_before
+  BEFORE UPDATE 
+  ON schema.items
+  
+FOR EACH ROW 
+  EXECUTE PROCEDURE schema._items_update_before();
+</code></pre>
+
+### delete
+<pre><code class="shell">
+CREATE OR REPLACE FUNCTION schema._items_delete_before (
+)
+RETURNS trigger AS
+$body$
+BEGIN
+    RETURN NULL;
+END;
+$body$
+LANGUAGE 'plpgsql'
+VOLATILE
+CALLED ON NULL INPUT
+SECURITY INVOKER
+COST 100;
+
+
+</code></pre>
+
 
 ## DBIx
 
