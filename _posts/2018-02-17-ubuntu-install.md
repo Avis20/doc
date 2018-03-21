@@ -294,7 +294,7 @@ chmod g-w ~/.moc/config
             - Use private auth +
             - SSH key file - Folder -> id_rsa1.ppk
             - Далее, Далее, Далее, открыть базу
-        2. Боевая
+        2. Боевая - TODO
             - Hostname - localhost
             - Port - 5432
             - User name - pgsql
