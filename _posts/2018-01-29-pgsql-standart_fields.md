@@ -149,7 +149,7 @@ SECURITY INVOKER
 COST 100;
 
 CREATE TRIGGER items_delete_before
-  BEFORE UPDATE
+  BEFORE DELETE
   ON schema.items
   
 FOR EACH ROW 
