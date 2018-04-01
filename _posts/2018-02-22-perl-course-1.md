@@ -161,8 +161,56 @@ warn $@ if $@;
 Illegal division by zero at simple.pl line 73.
 </code></pre>
 
-<pre><code class="shell">eval { die "Not root" if $< };
+<pre><code class="perl">eval { die "Not root" if $< };
 warn $@ if $@;
 </code></pre>
 
 Реализация try/catch
+
+<pre><code class="perl">eval {
+    100 / 0;
+1} or do {
+    warn "Error: $@";
+}
+=head
+Error: Illegal division by zero at simple.pl line 80.
+</code></pre>
+
+#### chop, chomp
+
+chop - вырезает 1 символ с конца строки
+chomp - вырезает 1 спец символ с конца строки
+
+<pre><code class="perl">my $a = $b = "test\t\n";
+say chop($a) . chop($a) . chop($a); # \n, \t, t
+say $a;
+
+say chomp($b) . chomp($b) . chomp($b); # \n, \t, ''
+say $b;
+=head
+
+    t
+tes
+100
+test    
+</code></pre>
+
+#### index, rindex, substr, length
+
+<pre><code class="perl">#         ↓─────index($_," ") # 4
+$_ = "some average string\n";
+#        └─┬─┘    ↑───rindex($_," ") # 12
+#          substr($_,3,5) = "e ave"
+</code></pre>
+
+#### lc, lcfirst, uc, ucfirst
+
+<pre><code class="shell">my $big = 'WORD';
+my $small = 'word';
+say lc $big;        # word "\L"
+say lcfirst $big;   # wORD "\l"
+say uc $small;      # WORD "\U"
+say ucfirst $small; # Word "\u"
+
+say "\u\l$big\E";
+</code></pre>
