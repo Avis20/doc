@@ -178,7 +178,7 @@ Error: Illegal division by zero at simple.pl line 80.
 
 #### chop, chomp
 
-chop - вырезает 1 символ с конца строки
+chop - вырезает 1 символ с конца строки  
 chomp - вырезает 1 спец символ с конца строки
 
 <pre><code class="perl">my $a = $b = "test\t\n";
@@ -205,7 +205,7 @@ $_ = "some average string\n";
 
 #### lc, lcfirst, uc, ucfirst
 
-<pre><code class="shell">my $big = 'WORD';
+<pre><code class="perl">my $big = 'WORD';
 my $small = 'word';
 say lc $big;        # word "\L"
 say lcfirst $big;   # wORD "\l"
@@ -213,4 +213,92 @@ say uc $small;      # WORD "\U"
 say ucfirst $small; # Word "\u"
 
 say "\u\l$big\E";
+</code></pre>
+
+#### sprintf
+
+<pre><code class="perl">say sprintf "%c", 9786;     # ☺ - utf8 символы
+say sprintf "%s", "str";    # str - строка
+say sprintf "%d", 49;       # 49 - число
+say sprintf "%u", -1;       # 18446744073709551615 - TODO: непонятно
+say sprintf "%o", 101;      # 145 - 8-ричное число
+say sprintf "%x", 57005;    # dead - 16-ричное число
+say sprintf "%e", 1/3;      # 3.333333e-01 - вывод дробного числа с экспонентой
+say sprintf "%f", 1/5;      # 0.200000
+say sprintf "%g", .333333e-01; # 0.0333333
+</code></pre>
+
+### Функции
+
+#### обьявление
+
+Именнованные функции
+<pre><code class="perl">sub mysub {
+    my ($a, $b ) = @_;
+    my $r = $a + $b;
+    return $r;
+}
+</code></pre>
+
+Безымянные функции
+<pre><code class="perl">my $var = sub {
+    my $a = shift;
+    return $a * 2;
+}
+</code></pre>
+
+#### вызов
+
+<pre><code class="perl">say mysub( 1, 2 );
+say mysub 5, 9;
+say $var->(5);
+=head
+3
+14
+10
+</code></pre>
+
+### Модули
+
+Пример модуля
+
+<pre><code class="perl">use MP3::Tag;
+my $mp3 = MP3::Tag->new( $ARGV[0] );
+print $mp3->artist . " - " . $mp3->title . "\n";
+=head
+perl simple.pl 1.mp3 
+Tech N9ne - Worldwide Choppers
+</code></pre>
+
+<pre><code class="perl">use Data::Dumper;
+my $foo = [{a => 1, b => 2}, { c => 3, d => 4}];
+print Dumper $foo;
+=head
+$VAR1 = [
+          {
+            'b' => 2,
+            'a' => 1
+          },
+          {
+            'd' => 4,
+            'c' => 3
+          }
+        ];
+</code></pre>
+
+<pre><code class="perl">use DDP;
+my $foo = [{a => 1, b => 2}, { c => 3, d => 4}];
+say p $foo;
+=head
+\ [
+    [0] {
+        a   1,
+        b   2
+    },
+    [1] {
+        c   3,
+        d   4
+    }
+]
+ARRAY(0x9aaa48)
 </code></pre>
