@@ -149,6 +149,87 @@ my $data = "Test\n";
 syswrite($fh, $data, length($data));
 </code></pre>
 
+Прямой вызов системного вызова sysread. Ваще непонятно!
+<pre><code class="perl">open my $fh, 'test.txt' or die $!;
+my $data = "Test\n";
+sysread($fh, $data, 2);
+</code></pre>
+
+Чтение двоичных данных. TODO: нужен нормальный двоичный файл!
+<pre><code class="perl">open my $fh, 'test.bin' or die $!;
+my $data = "Test\n";
+read($fh, $data, 2);
+warn <$fh>;
+</code></pre>
+
+Проверка на отсутствие данных в файле
+<pre><code class="perl">open my $fh, 'test.txt' or die $!;
+warn eof($fh);
+my @test = <$fh>;
+warn eof($fh);
+
+$ perl script.pl 
+Warning: something's wrong at script.pl line 6.
+1 at script.pl line 8, <$fh> line 1.
+
+</code></pre>
+
+#### Пример
+<pre><code class="perl">$ cat script.pl 
+#!/usr/bin/env perl
+
+use strict;
+use Digest::MD5 qw| md5_hex |;
+
+$\ = "\n";
+my $data = '';
+my $data_size = 1024;
+
+open my $fh, '<:raw', 'a.out' or die $!;
+
+until ( eof($fh) ){
+    read($fh, $data, $data_size) == $data_size
+      or die "Неверный формат";
+    print md5_hex($data);
+}
+close($fh);
+
+$ cat hi.cpp 
+
+#include <iostream\>
+
+int main (){
+    std::cout << 123 << std::endl;
+    return 0;
+}
+
+$ g++ hi.cpp
+$ perl script.pl 
+2912b5a9a1d612b3225e6259c8f16d82
+2b4c581f784b0c9ec5541ebb18747f8c
+4d158812ac0cf9d9b7788a148d2fb045
+d7db69845df9d9aeea28d0aa03222594
+7cad1fb5520ed9655e74d460d122f827
+d63d4167a2bb47e5ff299d855de08437
+fd05c1dde19ee23ae446b95029db2457
+f11bd83a259b3f32e9076d03570a236e
+Неверный формат at script.pl line 13.
+
+</code></pre>
+
+ЗАЧЕМ???
+
+### Проверка результата работы программы open
+
+<pre><code class="perl">open my $fh, 'Такого файла не существует!' || die $!;
+$ perl script.pl 
+
+open my $fh, 'Такого файла не существует!' or die $!;
+$ perl script.pl 
+No such file or directory at script.pl line 5.
+
+</code></pre>
+
 # Perl io backend
 
 fread, fwrite - чтение из диска!
