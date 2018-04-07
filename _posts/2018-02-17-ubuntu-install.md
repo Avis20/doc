@@ -1,13 +1,16 @@
 ---
 title: "Установка и настройка Ubuntu 16.04.3 LTS"
-categories: os
-tags: ubuntu
+categories: os ubuntu
+tags: ubuntu bugs
 reference:
   -
     title: Баг с дубликатом сорсов при api-get update
     link: https://askubuntu.com/questions/380330/duplicate-source-error-on-apt-get-update
   - title: Баг с зависанием виртуалки
     link: https://ru.stackoverflow.com/questions/774963/virtualbox-%D0%B8-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0
+  -
+    link: https://toster.ru/q/290158
+    title: "Почему chrome не открывает ссылку кликнутую в сторонних приложениях в Ubuntu?"
 
 ---
 
@@ -325,6 +328,17 @@ sudo apt-get update
 
 ```
 
+### Баг с новым окном в хроме
+
+Изменить параметр запуска в ```$HOME/.local/share/applications/google-chrome.desktop```  
+с ```Exec=/opt/google/chrome/chrome``` на ```Exec=/opt/google/chrome/chrome %U```
+
 ### Баг с зависанием виртуалки
 
-Инструкция по установке virt 5.2 - http://ubuntuhandbook.org/index.php/2017/10/virtualbox-reached-5-2-major-release-how-to-install/
+[Инструкция по установке virt 5.2](http://ubuntuhandbook.org/index.php/2017/10/virtualbox-reached-5-2-major-release-how-to-install/)  
+
+<div class="err">
+    <br>
+    <p>На картинке не правильная интсрукция. Но ошибка правильная</p>
+</div>
+<img src="/doc/static/img/bugs/virtual_box.png" alt="">

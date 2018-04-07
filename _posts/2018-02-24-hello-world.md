@@ -11,3 +11,11 @@ reference:
 ---
 
 Hello, world!
+
+<div class="warn">
+    <p>Это варнинг</p>
+</div>
+
+<div class="err">
+    <p>Это ошибка!</p>
+</div>
