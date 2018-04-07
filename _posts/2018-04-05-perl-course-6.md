@@ -230,6 +230,9 @@ No such file or directory at script.pl line 5.
 
 </code></pre>
 
+<!-- --------------------------------------------------------------------------- -->
+
+
 # Perl io backend
 
 fread, fwrite - чтение из диска!
