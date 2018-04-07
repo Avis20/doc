@@ -135,6 +135,20 @@ $ perl script.pl
 
 PS Чтобы прочитать, не нужно вызывать open
 
+### Функции для чтения
+
+Для работы с двоичными данными. Не помю зачем нужно...
+<pre><code class="perl">open my $fh, '<', 'test.bin' or die $!;
+binmode($fh);
+warn <$fh>;
+</code></pre>
+
+Небуферизированная запись
+<pre><code class="perl">open my $fh, '>', 'test.txt' or die $!;
+my $data = "Test\n";
+syswrite($fh, $data, length($data));
+</code></pre>
+
 # Perl io backend
 
 fread, fwrite - чтение из диска!
