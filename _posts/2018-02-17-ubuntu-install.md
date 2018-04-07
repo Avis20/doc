@@ -6,6 +6,8 @@ reference:
   -
     title: Баг с дубликатом сорсов при api-get update
     link: https://askubuntu.com/questions/380330/duplicate-source-error-on-apt-get-update
+  - title: Баг с зависанием виртуалки
+    link: https://ru.stackoverflow.com/questions/774963/virtualbox-%D0%B8-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0
 
 ---
 
@@ -322,3 +324,7 @@ sudo sed -i -e 's/deb http/deb [arch=amd64] http/' "/opt/google/chrome/cron/goog
 sudo apt-get update
 
 ```
+
+### Баг с зависанием виртуалки
+
+Инструкция по установке virt 5.2 - http://ubuntuhandbook.org/index.php/2017/10/virtualbox-reached-5-2-major-release-how-to-install/

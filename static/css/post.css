@@ -1,4 +1,27 @@
 
+.warn {
+    /*padding-left: 30px;*/
+    border: 1px solid orange;
+    border-radius: 10px;
+}
+
+.warn:before {
+    content: '\f02d';
+    font: normal normal normal 16px/1 octicons;
+    display: inline-block;
+    text-decoration: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 15px;
+    float: left;
+    color: orange;
+}
+
 pre {
     border: none !important;
     background-color: transparent;
