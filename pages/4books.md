@@ -140,6 +140,20 @@ TODO:
 <!-- ------------------------------------------------------------- -->
 
 <tr><td>
+
+    <p><img src="/doc/static/img/books/scripts.png" alt="Wicked Cool Perl Scripts" title="Wicked Cool Perl Scripts"></p>
+
+</td><td>
+
+<a href="https://yadi.sk/i/ypG3Pj6G3UK8TJ" target="_blank">Скачать PDF</a><br>
+
+</td><td>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
     
     <p>The Definitive Guide to Catalyst</p>
 
