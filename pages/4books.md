@@ -36,6 +36,36 @@ TODO:
 
 <tr><td>
     
+    <p><img src="/doc/static/img/books/alg3.jpg" alt="Алгоитмы. Вводный курс" title="Алгоитмы. Вводный курс"></p>
+    <p></p>
+
+</td><td>
+
+<a href="https://yadi.sk/d/VJhXx4u33UQSo4" target="_blank">Скачать 2014г. 208 с. DjVu</a><br>
+
+</td><td>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
+    <p><img src="/doc/static/img/books/alg2.png" alt="Алгоитмы. Построение и анализ" title="Алгоитмы. Построение и анализ"></p>
+    <p></p>
+
+</td><td>
+
+<a href="https://yadi.sk/i/YMPQF00W3UQSc8" target="_blank">Скачать 2013г. 1328 с. DjVu</a><br>
+
+</td><td>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
     <p><img src="/doc/static/img/books/alg.png" alt="Алгоитмы. Теория и практическое применение" title="Алгоитмы. Теория и практическое применение"></p>
     <p></p>
 
@@ -44,6 +74,8 @@ TODO:
 <a href="https://yadi.sk/i/b8fR4tSm3UBawQ" target="_blank">Скачать 2016г. 544 с. PDF</a><br>
 
 </td><td>
+
+<p>Очень сухо, непонятно.</p>
 
 </td></tr>
 

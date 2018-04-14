@@ -1,6 +1,6 @@
 ---
 title: "perl : курсы : Лекция 6"
-categories: perl
+categories: perl courses
 tags: courses 
 reference:
   -
