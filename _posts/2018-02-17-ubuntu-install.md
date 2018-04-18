@@ -11,7 +11,9 @@ reference:
   -
     link: https://toster.ru/q/290158
     title: "Почему chrome не открывает ссылку кликнутую в сторонних приложениях в Ubuntu?"
-
+  -
+    link: http://myubuntu.ru/programmy/grive2-fork-grive-s-podderzhkoj-google-drive-rest-api-i-chastichnoj-sinkhronizatsii
+    title: Синхронизация с gdrive
 ---
 
 * TOC 
