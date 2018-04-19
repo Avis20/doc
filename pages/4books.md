@@ -36,6 +36,20 @@ TODO:
 
 <tr><td>
     
+    <p><img src="/doc/static/img/books/unix.png" alt="Руководство системного администратора. Unix и Linux" title="Руководство системного администратора. Unix и Linux"></p>
+
+</td><td>
+
+<a href="https://yadi.sk/i/mFg6wsSP3UaqhN" target="_blank">Скачать 4-е издание - 2012г. PDF</a><br>
+
+</td><td>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
     <p><img src="/doc/static/img/books/alg3.jpg" alt="Алгоитмы. Вводный курс" title="Алгоитмы. Вводный курс"></p>
     <p></p>
 
@@ -206,20 +220,6 @@ TODO:
 </td><td>
 
 <a href="https://yadi.sk/i/ZW1JbN8U3UBc5z" target="_blank">Скачать 2007г. PDF</a><br>
-
-</td><td>
-
-</td></tr>
-
-<!-- ------------------------------------------------------------- -->
-
-<tr><td>
-    
-    <p><img src="/doc/static/img/books/unix.png" alt="Руководство системного администратора. Unix и Linux" title="Руководство системного администратора. Unix и Linux"></p>
-
-</td><td>
-
-<a href="https://yadi.sk/i/mFg6wsSP3UaqhN" target="_blank">Скачать 4-е издание - 2012г. PDF</a><br>
 
 </td><td>
 
