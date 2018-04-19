@@ -215,11 +215,11 @@ TODO:
 
 <tr><td>
     
-    <p>Руководство системного администратора. Unix и Linux</p>
+    <p><img src="/doc/static/img/books/unix.png" alt="Руководство системного администратора. Unix и Linux" title="Руководство системного администратора. Unix и Linux"></p>
 
 </td><td>
 
-<a href="https://yadi.sk/d/FbU4o27k3SG4tE" target="_blank">Скачать 4-е издание - 2012г. PDF</a><br>
+<a href="https://yadi.sk/i/mFg6wsSP3UaqhN" target="_blank">Скачать 4-е издание - 2012г. PDF</a><br>
 
 </td><td>
 
