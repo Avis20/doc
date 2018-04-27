@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu::GeeTeeDee todo менеджер"
+title: "Установка todo менеджера - GeeTeeDee"
 categories: ubuntu todo
 tags: "таск менеджеры"
 reference:
