@@ -301,19 +301,24 @@ chmod g-w ~/.moc/config
             - Use private auth +
             - SSH key file - Folder -> id_rsa1.ppk
             - Далее, Далее, Далее, открыть базу
-        2. Боевая - TODO
-            - Hostname - localhost
-            - Port - 5432
-            - User name - pgsql
+        2. Боевая
+            - Hostname - db01.msk.prototypes.ru
+            - Port - 6432
+            - User name - fonmix
+            - Password - смотри в конфиге
             - Use tunneling
                 - SSH tunneling
             - Далее
-            - SSH host name - qa01.prototypes.ru
+            - SSH host name - adm03.prototypes.ru
             - SSH port - 22
             - SSH user name - orlov
             - Use private auth +
             - SSH key file - Folder -> id_rsa1.ppk
             - Далее, Далее, Далее, открыть базу
+
+<img src="/doc/static/img/DB/db1.png" alt="">
+<br>
+<img src="/doc/static/img/DB/db2.png" alt="">
 
 ## etc
 
