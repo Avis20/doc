@@ -1,6 +1,6 @@
 ---
-title: "Front : handlebars"
-categories: frontend templates
+title: "Perl - таблица класификации скриптов"
+categories: perl tables
 reference:
   -
     link:
