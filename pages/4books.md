@@ -30,6 +30,7 @@ TODO:
     <li>Сборник задач по программированию - https://disk.yandex.ru/client/disk/Books/Algorithm</li>
     <li>Vagrant - https://disk.yandex.ru/client/disk/Books/Vagrant</li>
     <li>English - https://disk.yandex.ru/client/disk/Books/English</li>
+    <li>Системы баз данных Полный курс  2003 - https://yadi.sk/d/wBPGER2_3Uw6vS</li>
 </ul>
 
 <!-- ------------------------------------------------------------- -->
