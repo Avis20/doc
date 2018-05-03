@@ -332,10 +332,48 @@ pg_postmaster_start_time - возвращает время когда серве
 
 ## Сколько весит база данных?
 
-<pre><code class="perl">avis=# select pg_database_size(current_database());
- pg_database_size 
-------------------
-          7233708
+<pre><code class="perl">avis=# select pg_size_pretty(pg_database_size(current_database()));
+ pg_size_pretty 
+----------------
+ 7080 kB
 (1 row)
 </code></pre>
 
+"Луковица" состоит из:
+current_database() - возвращает название текущей БД. 
+pg_database_size([название базы]) - возвращает размер базы в байтах
+pg_size_pretty([байты]) - возвращает размер в человекочитаемом виде
+
+## Сколько весит таблица?
+
+<pre><code class="perl">avis=# select pg_size_pretty(pg_relation_size('user'));
+ pg_relation_size 
+------------------
+             8192
+(1 row)
+
+</code></pre>
+
+Размер всей таблицы + ее индексы и т.п.
+<pre><code class="perl">avis=# select pg_total_relation_size('user');
+ pg_total_relation_size 
+------------------------
+                   8192
+(1 row)
+
+</code></pre>
+
+
+## Какая таблица само много весит?
+
+<pre><code class="perl">
+select table_name, pg_relation_size(table_name) as size
+from information_schema.tables
+where table_schema not in ('information_schema', 'pg_catalog');
+ table_name | size 
+------------+------
+ test1      | 8192
+ user       | 8192
+(2 rows)
+
+</code></pre>
