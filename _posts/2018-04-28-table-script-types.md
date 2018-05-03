@@ -1,5 +1,5 @@
 ---
-title: "Perl - таблица класификации скриптов"
+title: "Perl - таблица классификации скриптов"
 categories: perl tables
 reference:
   -
@@ -10,4 +10,21 @@ reference:
 * TOC
 {:toc}
 
-# TODO
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    tr>td*3
+</table>
