@@ -1,5 +1,5 @@
 ---
-title: "Установка и настройка Ubuntu 16.04.3 LTS"
+title: "Ubuntu 16.04.3 LTS - установка и настройка"
 categories: os ubuntu
 tags: ubuntu bugs
 reference:
@@ -314,6 +314,7 @@ chmod g-w ~/.moc/config
             - SSH user name - orlov
             - Use private auth +
             - SSH key file - Folder -> id_rsa1.ppk
+            - Далее -> Database name -> fonmix_core1
             - Далее, Далее, Далее, открыть базу
 
 <img src="/doc/static/img/DB/db1.png" alt="">

@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu : Разное"
+title: "Ubuntu - Разное"
 categories: ubuntu
 tags: ubuntu pdf deadbeef
 reference:
