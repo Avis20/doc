@@ -1,10 +1,10 @@
 ---
 title: "Ubuntu - Установка генератора статичных страниц jekyll"
-categories: ubuntu jekyll
+categories: ubuntu os 
+tags: jekyll
 reference:
-  -
+  - title: How to Set Up a Jekyll Development Site on Ubuntu 16.04
     link: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-development-site-on-ubuntu-16-04
-    title: How to Set Up a Jekyll Development Site on Ubuntu 16.04
 ---
 
 * TOC

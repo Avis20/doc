@@ -1,6 +1,7 @@
 ---
-title: "Terminator"
-categories: linux terminator
+title: Terminator
+categories: linux
+tags: terminator
 reference: 
   -
     link:

@@ -1,5 +1,5 @@
 ---
-title: "Установка PostgreSQL"
+title: Postgres - Установка PostgreSQL
 categories: postgres
 reference:
   -

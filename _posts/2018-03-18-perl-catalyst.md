@@ -1,5 +1,5 @@
 ---
-title: "perl: catalyst: про MVC"
+title: Perl - catalyst про MVC
 categories: perl
 tags: catalyst
 reference:

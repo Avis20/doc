@@ -3,9 +3,8 @@ title: "Linux - таблица системных сигналов"
 categories: tables
 tags: signals 
 reference:
-  -
+  - title: Понятие о сигналах
     link: https://www.opennet.ru/docs/RUS/linux_parallel/node10.html
-    title: Понятие о сигналах
 ---
 
 * TOC 

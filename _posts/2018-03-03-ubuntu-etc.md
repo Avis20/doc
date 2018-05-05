@@ -1,6 +1,6 @@
 ---
-title: "Ubuntu - Разное"
-categories: ubuntu
+title: Ubuntu - etc
+categories: ubuntu os
 tags: ubuntu pdf deadbeef
 reference:
   -

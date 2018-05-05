@@ -1,14 +1,12 @@
 ---
-title: "Windows : Разное"
-categories: os
-tags: windows
+title: Windows - etc
+categories: os windows
 reference:
-  -
+  - title: "Минимальная сборка Win7"
     link: http://free-max.ru/2206-windows-7-professional-sp1-minimal-x64-v032015iso.html
-    title: "Минимальная сборка Win7"
-  -
+    
+  - title: "Дистрибутив WinXP"
     link: http://windows64.net/windows-xp-x64-skachat-torrent/originalnye-obrazy-xp/14-skachat-windows-xp-sp3-originalnyy-obraz-aktivator.html
-    title: "Дистрибутив WinXP"
 ---
 
 * TOC 

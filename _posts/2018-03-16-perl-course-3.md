@@ -1,5 +1,5 @@
 ---
-title: "perl : курсы : Лекция 3"
+title: Perl - курсы Лекция 3
 categories: perl
 tags: courses 
 reference:
