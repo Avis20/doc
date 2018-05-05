@@ -18,23 +18,22 @@ reference:
         <td>ctrl + shift + x</td>
         <td>Раскрыть/Востановить терминал</td>
     </tr>
+    <tr>
+        <td>ctrl + shift + e</td>
+        <td>Разделить окно вертикально</td>
+    </tr>
+    <tr>
+        <td>ctrl + shift + o</td>
+        <td>Разделить окно горизонтально</td>
+    </tr>
+    <tr>
+        <td>ctrl + shift + p, ctrl + shift + n</td>
+        <td>Направить фокус на следующее(n - next) или предыдущее(p - prev) окно. Не использую т.к. есть стрелочки(alt + верх/вниз/вправо/влево)</td>
+    </tr>
+    <tr>
+        <td>ctrl + shift + q</td>
+        <td>Выйти из программы</td>
+    </tr>
+    tr>td*2
 </table>
-
-else
-
-Codes:
-Ctrl-Shift-E: will split the view vertically.
-
-Ctrl-Shift-O: will split the view horizontally.
-
-Ctrl-Shift-P: will focus be active on the previous view.
-
-Ctrl-Shift-N: will focus be active on the next view.
-
-Ctrl-Shift-W: will close the view where the focus is on.
-
-Ctrl-Shift-Q: will exit terminator.
-
-Update:
-Ctrl-Shift-X: will focus active window and  enlarge it
 
