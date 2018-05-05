@@ -1,6 +1,7 @@
 ---
-title: "Front : handlebars"
-categories: frontend templates
+title: Handlebars
+categories: templates
+tags: frontend
 reference:
   -
     link:

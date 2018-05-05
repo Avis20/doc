@@ -1,16 +1,13 @@
 ---
-title: "Установка FreeBSD 11.1"
-categories: os
-tags: freebsd
+title: FreeBSD - Установка FreeBSD 11.1
+categories: freebsd
+tags: install
 reference:
-  -
-    link: https://download.freebsd.org/ftp/releases/ISO-IMAGES/11.1/FreeBSD-11.1-RELEASE-amd64-disc1.iso
+  - link: https://download.freebsd.org/ftp/releases/ISO-IMAGES/11.1/FreeBSD-11.1-RELEASE-amd64-disc1.iso
     title: Дистрибутив
-  -
-    link: https://serveradmin.ru/ustanovka-freebsd-11/
+  - link: https://serveradmin.ru/ustanovka-freebsd-11/
     title: Статья по установке
-  -
-    link: https://www.youtube.com/watch?v=Ab30k5mvZok&t=120s
+  - link: https://www.youtube.com/watch?v=Ab30k5mvZok&t=120s
     title: "Установка FreeBSD 9.1 на VirtualBox"
 ---
 

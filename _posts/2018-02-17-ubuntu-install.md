@@ -1,19 +1,19 @@
 ---
-title: "Ubuntu 16.04.3 LTS - установка и настройка"
-categories: os ubuntu
+title: Ubuntu 16.04.3 LTS - установка и настройка
+categories: os ubuntu linux
 tags: ubuntu bugs
 reference:
-  -
-    title: Баг с дубликатом сорсов при api-get update
+  - title: Баг с дубликатом сорсов при api-get update
     link: https://askubuntu.com/questions/380330/duplicate-source-error-on-apt-get-update
+  
   - title: Баг с зависанием виртуалки
     link: https://ru.stackoverflow.com/questions/774963/virtualbox-%D0%B8-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0
-  -
+  
+  - title: "Почему chrome не открывает ссылку кликнутую в сторонних приложениях в Ubuntu?"
     link: https://toster.ru/q/290158
-    title: "Почему chrome не открывает ссылку кликнутую в сторонних приложениях в Ubuntu?"
-  -
+  
+  - title: Синхронизация с gdrive
     link: http://myubuntu.ru/programmy/grive2-fork-grive-s-podderzhkoj-google-drive-rest-api-i-chastichnoj-sinkhronizatsii
-    title: Синхронизация с gdrive
 ---
 
 * TOC 

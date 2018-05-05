@@ -37,6 +37,20 @@ TODO:
 
 <tr><td>
     
+    <p>Yaml Cookbook. at the YamlForRuby site</p>
+
+</td><td>
+
+<a href="https://yadi.sk/i/Sd8QA3TW3VPMGk" target="_blank">Скачать PDF</a><br>
+
+</td><td>
+<p>Довольно интересное руководство по yaml. В нем собраны основные понятия об этом языке разметки</p>
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
     <p><img src="/doc/static/img/books/unix.png" alt="Руководство системного администратора. Unix и Linux" title="Руководство системного администратора. Unix и Linux"></p>
 
 </td><td>

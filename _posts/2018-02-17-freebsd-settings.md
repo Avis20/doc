@@ -1,7 +1,6 @@
 ---
-title: "Базовая настройка FreeBSD 11.1"
-categories: os
-tags: freebsd
+title: FreeBSD - базовая настройка FreeBSD
+categories: freebsd
 reference:
   -
     link: 
