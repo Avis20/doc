@@ -3,9 +3,8 @@ title: Handlebars
 categories: templates
 tags: frontend
 reference:
-  -
+  - title:
     link:
-    title:
 ---
 
 * TOC 
