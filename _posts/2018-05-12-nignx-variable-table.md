@@ -3,8 +3,8 @@ title: "Nginx - Таблица переменных"
 categories: nginx
 tags: log_format
 reference:
-  - title: 
-    link: 
+  - title: dictionnary variable in log format NGINX
+    link: https://stackoverflow.com/questions/37437153/dictionnary-variable-in-log-format-nginx
 ---
 
 * TOC 
