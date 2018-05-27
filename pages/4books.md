@@ -172,6 +172,18 @@ TODO:
 
 <tr><td>
 
+    <p><img src="/doc/static/img/books/perl_best.png" alt="Perl Best Practices" title="Perl Best Practices"></p>
+
+</td><td>
+
+<a href="https://yadi.sk/i/sGz7DK2i3WaWWn" target="_blank">Скачать 1-е издание - 2005г. 544 с. PDF</a><br>
+
+</td><td>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+
     <p><img src="/doc/static/img/books/deep_perl.png" alt="Изучаем perl глубже" title="Изучаем perl глубже"></p>
 
 </td><td>
@@ -192,7 +204,7 @@ TODO:
 
 </td><td>
 
-<a href="https://yadi.sk/d/CR5tr1Gm3UBcHU" target="_blank">Скачать PDF</a><br>
+<a href="https://yadi.sk/d/CR5tr1Gm3UBcHU" target="_blank">Скачать 2-е издание - 2000г. 400 с. DjVu</a><br>
 
 </td><td>
 
@@ -206,7 +218,7 @@ TODO:
 
 </td><td>
 
-<a href="https://yadi.sk/i/ypG3Pj6G3UK8TJ" target="_blank">Скачать PDF</a><br>
+<a href="https://yadi.sk/i/ypG3Pj6G3UK8TJ" target="_blank">Скачать 337 с. PDF</a><br>
 
 </td><td>
 
