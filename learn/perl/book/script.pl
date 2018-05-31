@@ -1,7 +1,66 @@
-#!/usr/local/bin/perl
+#!/usr/local/bin/perl -w
 
+use strict;
+use English;
 
-# =head Истина 
+print $] . "\n";
+use v5.22;
+print $] . "\n";
+
+=head
+# =head given/when
+
+# use v5.22;
+
+print "Введите цвет";
+
+chomp(my $answer = <STDIN>);
+
+given ($answer) {
+    when (/apples?/) {
+        print "I like apples."
+    }
+    when (/oranges?/) {
+        print "I don't like oranges."
+    }
+    default {
+        print "I don't like anything"
+    }
+}
+
+# given($answer){
+#     when('фиолетовый') { print "фиолетовый" };
+# }
+
+= if/unless
+
+my $a = 11;
+if ( $a > 10 ){
+    print "a > 10\n";
+}
+
+my $a = 15;
+if ( $a > 15 ){
+    print "a > 15\n";
+} else {
+    print "a < 15\n";
+}
+
+my $a = 20;
+if ( $a > 15 ){
+    print "a > 15\n";
+} elsif( $a >= 20 ) {
+    print "a >= 20\n";
+} else {
+    print "a > 20 or a < 20\n";
+}
+
+my $a = 20;
+unless( $a > 40 ){
+    print "a < 40\n";
+}
+
+=head Истина 
 
 print 0 ? "true\n" : "false\n";             # 0 становится строкой '0', поэтому false
 print 1 ? "true\n" : "false\n";             # 1 становится строкой '1', поэтому true
