@@ -37,6 +37,20 @@ TODO:
 
 <tr><td>
     
+    <p><img src="/doc/static/img/books/highload.png" alt="Высоконагруженные приложения. Программирование, масштабирование, поддержка" title="Высоконагруженные приложения. Программирование, масштабирование, поддержка"></p>
+
+</td><td>
+
+<a href="https://yadi.sk/i/e64K0CMl3Wp7Xy" target="_blank">Скачать 2018г. 640 с. PDF</a><br>
+
+</td><td>
+
+</td></tr>
+
+<!-- ------------------------------------------------------------- -->
+
+<tr><td>
+    
     <p>Yaml Cookbook. at the YamlForRuby site</p>
 
 </td><td>
