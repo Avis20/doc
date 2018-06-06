@@ -3,6 +3,13 @@
 use strict;
 use English;
 
+use v5.22;
+
+for ( 'test' ){
+    print $_;
+}
+
+=head
 print $] . "\n";
 use v5.22;
 print $] . "\n";
