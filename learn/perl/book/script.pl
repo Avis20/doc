@@ -1,8 +1,11 @@
 #!/usr/local/bin/perl -w
 
 use strict;
-use English;
+use MyTest;
 
+MyTest::test();
+
+=head
 use v5.22;
 
 given ($answer) {
@@ -16,7 +19,6 @@ given ($answer) {
         print "I don't like anything"
     }
 }
-
 =head
 print $] . "\n";
 use v5.22;
