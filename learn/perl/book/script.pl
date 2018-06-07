@@ -5,8 +5,16 @@ use English;
 
 use v5.22;
 
-for ( 'test' ){
-    print $_;
+given ($answer) {
+    when (/apples?/) {
+        print "I like apples."
+    }
+    when (/oranges?/) {
+        print "I don't like oranges."
+    }
+    default {
+        print "I don't like anything"
+    }
 }
 
 =head
