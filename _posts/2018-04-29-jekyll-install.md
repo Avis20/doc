@@ -1,10 +1,12 @@
 ---
-title: "Ubuntu - Установка генератора статичных страниц jekyll"
-categories: ubuntu os 
+title: "Jekyll"
 tags: jekyll
 reference:
   - title: How to Set Up a Jekyll Development Site on Ubuntu 16.04
     link: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-development-site-on-ubuntu-16-04
+
+  - title: Sorting Jekyll posts by modification date instead of posted date?
+    link: https://stackoverflow.com/questions/48245460/sorting-jekyll-posts-by-modification-date-instead-of-posted-date?noredirect=1&lq=1
 ---
 
 * TOC
@@ -55,4 +57,21 @@ Fetching gem metadata from https://rubygems.org/......
 
 </div>
 
+# Если хочется сортировать посты по дате изменения(как у меня :))
 
+1) создаем файлик _plugin/hook-add-last-modified-date.rb и пишем туда:
+
+<pre><code class="ruby">Jekyll::Hooks.register :posts, :pre_render do |post|
+
+# get the current post last modified time
+modification_time = File.mtime( post.path )
+
+# inject modification_time in post's datas.
+post.data['last-modified-date'] = modification_time
+
+end
+</code></pre>
+
+2) Сохраняем и делаем тестовую страницу pages/test.html, и сортируем посты
+
+<div class="err"><p>не получилось вставить jekyll код в jekyll страницу :DDD см. pages/2test.html</p></div>
