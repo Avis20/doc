@@ -1,7 +1,6 @@
 ---
 layout: default
-scripts: [tagCloud.js,tags.js]
-styles: [article-list.css,tags.css,tagCloud.css]
+styles: [article-list.css,tags.css]
 ---
 
 {% assign sorted_posts = site.posts | sort: "last-modified-date" | reverse %}
@@ -53,7 +52,7 @@ styles: [article-list.css,tags.css,tagCloud.css]
     </div><!-- col -->
     <div class="col-sm-3 col-lg-3">
         <div>
-            <h1>TAGS</h1>
+            <h3 class="title"><a href="#">TAGS</a></h3>
             <ul class="tag-box inline">
                 {% for tag in site.tags %}
                 <li><a href="#{{ tag | first }}">{{ tag | first }}<span>{{ tag | last | size }}</span></a></li>

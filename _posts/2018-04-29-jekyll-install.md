@@ -74,4 +74,7 @@ end
 
 2) Сохраняем и делаем тестовую страницу pages/test.html, и сортируем посты
 
-<div class="err"><p>не получилось вставить jekyll код в jekyll страницу :DDD см. pages/2test.html</p></div>
+<div class="err">
+    <p>не получилось вставить jekyll код в jekyll страницу :DDD см. pages/2test.html</p>
+    <p>Не работает на github :(</p>
+</div>
