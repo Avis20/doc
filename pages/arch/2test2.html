@@ -1,11 +1,43 @@
 ---
 layout: default
+title: test2
+permalink: /test2/
+icon: octicon-repo
+isNavItem: false
 scripts: [category.js]
-styles : [article-list.css,category.css,tags.css]
+styles : [article-list.css,category.css]
 ---
 
 <div class="row index">
-    <div class="col-sm-6 col-sm-offset-1 col-lg-6 col-lg-offset-1_5">
+        <div class="col-sm-6 col-sm-offset-1 col-lg-6 col-lg-offset-1_5">
+        <div class="dropdown">
+            <button
+                class="btn btn-default dropdown-toggle"
+                type="button"
+                id="dropdownMenu1"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="true">
+
+                <span class="octicon octicon-list-unordered"></span>&nbsp;Categories
+                <span class="caret"></span>
+
+            </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li>
+                    <a href="javascript:void(0);" class="categories-item" cate="All">
+                        All&nbsp;<span class="categories-badge"> {{site.posts | size}}</span>
+                    </a>
+                </li>
+                {% for category in site.categories %}
+                <li>
+                    <a href="javascript:void(0);" class="categories-item" cate="{{ category | first }}">
+                        {{ category | first }}&nbsp;<span class="categories-badge">{{ category | last | size }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
 
         <section class="category-slice" post-cate="All">
             {% for post in site.posts %}
@@ -23,7 +55,9 @@ styles : [article-list.css,category.css,tags.css]
                     </div>
 
                     <div class="readmore-block">
-                        <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 300 }}{% endif %}</p>
+                        <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}</p>
+                        <a class="readmore" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">  Read More
+                        </a>
                     </div>
 
                     <footer>
@@ -46,9 +80,9 @@ styles : [article-list.css,category.css,tags.css]
             {% endfor %}
         </section>
 
-        {% for tag in site.tags %}
-        <section class="category-slice" post-cate="{{ tag | first }}">
-            {% for posts in tag  %}
+        {% for category in site.categories %}
+        <section class="category-slice" post-cate="{{category | first}}">
+            {% for posts in category  %}
             {% for post in posts %}
             {% if post.url %}
             <article>
@@ -65,7 +99,9 @@ styles : [article-list.css,category.css,tags.css]
                     </div>
 
                     <div class="readmore-block">
-                        <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 300 }}{% endif %}</p>
+                        <p>{% if post.excerpt.size > 32 %}{{ post.excerpt }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}</p>
+                        <a class="readmore" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">  Read More
+                        </a>
                     </div>
 
                     <footer>
@@ -91,26 +127,5 @@ styles : [article-list.css,category.css,tags.css]
         </section>
         {% endfor %}
  
-
     </div><!-- col -->
-
-    <div class="col-sm-3 col-lg-3">
-        <div>
-            <h3 class="title"><a href="#">TAGS</a></h3>
-            <ul class="tag-box inline">
-                <li>
-                    <a href="javascript:void(0);" class="categories-item" cate="All">
-                        All<span>{{ site.tags | size }}&nbsp;</span>
-                    </a>
-                </li>
-                {% for tag in site.tags %}
-                <li>
-                    <a href="javascript:void(0);" class="categories-item" cate="{{ tag | first }}">
-                        {{ tag | first }}<span>{{ tag | last | size }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
 </div><!-- row index -->

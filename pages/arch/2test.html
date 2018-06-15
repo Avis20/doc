@@ -6,6 +6,10 @@ icon: octicon-repo
 isNavItem: false
 ---
 
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+<li>{{ tag | first }}</li>
+{% endfor %}
 
 <ul>
 {% assign sorted_posts = site.posts | sort: "last-modified-date" | reverse %}
