@@ -1,6 +1,6 @@
 ---
 title: "Заметки по книге - Администрирование PostgreSQL 9. Книга рецептов"
-categories: postgres books
+tags: [ postgres, books]
 reference:
   -
     link: http://qaru.site/questions/16236/how-to-change-postgresql-user-password

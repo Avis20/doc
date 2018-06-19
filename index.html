@@ -106,7 +106,7 @@ styles : [article-list.css,category.css,tags.css]
                 {% for tag in site.tags %}
                 <li>
                     <a href="javascript:void(0);" class="categories-item" cate="{{ tag | first }}">
-                        {{ tag | first }}<span>{{ tag | last | size }}</span>
+                        {{ tag | first }}<span>{{ tag | last | size }}&nbsp;</span>
                     </a>
                 </li>
                 {% endfor %}

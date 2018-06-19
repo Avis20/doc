@@ -1,7 +1,6 @@
 ---
 title: "Ubuntu - Установка todo менеджера GeeTeeDee"
-categories: ubuntu todo
-tags: "таск менеджеры"
+tags: [ ubuntu, todo ]
 reference:
   -
     link:
