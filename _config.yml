@@ -1,0 +1,19 @@
+permalink: /:day-:month-:year/:title/
+
+exclude:  ["Gemfile", "Gemfile.lock"]
+
+title: Avis notes
+description: "Thoughts, stories and ideas."
+email: orlov.avis@yandex.ru
+github_username: avis20
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input:  GFM
+  syntax_highlighter: rouge
+  
+theme: minima
+
+baseurl: /doc
+url: "https://avis20.github.io"
