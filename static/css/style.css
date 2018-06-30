@@ -1,0 +1,214 @@
+---
+layout: null
+---
+
+/* NEW STYLE START */
+
+h1 { font-size: 24px }
+h2 { font-size: 20px }
+h3 { font-size: 18px }
+h4 { font-size: 16px }
+h5 { font-size: 14px }
+h6 { font-size: 12px }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #3d3d3d;
+    font-weight: bold;
+    line-height: 1.16667;
+}
+
+a {
+    text-decoration: none;
+    color: #22b3eb;
+    text-decoration: underline;
+    transition: color 0.3s;
+    background-color: transparent;
+}
+
+a:link      { text-decoration: none }
+a:visited   { text-decoration: none }
+a:hover     { text-decoration: none }
+a:active    { text-decoration: none }
+
+html{
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+body {
+    background-color: #333;
+    color: #444;
+}
+
+body {
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+body, code, pre { font-family: "monospace", sans-serif }
+
+body, .sheet, pre, code {
+    font-size: 14px;
+}
+
+.word-keep{
+    display: inline-block;
+    word-break: keep-all;
+}
+
+@media (min-width: 1200px){
+    .col-lg-offset-1_5 {
+        margin-left: 12.5%;
+    }
+}
+
+.entry-meta {
+    background-color: #ed6b39;
+    clear: both;
+    color: #fff;
+    font-size: 12px;
+    width: fit-content;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding: 16px 30px;
+    text-transform: uppercase;
+}
+
+.site-header {
+    padding-bottom: 20px;
+}
+
+.site-title {
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 12px;
+    margin-right: 20px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.site-title a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+
+.site-title .logo-text {
+    border-left: 10px solid #22b3eb;
+    padding-left: 20px
+}
+
+.site-description {
+    color: #818181;
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.main{
+    min-height: 100%;
+    padding-bottom: 130px;
+}
+
+.content{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-tiffany{
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
+}
+
+.footnote-tiffany{
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 52%),
+    -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 52%);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 52%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 52%);
+    -webkit-background-size: 1em 1em;
+    background-size: 1em 1em;
+}
+.footnote-tiffany{
+    background-color: #333333;
+    border-color: #22b3eb;
+    box-shadow: 2px -4px 5px rgba(3,-3,3,0.2);
+}
+
+
+.navbar-tiffany .navbar-brand,
+.navbar-tiffany .navbar-text,
+.navbar-tiffany .nav>li>a{
+    color: #fff;
+}
+
+.navbar-tiffany .nav>li>a:hover,
+.navbar-tiffany .nav>li>a:focus,
+.navbar-tiffany .nav>li.active>a {
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+.navbar-tiffany .navbar-toggle{
+    border-color: #fff;
+}
+
+.navbar-tiffany .navbar-toggle .icon-bar{
+    background-color: #fff;
+}
+
+.navbar-nav>li>a {
+    line-height: 1.42857143;
+}
+
+.footnote-tiffany a,
+.footnote-tiffany span {
+    color:#fff
+}
+
+.footnote .foot-item{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px 3px;
+    -webkit-transition: background .4s ease-in-out;
+    -moz-transition: background .4s ease-in-out;
+    -ms-transition: background .4s ease-in-out;
+    -o-transition: background .4s ease-in-out;
+    transition: background .4s ease-in-out;
+}
+
+.footnote .foot-item:hover{
+    background-color: #22b3eb;
+    -webkit-transition: background .4s ease-in-out;
+    -moz-transition: background .4s ease-in-out;
+    -ms-transition: background .4s ease-in-out;
+    -o-transition: background .4s ease-in-out;
+    transition: background .4s ease-in-out;
+}
+
+.footnote{
+    min-height: 50px;
+    line-height: 50px;
+    margin-top: -50px;
+    text-align: center;
+}
+
+.sheet{
+    padding:10px 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .sheet{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

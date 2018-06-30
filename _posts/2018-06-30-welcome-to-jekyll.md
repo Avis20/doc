@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-categories: jekyll update
+tags: [jekyll, update, test]
 ---
 
 HI2334

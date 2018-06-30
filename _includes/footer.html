@@ -1,0 +1,14 @@
+<footer  class="footnote footnote-tiffany">
+    <div class="container">
+            <a class="foot-item" href="mailto:{{ site.email }}" target="_blank"><span class="octicon octicon-mail"></span></a>
+            <a class="foot-item" href="https://github.com/{{ site.github_username }}" target="_blank"><span class="octicon octicon-mark-github"></span></a>
+            <a class="foot-item" href="https://vk.com/orlov199595" target="_blank"><span class="octicon octicon-octoface"></span></a>
+    </div>
+</footer>
+
+<script type="text/javascript" src="{{ '/static/js/jquery.min.js' | prepend: site.baseurl | prepend: site.url}}"></script>
+<script type="text/javascript" src="{{ '/static/js/bootstrap.min.js' | prepend: site.baseurl | prepend: site.url}}"></script>
+<script type="text/javascript" src="{{ '/static/js/script.js' | prepend: site.baseurl | prepend: site.url}}"></script>
+{% for script in page.scripts %}
+    <script type="text/javascript" src="{{'/static/js/' | append:script | prepend:site.baseurl | prepend: site.url  }}"></script>
+{%endfor%}
