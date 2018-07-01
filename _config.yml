@@ -2,6 +2,16 @@ permalink: /:day-:month-:year/:title/
 
 exclude:  ["Gemfile", "Gemfile.lock"]
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      styles : [post.css]
+      scripts : [post.js]
+
 title: Avis notes
 description: "Thoughts, stories and ideas."
 email: orlov.avis@yandex.ru

@@ -27,6 +27,7 @@ function selectCategory(){
         $("section[post-cate!='" + cate + "']").hide(200);
         $("section[post-cate='" + cate + "']").show(200);
     } else {
+        $("section[post-cate!='All']").hide();
         $("section[post-cate='All']").show();
     }
 }
