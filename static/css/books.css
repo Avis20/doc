@@ -1,4 +1,108 @@
 
+/*
+    Подпись к картинке при наведении CSS3
+    http://jsfiddle.net/driver/58earyac/254/?utm_source=website&utm_medium=embed&utm_campaign=58earyac
+*/
+
+.item {
+    width: 100%;
+    max-width: 187px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+    display: inline-grid;
+    word-wrap: break-word;
+}
+
+.item:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    -webkit-transition-property: top, opacity;
+    transition-property: top, opacity;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.item img {
+    display: block;
+    max-width: 100%;
+    height: 270px;
+    border: 1px solid #a9a9a9;
+}
+
+.item .links {
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 3;
+}
+
+.item .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item .links a {
+    color: #fff;
+}
+
+.item .links li {
+    display: block;
+    opacity: 0;
+    position: relative;
+    background-color: #FD6343;
+    padding: 5px 10px;
+    margin: 10px -20px;
+    top: 100px;
+    -webkit-transition-property: top, opacity;
+    transition-property: top, opacity;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.item:focus:before,
+.item:focus li, .item:hover:before,
+.item:hover li {
+    opacity: 1;
+}
+.item:focus:before, .item:hover:before {
+    top: 0;
+    height: 270px;
+}
+.item:focus li, .item:hover li {
+    top: 0;
+}
+.item:focus .title, .item:hover .title {
+    -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .item {
     width: 240px;
     display: inline-grid;
@@ -10,14 +114,16 @@
 .item img {
     max-width: 100%;
     height: 270px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    opacity: .99;
-    overflow: hidden;
-    position: relative;
-    border-radius: 3px;
     border: 1px solid #a9a9a9;
 }
+
+.item:before {
+    content: 'dsa';
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
 
 .item .links {
     max-width: 240px;
@@ -45,3 +151,4 @@
 .item:hover::before {
     opacity: 1;
 }
+*/
