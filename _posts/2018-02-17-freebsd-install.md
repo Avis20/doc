@@ -1,7 +1,6 @@
 ---
 title: FreeBSD - Установка FreeBSD 11.1
-categories: freebsd
-tags: install
+tags: freebsd
 reference:
   - link: https://download.freebsd.org/ftp/releases/ISO-IMAGES/11.1/FreeBSD-11.1-RELEASE-amd64-disc1.iso
     title: Дистрибутив

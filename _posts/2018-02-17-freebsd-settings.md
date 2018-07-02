@@ -1,6 +1,6 @@
 ---
 title: FreeBSD - базовая настройка FreeBSD
-categories: freebsd
+tags: freebsd
 reference:
   -
     link: 

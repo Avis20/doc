@@ -1,6 +1,6 @@
 ---
 title: "Заметки по книге - Linux. Руководство системного администратора"
-categories: books
+tags: [books, linux]
 reference:
   -
     link:

@@ -87,7 +87,9 @@ styles : [article-list.css, tags.css]
                         All<span>{{ site.tags | size }}&nbsp;</span>
                     </a>
                 </li>
-                {% for tag in site.tags %}
+
+                {% assign sorted_tags = site.tags | sort %}
+                {% for tag in sorted_tags %}
                 <li>
                     <a href="javascript:void(0);" class="categories-item" cate="{{ tag | first }}">
                         {{ tag | first }}<span>{{ tag | last | size }}&nbsp;</span>

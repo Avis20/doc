@@ -1,7 +1,6 @@
 ---
 title: Perl - курсы Лекция 6
-categories: perl courses
-tags: courses 
+tags: [perl, courses]
 reference:
   -
 

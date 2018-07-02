@@ -1,7 +1,6 @@
 ---
 title: Ubuntu 16.04.3 LTS - установка и настройка
-categories: os ubuntu linux
-tags: ubuntu bugs
+tags: [ubuntu, linux]
 reference:
   - title: Баг с дубликатом сорсов при api-get update
     link: https://askubuntu.com/questions/380330/duplicate-source-error-on-apt-get-update

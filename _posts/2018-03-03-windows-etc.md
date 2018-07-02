@@ -1,6 +1,6 @@
 ---
 title: Windows - etc
-categories: os windows
+tags: windows
 reference:
   - title: "Минимальная сборка Win7"
     link: http://free-max.ru/2206-windows-7-professional-sp1-minimal-x64-v032015iso.html

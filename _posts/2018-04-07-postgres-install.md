@@ -1,6 +1,6 @@
 ---
 title: Postgres - Установка PostgreSQL
-categories: postgres
+tags: postgres
 reference:
   -
     link:

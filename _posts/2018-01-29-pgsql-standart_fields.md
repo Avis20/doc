@@ -1,7 +1,6 @@
 ---
 title: "Postgres - Создание стандартный полей: ts_create, ts_modify, user_id, modify_user_id"
-categories: postgres
-tag: [databases, catalyst]
+tag: [postgres, catalyst]
 reference:
   -
 ---

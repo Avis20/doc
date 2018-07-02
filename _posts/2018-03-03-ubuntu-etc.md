@@ -1,7 +1,6 @@
 ---
 title: Ubuntu - etc
-categories: ubuntu os
-tags: ubuntu pdf deadbeef
+tags: [ubuntu, pdf, deadbeef]
 reference:
   -
     link: http://softhelp.org.ua/?p=6423

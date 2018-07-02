@@ -1,7 +1,6 @@
 ---
 title: Terminator
-categories: linux
-tags: terminator
+tags: [terminator, linux]
 reference: 
   -
     link:

@@ -1,7 +1,6 @@
 ---
 title: Perl - catalyst про MVC
-categories: perl
-tags: catalyst
+tags: [catalyst, perl]
 reference:
   -
     link: https://dou.ua/lenta/articles/catalyst-mvc-perl-web-framework/

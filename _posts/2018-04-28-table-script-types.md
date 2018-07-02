@@ -1,6 +1,6 @@
 ---
 title: "Perl - таблица классификации скриптов"
-categories: perl tables
+tags: [perl, tables]
 reference:
   -
     link:

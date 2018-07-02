@@ -1,7 +1,6 @@
 ---
 title: "Perl - перехват и обработка сигналов"
-categories: perl 
-tags: signals
+tags: [signals, perl]
 reference:
   -
     link:

@@ -1,6 +1,6 @@
 ---
 title: Привет мир!
-categories: hello
+tags: hello
 reference:
   -
     title: template
