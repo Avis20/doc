@@ -7,6 +7,8 @@ isNavItem: true
 styles: [books.css]
 ---
 
+<h2>Linux</h2>
+
 <div class="item">
     <img src="/doc/static/img/books/unix.png" alt="Руководство системного администратора. Unix и Linux" title="Руководство системного администратора. Unix и Linux">
     <div class="links">
@@ -18,6 +20,34 @@ styles: [books.css]
     </div>
     <p>Руководство системного администратора. Unix и Linux</p>
 </div>
+
+<div class="item">
+    <img src="/doc/static/img/books/cli-linux.png" alt="Командная строка Linux" title="Командная строка Linux">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/EyfRrZ2G3YgkqZ" target="_blank">Скачать 2017г. 480с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Командная строка Linux</p>
+</div>
+
+<br>
+
+<h2>Сети</h2>
+
+<div class="item">
+    <img src="/doc/static/img/books/net1.png" alt="Компьютерные сети. Исходящий поток" title="Компьютерные сети. Исходящий поток">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/uikbgSFL3YgmX3" target="_blank">Скачать 6-е издание - 2016г. 912с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Компьютерные сети. Исходящий поток</p>
+</div>
+
+<br>
+
+<h2>Алгоритмы</h2>
 
 <div class="item">
     <img src="/doc/static/img/books/alg3.jpg" alt="Алгоитмы. Вводный курс" title="Алгоитмы. Вводный курс">
@@ -49,6 +79,10 @@ styles: [books.css]
     <p>Алгоитмы. Теория и практическое применение</p>
 </div>
 
+<br>
+
+<h2>PostgreSQL</h2>
+
 <div class="item">
     <img src="/doc/static/img/books/pgsql1.png" alt="Администрирование PostgreSQL 9. Книга рецептов" title="Администрирование PostgreSQL 9. Книга рецептов">
     <div class="links">
@@ -69,21 +103,15 @@ styles: [books.css]
     <p>Работа с PostgreSQL. Настройка и маштабирование</p>
 </div>
 
-<div class="item">
-    <img src="/doc/static/img/books/highload.png" alt="Высоконагруженные приложения. Программирование, масштабирование, поддержка" title="Высоконагруженные приложения. Программирование, масштабирование, поддержка">
-    <div class="links">
-        <ul>
-            <li><a href="https://yadi.sk/i/e64K0CMl3Wp7Xy" target="_blank">Скачать 2018г. 640 с. PDF</a></li>
-        </ul>
-    </div>
-    <p>Высоконагруженные приложения. Программирование, масштабирование, поддержка</p>
-</div>
+<br>
+
+<h2>Perl</h2>
 
 <div class="item">
     <img src="/doc/static/img/books/perl-lama.png" alt="Изучаем Perl" title="Изучаем Perl">
     <div class="links">
         <ul>
-            <li><a href="https://yadi.sk/i/6KsBX-za3Ygif8" target="_blank">Скачать 2009г. 384с. PDF</a></li>
+            <li><a href="https://yadi.sk/i/6KsBX-za3Ygif8" target="_blank">Скачать 5-е издание - 2009г. 384с. PDF</a></li>
         </ul>
     </div>
     <p>Изучаем Perl</p>
@@ -173,10 +201,9 @@ styles: [books.css]
     <p>Wicked Cool Perl Scripts</p>
 </div>
 
+<br>
 
-
-
-
+<h2>Git</h2>
 
 <div class="item">
     <img src="/doc/static/img/books/git1.png" alt="Pro Git" title="Pro Git">
@@ -198,9 +225,19 @@ styles: [books.css]
     <p>Git для профессионального программиста</p>
 </div>
 
+<br>
 
+<h2>etc</h2>
 
-
+<div class="item">
+    <img src="/doc/static/img/books/highload.png" alt="Высоконагруженные приложения. Программирование, масштабирование, поддержка" title="Высоконагруженные приложения. Программирование, масштабирование, поддержка">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/e64K0CMl3Wp7Xy" target="_blank">Скачать 2018г. 640 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Высоконагруженные приложения. Программирование, масштабирование, поддержка</p>
+</div>
 
 
 
@@ -214,3 +251,26 @@ styles: [books.css]
     </div>
     <p>text</p>
 </div>
+
+
+TODO:
+<ul>
+    <li>Сети - https://disk.yandex.ru/client/disk/Books/Net</li>
+    <li>nginx - https://disk.yandex.ru/client/disk/Books/nginx</li>
+    <li>Сборник задач по программированию - https://disk.yandex.ru/client/disk/Books/Algorithm</li>
+    <li>Vagrant - https://disk.yandex.ru/client/disk/Books/Vagrant</li>
+    <li>English - https://disk.yandex.ru/client/disk/Books/English</li>
+    <li>Системы баз данных Полный курс  2003 - https://yadi.sk/d/wBPGER2_3Uw6vS</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
