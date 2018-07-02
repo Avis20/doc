@@ -8,16 +8,6 @@ styles: [books.css]
 ---
 
 <div class="item">
-    <img src="/doc/static/img/books/blank.jpg" alt="text" title="text">
-    <div class="links">
-        <ul>
-            <li><a href="" target="_blank">Скачать г. с. DjVu</a></li>
-        </ul>
-    </div>
-    <p>text</p>
-</div>
-
-<div class="item">
     <img src="/doc/static/img/books/unix.png" alt="Руководство системного администратора. Unix и Linux" title="Руководство системного администратора. Unix и Linux">
     <div class="links">
         <ul>
@@ -70,6 +60,16 @@ styles: [books.css]
 </div>
 
 <div class="item">
+    <img src="/doc/static/img/books/pgsql2.png" alt="Работа с PostgreSQL. Настройка и маштабирование" title="Работа с PostgreSQL. Настройка и маштабирование">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/x9--NZgi3U5C6V" target="_blank">Скачать 5-е издание - 2017г. PDF</a></li>
+        </ul>
+    </div>
+    <p>Работа с PostgreSQL. Настройка и маштабирование</p>
+</div>
+
+<div class="item">
     <img src="/doc/static/img/books/highload.png" alt="Высоконагруженные приложения. Программирование, масштабирование, поддержка" title="Высоконагруженные приложения. Программирование, масштабирование, поддержка">
     <div class="links">
         <ul>
@@ -77,6 +77,49 @@ styles: [books.css]
         </ul>
     </div>
     <p>Высоконагруженные приложения. Программирование, масштабирование, поддержка</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/perl-lama.png" alt="Изучаем Perl" title="Изучаем Perl">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/6KsBX-za3Ygif8" target="_blank">Скачать 2009г. 384с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Изучаем Perl</p>
+    <p><span style="color: green" class="octicon octicon-check">done</span> - 2016г.</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/deep_perl.png" alt="Изучаем perl глубже" title="Изучаем perl глубже">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/FpP89Nm03UBdeN" target="_blank">Скачать 2-е издание - 2008г. 320 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Изучаем perl глубже</p>
+    <p><span style="color: green" class="octicon octicon-check">done</span> - 2017г.</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/perl-debug.png" alt="Perl отладчик. Карманный справочник" title="Perl отладчик. Карманный справочник">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/Hfd4cMvs3YghNT" target="_blank">Скачать 2005г. 208с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Perl отладчик. Карманный справочник</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/big_perl.png" alt="Программирование на Perl" title="Программирование на Perl">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/XpwEWO2R3SG4nr" target="_blank">Скачать 3-е издание - 2002г. 1152 с. PDF</a></li>
+            <li><a href="https://yadi.sk/d/FbU4o27k3SG4tE" target="_blank">Скачать 4-е издание - 2014г. 1048 с. DjVu</a></li>
+        </ul>
+    </div>
+    <p>Программирование на Perl</p>
 </div>
 
 <div class="item">
@@ -91,6 +134,26 @@ styles: [books.css]
 </div>
 
 <div class="item">
+    <img src="/doc/static/img/books/perl_best.png" alt="Perl Best Practices" title="Perl Best Practices">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/sGz7DK2i3WaWWn" target="_blank">Скачать 1-е издание - 2005г. 544 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Perl Best Practices</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/dbi.png" alt="Программирование на DBI" title="Программирование на DBI">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/d/CR5tr1Gm3UBcHU" target="_blank">Скачать 2-е издание - 2000г. 400 с. DjVu</a></li>
+        </ul>
+    </div>
+    <p>Программирование на DBI</p>
+</div>
+
+<div class="item">
     <img src="/doc/static/img/books/blank.jpg" alt="Yaml Cookbook. at the YamlForRuby site" title="Yaml Cookbook. at the YamlForRuby site">
     <div class="links">
         <ul>
@@ -100,3 +163,54 @@ styles: [books.css]
     <p>Yaml Cookbook. at the YamlForRuby site</p>
 </div>
 
+<div class="item">
+    <img src="/doc/static/img/books/scripts.png" alt="Wicked Cool Perl Scripts" title="Wicked Cool Perl Scripts">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/ypG3Pj6G3UK8TJ" target="_blank">Скачать 337 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Wicked Cool Perl Scripts</p>
+</div>
+
+
+
+
+
+
+<div class="item">
+    <img src="/doc/static/img/books/git1.png" alt="Pro Git" title="Pro Git">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/wTiln8Km3UBeZS" target="_blank">Скачать 608 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Pro Git</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/git2.png" alt="Git для профессионального программиста" title="Git для профессионального программиста">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/BonZFSkp3UBeoC" target="_blank">Скачать 2-е издание - 2016г. 496 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Git для профессионального программиста</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="item">
+    <img src="/doc/static/img/books/blank.jpg" alt="text" title="text">
+    <div class="links">
+        <ul>
+            <li><a href="" target="_blank">Скачать -е издание - г. с. DjVu</a></li>
+        </ul>
+    </div>
+    <p>text</p>
+</div>
