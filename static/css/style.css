@@ -4,74 +4,6 @@ layout: null
 
 /* NEW STYLE START */
 
-<<<<<<< HEAD
-h1 {
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 20px;
-}
-
-h3 {
-    font-size: 18px;
-}
-
-h4 {
-    font-size: 16px;
-}
-
-h5 {
-    font-size: 14px;
-}
-
-h6 {
-    font-size: 12px;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-table {
-    border: 1px solid #c0c0c0;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0 0 24px;
-    text-align: left;
-    width: 100%
-}
-
-th,
-td {
-    vertical-align: top;
-    color: #333333;
-    border: 1px solid #c0c0c0;
-    padding: 8px 10px;
-    max-width: 0;
-}
-
-th {
-    background: #fafafa;
-    color: #3d3d3d;
-    font-weight: bold
-}
-
-hr {
-    background: #ededed;
-    border: 0;
-    height: 2px;
-    margin: 24px 0
-}
-
-@media (min-width: 1200px){
-    .container {
-        width: 90% !important;
-    }
-}
-
-=======
 h1 { font-size: 24px }
 h2 { font-size: 20px }
 h3 { font-size: 18px }
@@ -136,7 +68,6 @@ h3.title {
     margin-top: 5px;
 }
 
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .entry-meta {
     background-color: #ed6b39;
     clear: both;
@@ -150,15 +81,6 @@ h3.title {
     text-transform: uppercase;
 }
 
-<<<<<<< HEAD
-h1, h2, h3, h4, h5, h6 {
-    color: #3d3d3d;
-    font-weight: bold;
-    line-height: 1.16667;
-}
-
-=======
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .site-header {
     padding-bottom: 20px;
 }
@@ -172,81 +94,17 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-<<<<<<< HEAD
-.site-description {
-    color: #818181;
-}
-
-=======
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .site-title a {
     color: #fff;
     display: block;
     text-decoration: none;
 }
 
-<<<<<<< HEAD
-.inner {
-    margin: 0 auto;
-    max-width: 90%;
-}
-
-a {
-    text-decoration: none;
-    color: #22b3eb;
-    text-decoration: underline;
-    transition: color 0.3s;
-    background-color: transparent;
-}
-
-=======
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .site-title .logo-text {
     border-left: 10px solid #22b3eb;
     padding-left: 20px
 }
 
-<<<<<<< HEAD
-.navbar-right2 {
-    padding-left: 0;
-}
-
-.navbar-right2 {
-    padding-left: 0;
-}
-
-.navbar-right2 {
-    margin-left: -15px;
-}
-
-.navbar-toggle {
-    position: relative;
-    float: left; 
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-left: 15px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-
-/* NEW STYLE END */
-
-/*.navbar-tiffany,
-.banner{
-    background: -webkit-linear-gradient(45deg, rgba(0 , 0, 0, 0) 48%, rgba(0 , 0, 0, 0.1) 50%, rgba(0 , 0, 0, 0) 52%),
-    -webkit-linear-gradient(135deg, rgba(0 , 0, 0, 0) 48%, rgba(0 , 0, 0, 0.1) 50%, rgba(0 , 0, 0, 0) 52%);
-    background: linear-gradient(45deg, rgba(0 , 0, 0, 0) 48%, rgba(0 , 0, 0, 0.1) 50%, rgba(0 , 0, 0, 0) 52%),
-    linear-gradient(-45deg, rgba(0 , 0, 0, 0) 48%, rgba(0 , 0, 0, 0.1) 50%, rgba(0 , 0, 0, 0) 52%);
-    -webkit-background-size: 1em 1em;
-    background-size: 1em 1em;
-}
-*/
-.navbar-tiffany{
-    /*background-color: #22b3eb;*/
-=======
 .site-description {
     color: #818181;
 }
@@ -266,7 +124,6 @@ a {
 }
 
 .navbar-tiffany{
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
     border-top: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.1);
     box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
@@ -293,10 +150,6 @@ a {
     color: #fff;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .navbar-tiffany .nav>li>a:hover,
 .navbar-tiffany .nav>li>a:focus,
 .navbar-tiffany .nav>li.active>a {
@@ -311,26 +164,15 @@ a {
     background-color: #fff;
 }
 
-<<<<<<< HEAD
-.navbar-nav>li>a{
-=======
 .navbar-nav>li>a {
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
     line-height: 1.42857143;
 }
 
 .footnote-tiffany a,
-<<<<<<< HEAD
-.footnote-tiffany span{
-    color:#fff;
-
-}
-=======
 .footnote-tiffany span {
     color:#fff
 }
 
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .footnote .foot-item{
     display: inline-block;
     width: 28px;
@@ -356,10 +198,6 @@ a {
     transition: background .4s ease-in-out;
 }
 
-<<<<<<< HEAD
-/* footer */
-=======
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .footnote{
     min-height: 50px;
     line-height: 50px;
@@ -367,61 +205,6 @@ a {
     text-align: center;
 }
 
-<<<<<<< HEAD
-html{
-    height: 100%;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-}
-
-
-body {
-    background-color: #333;
-    color: #444;
-}
-
-body {
-    /*background-image: url({{ "/static/bg.jpg" | prepend: site.baseurl | prepend: site.url }});*/
-    height: 100%;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-}
-
-body,code,pre{
-     font-family: "monospace", sans-serif;
-}
-
-body, .sheet, pre, code {
-    font-size: 14px;
-}
-
-
-a:link {text-decoration: none}		/* 未访问的链接 */
-a:visited {text-decoration: none}	/* 已访问的链接 */
-a:hover {text-decoration: none}	/* 鼠标移动到链接上 */
-a:active {text-decoration: none}	/* 选定的链接 */
-
-.main{
-    min-height: 100%;
-    padding-bottom: 130px;
-}
-
-.content{
-    padding-right: 0px;
-    padding-left: 0px;
-}
-
-.sheet{
-	background-color:#f8f8fd;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
-	-o-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
-}
-
-.sheet{
-    padding:10px 30px;
-=======
 .sheet{
     padding:10px 30px;
 }
@@ -432,7 +215,6 @@ a:active {text-decoration: none}	/* 选定的链接 */
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
     -o-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
     box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 }
 
 @media screen and (max-width: 767px) {
@@ -442,120 +224,10 @@ a:active {text-decoration: none}	/* 选定的链接 */
     }
 }
 
-<<<<<<< HEAD
-/**
- * back to top
- */
-.page-scrollTop {
-	position: fixed;
-	right: 10px;
-	bottom: 10px;
-	width: 60px;
-	height: 60px;
-	background-color: #bbb;
-	border-radius:7px;
-	opacity: 0.7;
-	display: none;
-	z-index: 888;
-}
-.page-scrollTop .arrow{
-	margin:0 auto;
-	padding-top:11px;
-	width:0;
-	height: 0;
-	border-right: 15px solid transparent;
-	border-left: 15px solid transparent;
-	border-bottom: 15px solid #7f7f7f;
-
-}
-.page-scrollTop .stick{
-	margin:0 auto;
-	padding-bottom:21px;
-	width: 13px;
-	border-bottom: 13px solid #bbb;
-	background-color: #7f7f7f;
-}
-
-.shadow-bottom-center{
-	background-color:#f8f8fd;
-	-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
-	-moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
-	-o-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
-}
-
-.word-keep{
-    display: inline-block;
-    word-break: keep-all;
-}
-
-.rectangle{
-	border-radius: 0px;
-}
-
-
-@media (min-width: 1200px){
-    .col-lg-offset-1_5 {
-        margin-left: 12.5%;
-    }
-}
-
-.pad-min,
-.pad-mid,
-.pad-lar{
-    display: block;
-}
-.pad-min{
-    height: 20px;
-}
-.pad-mid{
-    height: 50px;
-}
-.pad-lar{
-    height: 80px;
-}
-.scriptHub{
-    display: none!important;
-}
-
-.st-ui-stamp{
-    display: none!important;
-}
-
-/*** banner ***/
-.banner {
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #22b3eb;
-    display: none;
-}
-
-.banner h1{
-    font-size: 50px;
-    font-weight: bold;
-}
-
-
-.banner h1,
-.banner h3{
-    color: #ffffff;
-    text-align: center;
-}
-.banner h3{
-    line-height: 1.5;
-}
-
-@media screen and (max-width: 767px) {
-    .banner h1{
-        font-size: 36px;
-    }
-=======
 .shadow-bottom-center{
     background-color:#f8f8fd;
     -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
     -o-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
     box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 }

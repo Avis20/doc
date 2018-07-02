@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-$(function(){
-    $('.tagCloud').tagCloud();
-});
-=======
 
 $(document).ready(function() {
     categoryDisplay();
@@ -36,4 +31,3 @@ function selectCategory(){
         $("section[post-cate='All']").show();
     }
 }
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74

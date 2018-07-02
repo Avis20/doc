@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-    <footer  class="footnote footnote-tiffany">
-        <div class="container">
-                <a class="foot-item" href="mailto:{{ site.email }}" target="_blank"><span class="octicon octicon-mail"></span></a>
-                <a class="foot-item" href="https://github.com/{{ site.github_username }}" target="_blank"><span class="octicon octicon-mark-github"></span></a>
-                <a class="foot-item" href="https://vk.com/orlov199595" target="_blank"><span class="octicon octicon-octoface"></span></a>
-        </div>
-    </footer>
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{'/static/js/highlight.pack.js' | prepend:site.baseurl | prepend: site.url  }}"></script>
-    <script type="text/javascript" src="{{'/static/js/script.js' | prepend:site.baseurl | prepend: site.url  }}"></script>
-    {% for script in page.scripts %}<script type="text/javascript" src="{{'/static/js/' | append:script | prepend:site.baseurl | prepend: site.url  }}"></script>
-    {%endfor%}
-=======
 <footer  class="footnote footnote-tiffany">
     <div class="container">
             <a class="foot-item" href="mailto:{{ site.email }}" target="_blank"><span class="octicon octicon-mail"></span></a>
@@ -27,4 +12,3 @@
 {% for script in page.scripts %}
     <script type="text/javascript" src="{{'/static/js/' | append:script | prepend:site.baseurl | prepend: site.url  }}"></script>
 {%endfor%}
->>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
