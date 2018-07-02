@@ -4,6 +4,7 @@ layout: null
 
 /* NEW STYLE START */
 
+<<<<<<< HEAD
 h1 {
     font-size: 24px;
 }
@@ -70,6 +71,72 @@ hr {
     }
 }
 
+=======
+h1 { font-size: 24px }
+h2 { font-size: 20px }
+h3 { font-size: 18px }
+h4 { font-size: 16px }
+h5 { font-size: 14px }
+h6 { font-size: 12px }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #3d3d3d;
+    font-weight: bold;
+    line-height: 1.16667;
+}
+
+a {
+    text-decoration: none;
+    color: #22b3eb;
+    text-decoration: underline;
+    transition: color 0.3s;
+    background-color: transparent;
+}
+
+a:link      { text-decoration: none }
+a:visited   { text-decoration: none }
+a:hover     { text-decoration: none }
+a:active    { text-decoration: none }
+
+html{
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+body {
+    background-color: #333;
+    color: #444;
+}
+
+body {
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+body, code, pre { font-family: "monospace", sans-serif }
+
+body, .sheet, pre, code {
+    font-size: 14px;
+}
+
+.word-keep{
+    display: inline-block;
+    word-break: keep-all;
+}
+
+@media (min-width: 1200px){
+    .col-lg-offset-1_5 {
+        margin-left: 12.5%;
+    }
+}
+
+h3.title {
+    margin-top: 5px;
+}
+
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .entry-meta {
     background-color: #ed6b39;
     clear: both;
@@ -83,12 +150,15 @@ hr {
     text-transform: uppercase;
 }
 
+<<<<<<< HEAD
 h1, h2, h3, h4, h5, h6 {
     color: #3d3d3d;
     font-weight: bold;
     line-height: 1.16667;
 }
 
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .site-header {
     padding-bottom: 20px;
 }
@@ -102,16 +172,20 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+<<<<<<< HEAD
 .site-description {
     color: #818181;
 }
 
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .site-title a {
     color: #fff;
     display: block;
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 .inner {
     margin: 0 auto;
     max-width: 90%;
@@ -125,11 +199,14 @@ a {
     background-color: transparent;
 }
 
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .site-title .logo-text {
     border-left: 10px solid #22b3eb;
     padding-left: 20px
 }
 
+<<<<<<< HEAD
 .navbar-right2 {
     padding-left: 0;
 }
@@ -169,6 +246,27 @@ a {
 */
 .navbar-tiffany{
     /*background-color: #22b3eb;*/
+=======
+.site-description {
+    color: #818181;
+}
+
+.inner {
+    max-width: 90%;
+}
+
+.main{
+    min-height: 100%;
+    padding-bottom: 130px;
+}
+
+.content{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-tiffany{
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
     border-top: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.1);
     box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
@@ -195,7 +293,10 @@ a {
     color: #fff;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .navbar-tiffany .nav>li>a:hover,
 .navbar-tiffany .nav>li>a:focus,
 .navbar-tiffany .nav>li.active>a {
@@ -210,15 +311,26 @@ a {
     background-color: #fff;
 }
 
+<<<<<<< HEAD
 .navbar-nav>li>a{
+=======
+.navbar-nav>li>a {
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
     line-height: 1.42857143;
 }
 
 .footnote-tiffany a,
+<<<<<<< HEAD
 .footnote-tiffany span{
     color:#fff;
 
 }
+=======
+.footnote-tiffany span {
+    color:#fff
+}
+
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .footnote .foot-item{
     display: inline-block;
     width: 28px;
@@ -244,7 +356,10 @@ a {
     transition: background .4s ease-in-out;
 }
 
+<<<<<<< HEAD
 /* footer */
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 .footnote{
     min-height: 50px;
     line-height: 50px;
@@ -252,6 +367,7 @@ a {
     text-align: center;
 }
 
+<<<<<<< HEAD
 html{
     height: 100%;
     padding: 0px 0px 0px 0px;
@@ -305,6 +421,18 @@ a:active {text-decoration: none}	/* 选定的链接 */
 
 .sheet{
     padding:10px 30px;
+=======
+.sheet{
+    padding:10px 30px;
+}
+
+.sheet{
+    background-color:#f8f8fd;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+    -o-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 }
 
 @media screen and (max-width: 767px) {
@@ -314,6 +442,7 @@ a:active {text-decoration: none}	/* 选定的链接 */
     }
 }
 
+<<<<<<< HEAD
 /**
  * back to top
  */
@@ -421,4 +550,12 @@ a:active {text-decoration: none}	/* 选定的链接 */
     .banner h1{
         font-size: 36px;
     }
+=======
+.shadow-bottom-center{
+    background-color:#f8f8fd;
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
+    -o-box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4),0 0 20px rgba(0,0,0,0.1) inset;
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 }

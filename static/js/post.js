@@ -2,6 +2,7 @@
     layout: null
 ---
 
+<<<<<<< HEAD
 /**
  * 页面ready方法
  */
@@ -14,6 +15,12 @@ $(document).ready(function() {
 /**
  * 侧边目录
  */
+=======
+$(document).ready(function() {
+    generateContent();
+});
+
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 function generateContent() {
     var $mt = $('.toc');
     var toc = $(".post ul#markdown-toc").clone().get(0);
@@ -21,6 +28,7 @@ function generateContent() {
         $(o).html(toc);
     });
 }
+<<<<<<< HEAD
 
 function share(){
     window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
@@ -36,3 +44,5 @@ function disqus(){
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     document.getElementsByTagName("script")[0].parentNode.appendChild(dsq);
 }
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74

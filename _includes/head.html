@@ -1,4 +1,5 @@
 <head>
+<<<<<<< HEAD
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,3 +19,17 @@
     {%endfor%}
 
 </head>
+=======
+    <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="shortcut icon" type="image/x-icon" media="screen" href="{{ '/favicon.ico' | prepend: site.baseurl | prepend: site.url}}" />
+    <link rel="stylesheet" href="{{ '/static/css/bootstrap.min.css' | prepend: site.baseurl | prepend: site.url}}"/>
+    <link rel="stylesheet" href="{{ '/static/css/octicons.min.css' | prepend: site.baseurl | prepend: site.url}}"/>
+    <link rel="stylesheet" href="{{ '/static/css/monokai-sublime.css' | prepend: site.baseurl | prepend: site.url}}" />
+    <link rel="stylesheet" href="{{ '/static/css/style.css' | prepend: site.baseurl | prepend: site.url}}" />
+    {% for style in page.styles %}
+        <link rel="stylesheet" type="text/css" href="{{ '/static/css/' | append: style | prepend: site.baseurl | prepend: site.url}}" />
+    {%endfor%}
+
+</head>
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74

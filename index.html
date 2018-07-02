@@ -1,11 +1,20 @@
 ---
 layout: default
+<<<<<<< HEAD
 scripts: [category.js]
 styles : [article-list.css,category.css,tags.css]
 ---
 
 <div class="row index">
     <div class="col-sm-6 col-sm-offset-1 col-lg-6 col-lg-offset-1_5">
+=======
+scripts: [tags.js]
+styles : [article-list.css, tags.css]
+---
+
+<div class="row index">
+    <div class="col-sm-7 col-lg-8">
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 
         <section class="category-slice" post-cate="All">
             {% for post in site.posts %}
@@ -32,6 +41,7 @@ styles : [article-list.css,category.css,tags.css]
                             <span class="octicon octicon-tag"></span>&nbsp;{{ tag }}
                         </a>
                     {% endfor %}
+<<<<<<< HEAD
                         <span class="word-keep pull-right">
                             <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#post-comment">
                                 <span class="octicon octicon-comment"></span>&nbsp;Comment
@@ -40,12 +50,18 @@ styles : [article-list.css,category.css,tags.css]
                                 <span class="octicon octicon-file-symlink-file"></span>&nbsp;Share
                             </a>
                         </span>
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
                     </footer>
                 </div><!-- module -->
             </article>
             {% endfor %}
         </section>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
         {% for tag in site.tags %}
         <section class="category-slice" post-cate="{{ tag | first }}">
             {% for posts in tag  %}
@@ -74,6 +90,7 @@ styles : [article-list.css,category.css,tags.css]
                             <span class="octicon octicon-tag"></span>&nbsp;{{ tag }}
                         </a>
                     {% endfor %}
+<<<<<<< HEAD
                         <span class="word-keep pull-right">
                             <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#post-comment">
                                 <span class="octicon octicon-comment"></span>&nbsp;Comment
@@ -82,6 +99,8 @@ styles : [article-list.css,category.css,tags.css]
                                 <span class="octicon octicon-file-symlink-file"></span>&nbsp;Share
                             </a>
                         </span>
+=======
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
                     </footer>
                 </div><!-- module -->
             </article>
@@ -92,7 +111,11 @@ styles : [article-list.css,category.css,tags.css]
         {% endfor %}
  
 
+<<<<<<< HEAD
     </div><!-- col -->
+=======
+    </div><!-- col-sm-6  -->
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
 
     <div class="col-sm-3 col-lg-3">
         <div>
@@ -113,4 +136,10 @@ styles : [article-list.css,category.css,tags.css]
             </ul>
         </div>
     </div>
+<<<<<<< HEAD
 </div><!-- row index -->
+=======
+
+</div>
+
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74

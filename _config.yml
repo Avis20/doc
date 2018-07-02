@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 permalink: /:day-:month-:year/:title/
 
 exclude:              ["Gemfile", "Gemfile.lock"]
@@ -35,3 +36,32 @@ baseurl: /doc
 url: "https://avis20.github.io"
 #imgrepo: "http://127.0.0.1:4000/static/img"
 
+=======
+permalink: /:day-:month-:year/:title/
+
+exclude:  ["Gemfile", "Gemfile.lock"]
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      styles : [post.css]
+      scripts : [post.js]
+
+title: Avis notes
+description: "Thoughts, stories and ideas."
+email: orlov.avis@yandex.ru
+github_username: avis20
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input:  GFM
+  syntax_highlighter: rouge
+
+baseurl: /doc
+url: "https://avis20.github.io"
+>>>>>>> c0854a4f45e67e3799fbe293e8de39f4e107ca74
