@@ -9,7 +9,7 @@ defaults:
       type: "posts"
     values:
       layout: post
-      styles : [post.css]
+      styles : [highlight.css, post.css]
       scripts : [post.js]
 
 title: Avis notes
