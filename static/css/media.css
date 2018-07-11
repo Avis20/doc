@@ -1,0 +1,17 @@
+
+
+@media screen and (max-width: 767px) {
+    body {
+        background-color: red !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+   html {
+      -webkit-text-size-adjust: none;
+   }
+   a {
+      font-size: 90%;
+      padding: 10px 8px;
+   }
+}
