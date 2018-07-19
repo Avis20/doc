@@ -56,11 +56,17 @@ pre {
     }
 }
 
+.post {
+    width: 100%;
+}
+
 .post table{
     border-top:2px solid #777;
     border-bottom: 2px solid #777;
     margin: 8px 0;
+    width: 100%;
 }
+
 .post table thead{
     border-bottom: 1px dashed #777;
     background-color: #aaa;
@@ -69,17 +75,23 @@ pre {
 .post table th{
     padding: 2px 10px;
 }
+
+.post table tr td:first-child {
+    max-width: 70px;
+}
+.post table tr td:last-child {
+    max-width: 400px;
+}
+
 .post table tr:nth-child(2n){
     background-color: #E5EAED;
 }
-.post table td{
+
+.post table td {
     padding: 2px 10px;
     vertical-align: top;
 }
 
-/* post
- * post articles area
- */
 .post header{
     margin-left: -30px;
     padding-left: 25px;
