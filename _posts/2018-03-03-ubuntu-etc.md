@@ -26,4 +26,6 @@ pdfposter -p 2x1a4 input.pdf out.pdf
 
 ## Hotkeys для deadbeef
 
+```Параметры системы -> Клавиатура -> Комбинации клавиш -> Доп. комбинации```
+
 <img src="/doc/static/img/deadbeef.png" alt="">
