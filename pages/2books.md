@@ -189,6 +189,7 @@ styles: [books.css]
         </ul>
     </div>
     <p>Yaml Cookbook. at the YamlForRuby site</p>
+    <p><span style="color: green" class="octicon octicon-check">done</span> - 2018г.</p>
 </div>
 
 <div class="item">
