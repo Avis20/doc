@@ -256,6 +256,8 @@ styles: [books.css]
 
 TODO:
 <ul>
+    
+    <li>Perl LWP - http://lwp.interglacial.com/index.html</li>
     <li>Сети - https://disk.yandex.ru/client/disk/Books/Net</li>
     <li>nginx - https://disk.yandex.ru/client/disk/Books/nginx</li>
     <li>Сборник задач по программированию - https://disk.yandex.ru/client/disk/Books/Algorithm</li>
