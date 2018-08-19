@@ -57,6 +57,7 @@ styles: [books.css]
         </ul>
     </div>
     <p>Алгоитмы. Вводный курс</p>
+    <p><span style="color: red" class="octicon octicon-thumbsdown"> Бросил, слишком много неправильных примеров</span> - 18.08.2018</p>
 </div>
 
 <div class="item">
@@ -67,6 +68,7 @@ styles: [books.css]
         </ul>
     </div>
     <p>Алгоитмы. Построение и анализ</p>
+    <p>start - 18.08.2018</p>
 </div>
 
 <div class="item">
