@@ -65,6 +65,7 @@ styles: [books.css]
     <div class="links">
         <ul>
             <li><a href="https://yadi.sk/i/YMPQF00W3UQSc8" target="_blank">Скачать 2013г. 1328 с. DjVu</a><br></li>
+            <li><a href="https://yadi.sk/i/4hMXjOF-3aYhCa" target="_blank">Скачать 2013г. 1328 с. PDF</a><br></li>
         </ul>
     </div>
     <p>Алгоитмы. Построение и анализ</p>
