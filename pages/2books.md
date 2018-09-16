@@ -108,6 +108,19 @@ styles: [books.css]
 
 <br>
 
+<h2>C, C++</h2>
+
+<div class="item">
+    <img src="/doc/static/img/books/si.png" alt="Язык программирования Си" title="Язык программирования Си">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/GSZpE8gVGpwWCg" target="_blank">Скачать 2-е издание - 2009г. 292. PDF</a></li>
+        </ul>
+    </div>
+    <p>Язык программирования Си</p>
+    <p>start - 30.09.2018</p>
+</div>
+
 <h2>Perl</h2>
 
 <div class="item">
