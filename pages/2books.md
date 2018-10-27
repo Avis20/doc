@@ -7,6 +7,52 @@ isNavItem: true
 styles: [books.css]
 ---
 
+<h2>Алгоритмы/Основы</h2>
+
+<div class="item">
+    <img src="/doc/static/img/books/code.png" alt="Код. Тайный язык информатики" title="Код. Тайный язык информатики">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/kq1kTyzoAD2_Sw" target="_blank">Скачать 2001г. 492 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Код. Тайный язык информатики</p>
+    <p>start - 27.10.2018</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/alg3.jpg" alt="Алгоитмы. Вводный курс" title="Алгоитмы. Вводный курс">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/d/VJhXx4u33UQSo4" target="_blank">Скачать 2014г. 208 с. DjVu</a></li>
+        </ul>
+    </div>
+    <p>Алгоитмы. Вводный курс</p>
+    <p><span style="color: red" class="octicon octicon-thumbsdown"> Бросил, слишком много неправильных примеров</span> - 18.08.2018</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/alg2.png" alt="Алгоитмы. Построение и анализ" title="Алгоитмы. Построение и анализ">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/YMPQF00W3UQSc8" target="_blank">Скачать 2013г. 1328 с. DjVu</a><br></li>
+            <li><a href="https://yadi.sk/i/4hMXjOF-3aYhCa" target="_blank">Скачать 2013г. 1328 с. PDF</a><br></li>
+        </ul>
+    </div>
+    <p>Алгоитмы. Построение и анализ</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/alg.png" alt="Алгоитмы. Теория и практическое применение" title="Алгоитмы. Теория и практическое применение">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/b8fR4tSm3UBawQ" target="_blank">Скачать 2016г. 544 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Алгоитмы. Теория и практическое применение</p>
+</div>
+
+<br>
 <h2>Linux</h2>
 
 <div class="item">
@@ -43,43 +89,6 @@ styles: [books.css]
         </ul>
     </div>
     <p>Компьютерные сети. Исходящий поток</p>
-</div>
-
-<br>
-
-<h2>Алгоритмы</h2>
-
-<div class="item">
-    <img src="/doc/static/img/books/alg3.jpg" alt="Алгоитмы. Вводный курс" title="Алгоитмы. Вводный курс">
-    <div class="links">
-        <ul>
-            <li><a href="https://yadi.sk/d/VJhXx4u33UQSo4" target="_blank">Скачать 2014г. 208 с. DjVu</a></li>
-        </ul>
-    </div>
-    <p>Алгоитмы. Вводный курс</p>
-    <p><span style="color: red" class="octicon octicon-thumbsdown"> Бросил, слишком много неправильных примеров</span> - 18.08.2018</p>
-</div>
-
-<div class="item">
-    <img src="/doc/static/img/books/alg2.png" alt="Алгоитмы. Построение и анализ" title="Алгоитмы. Построение и анализ">
-    <div class="links">
-        <ul>
-            <li><a href="https://yadi.sk/i/YMPQF00W3UQSc8" target="_blank">Скачать 2013г. 1328 с. DjVu</a><br></li>
-            <li><a href="https://yadi.sk/i/4hMXjOF-3aYhCa" target="_blank">Скачать 2013г. 1328 с. PDF</a><br></li>
-        </ul>
-    </div>
-    <p>Алгоитмы. Построение и анализ</p>
-    <p>start - 18.08.2018</p>
-</div>
-
-<div class="item">
-    <img src="/doc/static/img/books/alg.png" alt="Алгоитмы. Теория и практическое применение" title="Алгоитмы. Теория и практическое применение">
-    <div class="links">
-        <ul>
-            <li><a href="https://yadi.sk/i/b8fR4tSm3UBawQ" target="_blank">Скачать 2016г. 544 с. PDF</a></li>
-        </ul>
-    </div>
-    <p>Алгоитмы. Теория и практическое применение</p>
 </div>
 
 <br>
