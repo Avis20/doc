@@ -129,6 +129,18 @@ styles: [books.css]
     <p>start - 30.09.2018</p>
 </div>
 
+<h2>JavaScript</h2>
+
+<div class="item">
+    <img src="/doc/static/img/books/js-patterns.png" alt="JavaScript. Шаблоны" title="JavaScript. Шаблоны">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/PCm2kFhJvPuiAw" target="_blank">Скачать 1-е издание - 2011г. 272. PDF</a></li>
+        </ul>
+    </div>
+    <p>JavaScript. Шаблоны</p>
+</div>
+
 <h2>Perl</h2>
 
 <div class="item">
