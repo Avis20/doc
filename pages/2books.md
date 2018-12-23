@@ -238,6 +238,16 @@ styles: [books.css]
     <p>Wicked Cool Perl Scripts</p>
 </div>
 
+<div class="item">
+    <img src="/doc/static/img/books/catalyst.png" alt="The Definitive Guide to Catalyst" title="The Definitive Guide to Catalyst">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/AvzLOknCeY7yrA" target="_blank">Скачать 319 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>The Definitive Guide to Catalyst</p>
+</div>
+
 <br>
 
 <h2>Git</h2>
