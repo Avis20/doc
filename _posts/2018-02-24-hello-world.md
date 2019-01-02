@@ -16,6 +16,6 @@ Hello, world!
     <p>Это варнинг</p>
 </div>
 
-<div class="err">
+<div class="error">
     <p>Это ошибка!</p>
 </div>

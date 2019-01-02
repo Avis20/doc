@@ -344,7 +344,7 @@ sudo apt-get update
 
 [Инструкция по установке virt 5.2](http://ubuntuhandbook.org/index.php/2017/10/virtualbox-reached-5-2-major-release-how-to-install/)  
 
-<div class="err">
+<div class="error">
     <p>На картинке не правильная интсрукция. Но ошибка правильная</p>
 </div>
 <img src="/doc/static/img/bugs/virtual_box.png" alt="">

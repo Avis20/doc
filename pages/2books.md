@@ -217,6 +217,18 @@ styles: [books.css]
     <p>Программирование на DBI</p>
 </div>
 
+
+
+<div class="item">
+    <img src="/doc/static/img/books/perl-master.jpg" alt="Mastering Algorithms with Perl" title="Mastering Algorithms with Perl">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/dXP_9CQcrBO-Ng" target="_blank">Скачать 1999г. 739 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Mastering Algorithms with Perl</p>
+</div>
+
 <div class="item">
     <img src="/doc/static/img/books/blank.jpg" alt="Yaml Cookbook. at the YamlForRuby site" title="Yaml Cookbook. at the YamlForRuby site">
     <div class="links">
@@ -246,6 +258,16 @@ styles: [books.css]
         </ul>
     </div>
     <p>The Definitive Guide to Catalyst</p>
+</div>
+
+<div class="item">
+    <img src="/doc/static/img/books/perl-spec.jpg" alt="Perl специальный справочник" title="Perl специальный справочник">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/qOJbUNbJg_Lycg" target="_blank">Скачать 2001г. 386 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Perl специальный справочник</p>
 </div>
 
 <br>
