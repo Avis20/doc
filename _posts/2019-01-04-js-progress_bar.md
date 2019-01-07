@@ -9,7 +9,6 @@ reference:
 #myProgress {
   width: 100%;
   background-color: grey;
-  margin: 20 10;
 }
 
 #myBar {
