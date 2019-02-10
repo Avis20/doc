@@ -12,8 +12,6 @@ reference:
 * TOC
 {:toc}
 
-* У меня заработало на 16.04 без особых проблем. На 14.04 были какие-то пляски с бубном но я уже не помню...
-
 # Устанока
 
 Все довольно тривиально
@@ -21,9 +19,42 @@ reference:
 Обновляем пакеты, устанавливаем
 
 <pre><code class="shell">sudo apt-get update
+sudo apt-get install ruby ruby-dev make gcc
+sudo gem install jekyll bundler
 ...
-sudo apt-get install jekyll bundler
-...
+
+avis@avis-PC:~/develop/doc$ jekyll --version
+WARN: Unresolved specs during Gem::Specification.reset:
+      rb-fsevent (>= 0.9.4, ~> 0.9)
+      ffi (< 2, >= 0.5.0)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+jekyll 3.7.3
+
+avis@avis-PC:~/develop/doc$ bundle --version
+Bundler version 1.16.1
+
+avis@avis-PC:~/develop/doc$ ruby --version
+ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
+
+</code></pre>
+
+Баг 1
+<pre><code class="perl">
+$ jekyll-server
+/var/lib/gems/2.3.0/gems/bundler-2.0.1/lib/bundler/spec_set.rb:87:in `block in materialize':
+</code></pre>
+
+<pre><code class="perl">sudo gem install public_suffix --version 3.0.1
+</code></pre>
+
+Баг 2
+
+<pre><code class="perl">$ jekyll
+/var/lib/gems/2.3.0/gems/bundler-2.0.1/lib/bundler/spec_set.rb:87:in `block in materialize'
+</code></pre>
+
+<pre><code class="perl">sudo bundle update
 </code></pre>
 
 Проверяем
@@ -55,26 +86,4 @@ Warning: the running version of Bundler is older than the version that created t
 Fetching gem metadata from https://rubygems.org/......
 </code></pre>
 
-</div>
-
-# Если хочется сортировать посты по дате изменения(как у меня :))
-
-1) создаем файлик _plugin/hook-add-last-modified-date.rb и пишем туда:
-
-<pre><code class="ruby">Jekyll::Hooks.register :posts, :pre_render do |post|
-
-# get the current post last modified time
-modification_time = File.mtime( post.path )
-
-# inject modification_time in post's datas.
-post.data['last-modified-date'] = modification_time
-
-end
-</code></pre>
-
-2) Сохраняем и делаем тестовую страницу pages/test.html, и сортируем посты
-
-<div class="error">
-    <p>не получилось вставить jekyll код в jekyll страницу :DDD см. pages/2test.html</p>
-    <p>Не работает на github :(</p>
 </div>
