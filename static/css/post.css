@@ -1,5 +1,5 @@
 
-.warn, .err {
+.warn, .error {
     border: 1px solid;
     border-radius: 10px;
     padding-left: 30px;
@@ -12,11 +12,11 @@
     border-color: orange;
 }
 
-.err {
+.error {
     border: 1px solid red;
 }
 
-.warn:before, .err:before {
+.warn:before, .error:before {
     font: normal normal normal 16px/1 octicons;
     display: inline-block;
     text-decoration: none;
@@ -36,7 +36,7 @@
     color: orange;
 }
 
-.err:before {
+.error:before {
     content: '\f084';
     color: red;
 }
