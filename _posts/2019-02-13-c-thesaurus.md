@@ -8,9 +8,14 @@ reference:
 * TOC 
 {:toc}
 
-# stdlib.h
+# stdlib.h - стандартный заголовочный файл. Содержит кучу всего
 
-### long int strtol(const char *str, char **endptr, int base) - 
+### strtol - Преобразует строку в число
+
+Принимает: строку, TODO: Что-то еще, систему счисления  
+Возвращает: число типа long int
+
+long int strtol(const char *str, char **endptr, int base)
 
 [strtol - convert string to a long integer](http://pubs.opengroup.org/onlinepubs/7908799/xsh/strtol.html)
 
@@ -20,11 +25,13 @@ reference:
         Пример
     </summary>
     <pre><code class="perl">
-        content
+printf("%ld\n", strtol("0xabcdef0", NULL, 16));
+180150000
+[Finished in 0.1s]
     </code></pre>
 </details>
 
-# string.h
+# string.h - обработка строк
 
 ### strlen(s) - возвращает длину строки s
 
@@ -38,7 +45,7 @@ reference:
     </code></pre>
 </details>
 
-# ctype.h
+# ctype.h - обработка символов
 
 ### isdigit(c) - проверка на число
 
@@ -49,5 +56,19 @@ reference:
     </summary>
     <pre><code class="perl">
         content
+    </code></pre>
+</details>
+
+# math.h - мат. функции
+
+### sqrt - квадратный корень
+
+<p><b>Примеры</b></p>
+<details>
+    <summary>
+        Пример
+    </summary>
+    <pre><code class="perl">
+printf("%f", sqrt( (double) 4));
     </code></pre>
 </details>
