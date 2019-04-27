@@ -5,6 +5,9 @@ reference:
   - title: How to Set Up a Jekyll Development Site on Ubuntu 16.04
     link: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-development-site-on-ubuntu-16-04
 
+  - title: Как завести блог на Jekyll
+    link: https://guides.hexlet.io/jekyll/
+
   - title: Sorting Jekyll posts by modification date instead of posted date?
     link: https://stackoverflow.com/questions/48245460/sorting-jekyll-posts-by-modification-date-instead-of-posted-date?noredirect=1&lq=1
 ---

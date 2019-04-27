@@ -77,7 +77,7 @@ pre {
 }
 
 .post table tr td:first-child {
-    max-width: 70px;
+    max-width: max-content;
 }
 .post table tr td:last-child {
     max-width: 400px;
@@ -90,6 +90,7 @@ pre {
 .post table td {
     padding: 2px 10px;
     vertical-align: top;
+    border: 1px black solid;
 }
 
 .post header{
