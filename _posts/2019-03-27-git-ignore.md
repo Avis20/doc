@@ -20,7 +20,7 @@ $ git rm --cached debug.log
 $ git add .gitignore
 $ git commit -m "Start ignoring debug.log"
 </code></pre>
-      Параметр --cached говорит что нужно удалить только из гита
+      Параметр --cached говорит что нужно удалить только из гита, сам файл остается без изменений
       </p>
     </li>
     <li>
@@ -47,13 +47,13 @@ $ git commit -m "Adding debug.log"
       <p>Можно создать персональный .gitignore файл который не попадет в репу но будет работать по тем же правилам. <code>.git/info/exclude</code></p>
     </li>
     <li>
-      <p>Также можно создать глобальный .gitignore файл во всей системе. Для этого нужно
-<pre><code class="bash">avis@avis-PC[18:23:14]:~/develop/123$ echo logs > ~/.gitignore 
-avis@avis-PC[18:23:07]:~/develop/123$ git config --global core.excludesFile ~/.gitignore
-avis@avis-PC[18:23:31]:~/develop/123$ ls -l
+      <p>Также можно создать глобальный .gitignore файл во всей системе. Пример
+<pre><code class="bash">$ echo logs > ~/.gitignore 
+$ git config --global core.excludesFile ~/.gitignore
+$ ls -l
 итого 4
 drwxrwxr-x 4 avis avis 4096 апр 27 18:10 logs
-avis@avis-PC[18:23:23]:~/develop/123$ git st
+$ git st
 На ветке master
 Ваша ветка обновлена в соответствии с «origin/master».
 нечего коммитить, нет изменений в рабочем каталоге
@@ -63,9 +63,8 @@ avis@avis-PC[18:23:23]:~/develop/123$ git st
       </p>
     </li>
     <li>
-      <p>Для дебаггинга игнор файлика нужно
-<pre><code class="perl">
-$ git check-ignore file.log
+      <p>Пример дебаггинга игнор файлика
+<pre><code class="perl">$ git check-ignore file.log
 file.log
 $ git check-ignore file.log -v
 .gitignore:1:*.log  file.log

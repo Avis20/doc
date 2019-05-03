@@ -27,7 +27,7 @@ reference:
 ## План
 
 Чтобы вывести кол-во успешных/неуспешных тестов, нужно указать ```no_plan``` в use
-<pre><code class="perl">use Test::More;      qw| no_plan |;</code></pre>
+<pre><code class="perl">use Test::More  qw| no_plan |;</code></pre>
 
 В таком случает, модуль сам пощитает.
 
@@ -238,3 +238,11 @@ not ok 1 - test structure
 ### TODO: BLOCK
 ### SKIP: BLOCK
 ### todo_skip
+
+
+## Debugging tests
+
+<pre><code class="perl">
+perl -d -Ilib t/mytest.t
+</code></pre>
+
