@@ -1,6 +1,6 @@
 ---
 title: nginx + встроенный perl
-tags: [nginx perl]
+tags: [nginx, perl]
 reference:
   - title: Встроенному perl'у быть!
     link: https://habr.com/ru/post/45590/
