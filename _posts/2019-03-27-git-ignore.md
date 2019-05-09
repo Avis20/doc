@@ -14,9 +14,10 @@ reference:
   <ul>
     <li>
       <p>Чтобы начать игнорировать файл который был ранее закомичен, нужно его удалить из гита. Пример
-<pre><code class="bash">$ echo debug.log >> .gitignore
+<pre><code class="bash">
+$ echo debug.log >> .gitignore
 $ git rm --cached debug.log
-  rm 'debug.log'
+rm 'debug.log'
 $ git add .gitignore
 $ git commit -m "Start ignoring debug.log"
 </code></pre>
@@ -25,13 +26,15 @@ $ git commit -m "Start ignoring debug.log"
     </li>
     <li>
       <p>Для принудительного добавления файла в коммит, используй флаг -f (--force)
-<pre><code class="bash">$ cat .gitignore
+<pre><code class="bash">
+$ cat .gitignore
 *.log
 $ git add -f debug.log
 $ git commit -m "Force adding debug.log"
 </code></pre>
       или использовать более наглядный способ
-<pre><code class="bash">$ echo '!debug.log' >> .gitignore
+<pre><code class="bash">
+$ echo '!debug.log' >> .gitignore
 $ cat .gitignore
 *.log
 !debug.log
@@ -48,7 +51,8 @@ $ git commit -m "Adding debug.log"
     </li>
     <li>
       <p>Также можно создать глобальный .gitignore файл во всей системе. Пример
-<pre><code class="bash">$ echo logs > ~/.gitignore 
+<pre><code class="bash">
+$ echo logs > ~/.gitignore 
 $ git config --global core.excludesFile ~/.gitignore
 $ ls -l
 итого 4
@@ -64,12 +68,14 @@ $ git st
     </li>
     <li>
       <p>Пример дебаггинга игнор файлика
-<pre><code class="perl">$ git check-ignore file.log
+<pre><code class="perl">
+$ git check-ignore file.log
 file.log
 $ git check-ignore file.log -v
 .gitignore:1:*.log  file.log
 </code></pre>
-<pre><code class="perl">output
+<pre><code class="perl">
+output
 [file containing the pattern]:[line number of the pattern]:[pattern] [file name]
 </code></pre>
       </p>
@@ -363,7 +369,8 @@ avis@avis-PC[17:58:50]:~/develop/123$ git st
   <tr>
     <td>logs/dir*/file*.txt</td>
     <td colspan="2">
-<pre><code class="bash"> В игноре
+<p>В игноре</p>
+<pre><code class="bash">
 avis@avis-PC[18:10:49]:~/develop/123$ tree 
 .
 └── logs

@@ -34,7 +34,8 @@ TLS SNI support enabled
 
 ## Пример из документации
 
-<pre><code class="perl">$ cat /etc/nginx/nginx.conf
+<pre><code class="perl">
+$ cat /etc/nginx/nginx.conf
 http {
 
   perl_modules /etc/nginx/perl/lib;
@@ -61,7 +62,8 @@ http {
 }
 </code></pre>
 
-<pre><code class="perl">$ cat /etc/nginx/perl/lib/hello.pm 
+<pre><code class="perl">
+$ cat /etc/nginx/perl/lib/hello.pm 
 package hello;
 
 use nginx;
@@ -87,7 +89,8 @@ __END__
 
 Результат
 
-<pre><code class="perl"># curl localhost
+<pre><code class="perl">
+$ curl localhost
 hello world!
 &lt;br/&gt;/ exists!
 </code></pre>

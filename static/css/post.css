@@ -143,7 +143,8 @@ pre {
     white-space: pre;
 }
 
-.post pre code{
+.post pre code {
+    margin-top: -30px;
     white-space: pre;
 }
 
@@ -167,7 +168,7 @@ pre {
 }
 
 @media screen and (max-width: 991px){
-    .post pre code{
+    .post pre code {
         font-size: 90%;
     }
 }
