@@ -12,33 +12,32 @@ reference:
 * TOC 
 {:toc}
 
-<div class="blockquote">
-    <p>justnoxx • 4 года назад<br>
-       Здесь главное не начать подгонять код под тесты, чтобы "все работало". Тогда будет счастье.
-       Ну и не писать бесполезных тестов.
-    </p>
-</div>
+>Здесь главное не начать подгонять код под тесты, чтобы "все работало". Тогда будет счастье. Ну и не писать бесполезных тестов.
+justnoxx • 4 года назад
 
 Синтаксис
-<pre><code class="perl">
-
-</code></pre>
 
 ## План
 
 Чтобы вывести кол-во успешных/неуспешных тестов, нужно указать ```no_plan``` в use
-<pre><code class="perl">use Test::More  qw| no_plan |;</code></pre>
 
-В таком случает, модуль сам пощитает.
+<pre><code class="perl">
+use Test::More  qw| no_plan |;
+</code></pre>
+
+В таком случает, модуль сам посчитает
 
 Либо в конце скрипта
-<pre><code class="perl">use Test::More;
+<pre><code class="perl">
+use Test::More;
 ...
 done_testing();
 </code></pre>
 
 Или самому сказать сколько планировалось обработать тестов
-<pre><code class="perl">use Test::More      'tests' => 2;</code></pre>
+<pre><code class="perl">
+use Test::More  'tests' => 2;
+</code></pre>
 
 ## Основные функции модуля
 
@@ -50,7 +49,8 @@ done_testing();
 
 ok проверяет булево значение 
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 ok('Привет' eq 'Привет', 'Проверка строки');
 ok( 1 + 1 == 3, '1 + 1 = 3');
@@ -74,7 +74,8 @@ not ok 2 - 1 + 1 = 3
 
 Сравнение на eq и ne
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 is('Привет', 'Привет', 'Проверка eq');
 isnt('Привет', 'Пока', 'Проверка ne');
@@ -87,7 +88,8 @@ ok 2 - Проверка ne
 
 По сравнению с ok, is и isnt предосталяют подробный отчет
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 is('test', 'more', 'fail test!!!');
 
 $ perl script.pl 
@@ -109,7 +111,8 @@ not ok 1 - fail test!!!
 
 Сравнение по регулярке
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 like('hello, world!', qr/hell/, 'hell is matched');
 
@@ -118,7 +121,8 @@ ok 1 - hell is matched
 1..1
 </code></pre>
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 unlike('hello, world!', qr/you/, 'you is not matched');
 
@@ -135,7 +139,8 @@ ok 1 - you is not matched
 
 Сравнение с переданным оператором 
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 cmp_ok('1', '<', 2, "Test cmp_ok");
 
@@ -155,7 +160,8 @@ ok 1 - Test cmp_ok
 
 Видимо используются для принудительного указания
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 pass('test 1 ok');
 pass('test 2 ok');
@@ -175,16 +181,24 @@ not ok 4 - test 4 ok
 # Looks like you failed 2 tests of 4.
 </code></pre>
 
+## саб тесты
+
+<pre><code class="perl">
+subtest "Название теста" => sub {
+    # Тест
+};
+</code></pre>
+
 ## Тест ООП
 
 TODO
 
 ### can_ok
 
-```perl
-can_ok($module, @methods);
-can_ok($object, @methods);
-```
+<pre>
+    can_ok($module, @methods);
+    can_ok($object, @methods);
+</pre>
 
 ### isa_ok
 
@@ -204,7 +218,8 @@ can_ok($object, @methods);
 
 Проверяет структуру
 
-<pre><code class="perl">use Test::More      qw| no_plan |;
+<pre><code class="perl">
+use Test::More      qw| no_plan |;
 
 my $got = {
     test  => [{t => 1,  q  => 'w'}],
