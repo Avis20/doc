@@ -20,7 +20,9 @@ reference:
 
 на ubuntu 
 <pre><code class="perl">sudo apt install make build-essential
-export PERL5LIB="/home/avis/perl5/lib/perl5" && echo "PERL5LIB=/home/avis/perl5/lib/perl5" >> ~/.bashrc
+
+PERL5LIB="/home/avis/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB; PERL5LIB="/home/avis/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}" >> ~/.bashrc
+
 sudo apt-get install libcatalyst-perl
 curl -L cpanmin.us | perl - -l $HOME/perl5 App::cpanminus uni::perl local::lib Catalyst::Devel
 </code></pre>
