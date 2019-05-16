@@ -13,7 +13,8 @@ reference:
 
 <!-- ------------------------------------------------------------- -->
 
-<pre><code class="sql">ALTER TABLE schema.table
+<pre><code class="sql">
+ALTER TABLE schema.table
   ADD COLUMN ts_create TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT now() NOT NULL;
 
 ALTER TABLE schema.table
