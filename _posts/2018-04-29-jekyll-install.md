@@ -21,7 +21,8 @@ reference:
 
 Обновляем пакеты, устанавливаем
 
-<pre><code class="shell">sudo apt-get update
+<pre><code class="shell">
+sudo apt-get update
 sudo apt-get install ruby ruby-dev make gcc
 sudo gem install jekyll bundler
 ...
@@ -48,21 +49,25 @@ $ jekyll-server
 /var/lib/gems/2.3.0/gems/bundler-2.0.1/lib/bundler/spec_set.rb:87:in `block in materialize':
 </code></pre>
 
-<pre><code class="perl">sudo gem install public_suffix --version 3.0.1
+<pre><code class="perl">
+sudo gem install public_suffix --version 3.0.1
 </code></pre>
 
 Баг 2
 
-<pre><code class="perl">$ jekyll
+<pre><code class="perl">
+$ jekyll
 /var/lib/gems/2.3.0/gems/bundler-2.0.1/lib/bundler/spec_set.rb:87:in `block in materialize'
 </code></pre>
 
-<pre><code class="perl">sudo bundle update
+<pre><code class="perl">
+sudo bundle update
 </code></pre>
 
 Проверяем
 
-<pre><code class="shell">$ cd /tmp
+<pre><code class="shell">
+$ cd /tmp
 $ jekyll new test
 New jekyll site installed in /tmp/test.
 avis@avis-PC:/tmp$ cd test/
@@ -73,7 +78,8 @@ vis@avis-PC:/tmp/test$ jekyll serve
 В браузере заходим на ```http://localhost:4000/```
 
 <div class="warn"> Если при запуске jekyll serve -LR 4001 возникла ошибка типа: 
-<pre><code class="perl">/usr/lib/ruby/vendor_ruby/bundler/spec_set.rb:94:in `block in materialize':
+<pre><code class="perl">
+/usr/lib/ruby/vendor_ruby/bundler/spec_set.rb:94:in `block in materialize':
     Could not find public_suffix-3.0.2 in any of the sources (Bundler::GemNotFound)
 ....
 </code></pre>
@@ -81,7 +87,8 @@ vis@avis-PC:/tmp/test$ jekyll serve
 <p>Нужно запускать bundle exec jekyll serve -LR 4001 </p>
 
 И если в этом случае не запускается, последовать инструкции и установить доп. модули:
-<pre><code class="perl">$ jekyll-server-bundle 
+<pre><code class="perl">
+$ jekyll-server-bundle 
 Could not find public_suffix-3.0.2 in any of the sources
 Run `bundle install` to install missing gems.
 avis@avis-PC:~/develop/doc$ bundle install

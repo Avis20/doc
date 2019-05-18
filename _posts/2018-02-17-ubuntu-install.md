@@ -5,9 +5,6 @@ reference:
   - title: Баг с дубликатом сорсов при api-get update
     link: https://askubuntu.com/questions/380330/duplicate-source-error-on-apt-get-update
   
-  - title: Баг с зависанием виртуалки
-    link: https://ru.stackoverflow.com/questions/774963/virtualbox-%D0%B8-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0
-  
   - title: "Почему chrome не открывает ссылку кликнутую в сторонних приложениях в Ubuntu?"
     link: https://toster.ru/q/290158
   
@@ -263,62 +260,7 @@ chmod g-w ~/.moc/config
 ```
 ```
 
-#### virtualBox + WinXP + EMS
-1. sudo apt-get install virtualbox
-2. Скачать WinXP. [Дистрибутив WinXP](http://windows64.net/windows-xp-x64-skachat-torrent/originalnye-obrazy-xp/14-skachat-windows-xp-sp3-originalnyy-obraz-aktivator.html)
-3. Установить и настроить
-    1. Устройства -> Общий буфер обмена -> Двунаправленный
-    2. Устройства -> Drag'n'Drop -> Двунаправленный
-    3. Подключить образ диска доп гостевой
-        - Далее, далее, готово
-    4. Устройства -> Настроить общие папки
-        - Добавить общую папку(папка с плюсиком с права)
-        - Путь /home/avis/Folder
-        - Авто-подключение +
-        - Создать постоянную папку +
-    5. Выключить
-    6. Настроить -> Сеть
-        - Включить сетевой адаптер
-        - Тип подключения - Сетевой мост
-        - Имя - еcли Wi-Fi, то wlan0, если провод, то eth
-        - Дополнительно -> Тип адаптера -> PCnet-FAST \|\|\|
-        - Запустить
-        - Проверить интернет
-    5. Склонировать репу с EMS TODO Link
-    6. Запустить и зарегать базы
-        1. Register DataBase
-        2. Тестовая
-            - Hostname - localhost
-            - Port - 5432
-            - User name - pgsql
-            - Use tunneling
-                - SSH tunneling
-            - Далее
-            - SSH host name - qa01.prototypes.ru
-            - SSH port - 22
-            - SSH user name - orlov
-            - Use private auth +
-            - SSH key file - Folder -> id_rsa1.ppk
-            - Далее, Далее, Далее, открыть базу
-        2. Боевая
-            - Hostname - db01.msk.prototypes.ru
-            - Port - 6432
-            - User name - fonmix
-            - Password - смотри в конфиге
-            - Use tunneling
-                - SSH tunneling
-            - Далее
-            - SSH host name - adm03.prototypes.ru
-            - SSH port - 22
-            - SSH user name - orlov
-            - Use private auth +
-            - SSH key file - Folder -> id_rsa1.ppk
-            - Далее -> Database name -> fonmix_core1
-            - Далее, Далее, Далее, открыть базу
 
-<img src="/doc/static/img/DB/db1.png" alt="">
-<br>
-<img src="/doc/static/img/DB/db2.png" alt="">
 
 ## etc
 
@@ -340,11 +282,3 @@ sudo apt-get update
 Изменить параметр запуска в ```$HOME/.local/share/applications/google-chrome.desktop```  
 с ```Exec=/opt/google/chrome/chrome``` на ```Exec=/opt/google/chrome/chrome %U```
 
-### Баг с зависанием виртуалки
-
-[Инструкция по установке virt 5.2](http://ubuntuhandbook.org/index.php/2017/10/virtualbox-reached-5-2-major-release-how-to-install/)  
-
-<div class="error">
-    <p>На картинке не правильная интсрукция. Но ошибка правильная</p>
-</div>
-<img src="/doc/static/img/bugs/virtual_box.png" alt="">

@@ -12,7 +12,8 @@ reference:
 
 # Базовая установка postgres на ubuntu server 16.04.4
 
-<pre><code class="shell">$ sudo apt-get update
+<pre><code class="shell">
+$ sudo apt-get update
 $ sudo apt-get install postgresql postgresql-contrib
 </code></pre>
 

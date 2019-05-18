@@ -12,7 +12,8 @@ reference:
 # Синтаксис языка
 #### Простые конструкции
 
-<pre><code class="perl">my $var;        # Обьявление переменной
+<pre><code class="perl">
+my $var;        # Обьявление переменной
 my $a = 42;     # Присвоение переменной значниея
 print "test";   # Вывод в STDOUT
 eval {};        # Выполнение кода с крит. ошибкой
@@ -20,26 +21,30 @@ do {};          # Просто выполнение блок кода
 </code></pre>
 
 #### Блок
-<pre><code class="perl">{
+<pre><code class="perl">
+{
     # Здесь можно писать код
 }
 </code></pre>
 
 #### Условия - if
 
-<pre><code class="perl">if ( $a > $b ){
+<pre><code class="perl">
+if ( $a > $b ){
     print "a > b";
 }
 </code></pre>
 
-<pre><code class="perl">if ( $a > $b ){
+<pre><code class="perl">
+if ( $a > $b ){
     print "a > b";
 } else {
     print "something else";
 }
 </code></pre>
 
-<pre><code class="perl">if ( $a > $b ){
+<pre><code class="perl">
+if ( $a > $b ){
     print "a > b";
 } elsif ( $a > $c ){
     print "a > c";
@@ -50,7 +55,8 @@ do {};          # Просто выполнение блок кода
 
 #### Условия - unless
 
-<pre><code class="perl">unless ( $a > $b ){
+<pre><code class="perl">
+unless ( $a > $b ){
     print 'b > a';
 }
 </code></pre>
@@ -58,7 +64,8 @@ do {};          # Просто выполнение блок кода
 #### Циклы while/until
 
 Пока условие истина
-<pre><code class="perl">my $a = 0;
+<pre><code class="perl">
+my $a = 0;
 while ( $a < 3 ){
     $a++;
     print "$a\n";
@@ -70,7 +77,8 @@ while ( $a < 3 ){
 </code></pre>
 
 Пока условие ложно
-<pre><code class="perl">my $a = 0;
+<pre><code class="perl">
+my $a = 0;
 until ( $a > 3 ){
     $a++;
     print "$a\n";
@@ -83,7 +91,8 @@ until ( $a > 3 ){
 </code></pre>
 
 Цикл с пост усовием пока истина
-<pre><code class="perl">my $a = 0;
+<pre><code class="perl">
+my $a = 0;
 do {
     $a++;
     print "$a\n";
@@ -94,7 +103,8 @@ do {
 3
 </code></pre>
 
-<pre><code class="perl">my $a = 0;
+<pre><code class="perl">
+my $a = 0;
 do {
     print "$a\n";
     $a++;
@@ -108,7 +118,8 @@ do {
 
 #### Циклы for/foreach
 
-<pre><code class="perl">for (my $i = 0; $i < 3; $i++){
+<pre><code class="perl">
+for (my $i = 0; $i < 3; $i++){
     print "$i\n";
 }
 =head
@@ -117,7 +128,8 @@ do {
 2
 </code></pre>
 
-<pre><code class="perl">my @list = (1,2,3);
+<pre><code class="perl">
+my @list = (1,2,3);
 for ( @list ){
     print "$_\n";
 }
@@ -126,7 +138,8 @@ for ( @list ){
 3
 </code></pre>
 
-<pre><code class="perl">my @list = (1,2,3);
+<pre><code class="perl">
+my @list = (1,2,3);
 for my $a ( @list ){
     print "$a\n";
 }
@@ -136,7 +149,8 @@ for my $a ( @list ){
 3
 </code></pre>
 
-<pre><code class="perl">my @list = (1,2,3);
+<pre><code class="perl">
+my @list = (1,2,3);
 print "$_\n" for ( @list );
 =head
 1
@@ -148,25 +162,29 @@ print "$_\n" for ( @list );
 
 #### warn, eval, die
 
-<pre><code class="perl">eval "$a/$b";
+<pre><code class="perl">
+eval "$a/$b";
 warn $@ if $@;
 =head
 syntax error at (eval 4) line 1, at EOF
 </code></pre>
 
-<pre><code class="perl">eval { $a / $b };
+<pre><code class="perl">
+eval { $a / $b };
 warn $@ if $@;
 =head
 Illegal division by zero at simple.pl line 73.
 </code></pre>
 
-<pre><code class="perl">eval { die "Not root" if $< };
+<pre><code class="perl">
+eval { die "Not root" if $< };
 warn $@ if $@;
 </code></pre>
 
 Реализация try/catch
 
-<pre><code class="perl">eval {
+<pre><code class="perl">
+eval {
     100 / 0;
 1} or do {
     warn "Error: $@";
@@ -180,7 +198,8 @@ Error: Illegal division by zero at simple.pl line 80.
 chop - вырезает 1 символ с конца строки  
 chomp - вырезает 1 спец символ с конца строки
 
-<pre><code class="perl">my $a = $b = "test\t\n";
+<pre><code class="perl">
+my $a = $b = "test\t\n";
 say chop($a) . chop($a) . chop($a); # \n, \t, t
 say $a;
 
@@ -196,7 +215,8 @@ test
 
 #### index, rindex, substr, length
 
-<pre><code class="perl">#         ↓─────index($_," ") # 4
+<pre><code class="perl">
+#         ↓─────index($_," ") # 4
 $_ = "some average string\n";
 #        └─┬─┘    ↑───rindex($_," ") # 12
 #          substr($_,3,5) = "e ave"
@@ -204,7 +224,8 @@ $_ = "some average string\n";
 
 #### lc, lcfirst, uc, ucfirst
 
-<pre><code class="perl">my $big = 'WORD';
+<pre><code class="perl">
+my $big = 'WORD';
 my $small = 'word';
 say lc $big;        # word "\L"
 say lcfirst $big;   # wORD "\l"
@@ -216,7 +237,8 @@ say "\u\l$big\E";
 
 #### sprintf
 
-<pre><code class="perl">say sprintf "%c", 9786;     # ☺ - utf8 символы
+<pre><code class="perl">
+say sprintf "%c", 9786;     # ☺ - utf8 символы
 say sprintf "%s", "str";    # str - строка
 say sprintf "%d", 49;       # 49 - число
 say sprintf "%u", -1;       # 18446744073709551615 - TODO: непонятно
@@ -232,7 +254,8 @@ say sprintf "%g", .333333e-01; # 0.0333333
 #### обьявление
 
 Именнованные функции
-<pre><code class="perl">sub mysub {
+<pre><code class="perl">
+sub mysub {
     my ($a, $b ) = @_;
     my $r = $a + $b;
     return $r;
@@ -240,7 +263,8 @@ say sprintf "%g", .333333e-01; # 0.0333333
 </code></pre>
 
 Безымянные функции
-<pre><code class="perl">my $var = sub {
+<pre><code class="perl">
+my $var = sub {
     my $a = shift;
     return $a * 2;
 }
@@ -248,7 +272,8 @@ say sprintf "%g", .333333e-01; # 0.0333333
 
 #### вызов
 
-<pre><code class="perl">say mysub( 1, 2 );
+<pre><code class="perl">
+say mysub( 1, 2 );
 say mysub 5, 9;
 say $var->(5);
 =head
@@ -261,7 +286,8 @@ say $var->(5);
 
 Пример модуля
 
-<pre><code class="perl">use MP3::Tag;
+<pre><code class="perl">
+use MP3::Tag;
 my $mp3 = MP3::Tag->new( $ARGV[0] );
 print $mp3->artist . " - " . $mp3->title . "\n";
 =head
@@ -269,7 +295,8 @@ perl simple.pl 1.mp3
 Tech N9ne - Worldwide Choppers
 </code></pre>
 
-<pre><code class="perl">use Data::Dumper;
+<pre><code class="perl">
+use Data::Dumper;
 my $foo = [{a => 1, b => 2}, { c => 3, d => 4}];
 print Dumper $foo;
 =head
@@ -285,7 +312,8 @@ $VAR1 = [
         ];
 </code></pre>
 
-<pre><code class="perl">use DDP;
+<pre><code class="perl">
+use DDP;
 my $foo = [{a => 1, b => 2}, { c => 3, d => 4}];
 say p $foo;
 =head

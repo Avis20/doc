@@ -21,7 +21,8 @@ reference:
 * timeit(COUNT, CODE) - запустить часть кода и посмотреть как долго он работает. COUNT - сколько раз запускать код. CODE - может быть как строкой, ссылкой на coderef или eval-ом.  
 Возвращает обьект Benchmark
 
-<pre><code class="perl">use Benchmark;
+<pre><code class="perl">
+use Benchmark;
 
 my $res = timeit(100, sub { for (0..1000000){}; });
 print "Result: " . timestr($res) . "\n\n";
@@ -36,7 +37,8 @@ COUNT - сколько раз запускать, CODE - что запускат
 
 PS. COUNT может быть нулем либо отрицательным значением. В таком случае код будет повторятся в течении COUNT секунд. 0 - 3 сек.
 
-<pre><code class="perl">use Benchmark;
+<pre><code class="perl">
+use Benchmark;
 
 timethis(100, sub { for (0..200000){}; }, "Привет", 'noс');
 
@@ -44,7 +46,8 @@ $ perl benchmark.pl
 Привет: 1 0.65 0 0 0 100 noс @ 153.85/s (n=100)
 </code></pre>
 
-<pre><code class="perl">timethis(0, sub { for (0..200000){}; } );
+<pre><code class="perl">
+timethis(0, sub { for (0..200000){}; } );
 
 $ perl benchmark.pl 
 timethis for 3:  4 wallclock secs ( 3.22 usr +  0.01 sys =  3.23 CPU) @ 150.77/s (n=487)
@@ -84,7 +87,8 @@ Benchmark: running for, foreach for at least 3 CPU seconds...
     <summary>
         Сколько выполняется часть кода между start и end
     </summary>
-<pre><code class="perl">use Benchmark;
+<pre><code class="perl">
+use Benchmark;
 
 my $start = Benchmark->new();
 

@@ -28,7 +28,8 @@ reference:
 
 
 ## Числа 
-<pre><code class="perl">my $int = 12345;                # число
+<pre><code class="perl">
+my $int = 12345;                # число
 my $pi = 3.141592;              # число с остатком
 my $pi_read = 3.14_15_92_65;    # Число с остатком разделеное _
 my $plank = .6633E-33;          # ?

@@ -16,7 +16,8 @@ reference:
 
 ## Открыть файл
 
-<pre><code class="perl">open my $fh, '<', 'test.txt'; # '<' - открыть файл на чтение
+<pre><code class="perl">
+open my $fh, '<', 'test.txt'; # '<' - открыть файл на чтение
 print <$fh>; # <> - алиас для readline
 </code></pre>
 
@@ -29,7 +30,8 @@ print <$fh>; # <> - алиас для readline
 
 ### Указание кодировки при открытии
 
-<pre><code class="perl">open my $fh, '<:encoding(CP-1251)', 'unicode.txt';
+<pre><code class="perl">
+open my $fh, '<:encoding(CP-1251)', 'unicode.txt';
 print <$fh>;
 
 $ cat unicode.txt 
@@ -39,7 +41,8 @@ $ perl script.pl
 </code></pre>
 
 Из cp-1251 в utf8
-<pre><code class="perl">open my $fh_cp, '<:encoding(CP-1251)', 'unicode.txt';
+<pre><code class="perl">
+open my $fh_cp, '<:encoding(CP-1251)', 'unicode.txt';
 open my $fh_utf, '>:encoding(UTF-8)', 'utf8.txt';
 
 while ( <$fh_cp> ){
@@ -58,7 +61,8 @@ $ cat utf8.txt
 ### Чтение и запись в файл?
 
 Читать можно из файла или из входного потока
-<pre><code class="perl">my $input = <> # = <STDIN\> - чтение из дескриптора;
+<pre><code class="perl">
+my $input = <> # = <STDIN\> - чтение из дескриптора;
 open my $fh, '<', 'test.txt';
 my $input = <$fh>; # Первую строку
 say $input;
@@ -74,7 +78,8 @@ $ perl script.pl
 </code></pre>
 
 Писать также
-<pre><code class="perl">open my $fh, '>', 'test.txt';
+<pre><code class="perl">
+open my $fh, '>', 'test.txt';
 my $var = 'test';
 print $var; # Пишет в STDOUT
 print STDERR "ALARM!"; # Можно указывать явно поток
@@ -87,7 +92,8 @@ ALARM!test
 
 ### Выбор дескриптора
 
-<pre><code class="perl">open my $fh1, '>', 'file1.txt' or die $!;
+<pre><code class="perl">
+open my $fh1, '>', 'file1.txt' or die $!;
 open my $fh2, '>', 'file2.txt' or die $!;
 
 print "Написать в STDOUT\n";
@@ -121,7 +127,8 @@ $ tail -f file*
 
 ### Втроенные данные
 
-<pre><code class="perl">my @data = <DATA\>; # Здесь слеш не нужен!!
+<pre><code class="perl">
+my @data = <DATA\>; # Здесь слеш не нужен!!
 
 print @data;
 
@@ -137,32 +144,37 @@ PS Чтобы прочитать, не нужно вызывать open
 ### Функции для чтения
 
 Для работы с двоичными данными. Не помю зачем нужно...
-<pre><code class="perl">open my $fh, '<', 'test.bin' or die $!;
+<pre><code class="perl">
+open my $fh, '<', 'test.bin' or die $!;
 binmode($fh);
 warn <$fh>;
 </code></pre>
 
 Небуферизированная запись
-<pre><code class="perl">open my $fh, '>', 'test.txt' or die $!;
+<pre><code class="perl">
+open my $fh, '>', 'test.txt' or die $!;
 my $data = "Test\n";
 syswrite($fh, $data, length($data));
 </code></pre>
 
 Прямой вызов системного вызова sysread. Ваще непонятно!
-<pre><code class="perl">open my $fh, 'test.txt' or die $!;
+<pre><code class="perl">
+open my $fh, 'test.txt' or die $!;
 my $data = "Test\n";
 sysread($fh, $data, 2);
 </code></pre>
 
 Чтение двоичных данных. TODO: нужен нормальный двоичный файл!
-<pre><code class="perl">open my $fh, 'test.bin' or die $!;
+<pre><code class="perl">
+open my $fh, 'test.bin' or die $!;
 my $data = "Test\n";
 read($fh, $data, 2);
 warn <$fh>;
 </code></pre>
 
 Проверка на отсутствие данных в файле
-<pre><code class="perl">open my $fh, 'test.txt' or die $!;
+<pre><code class="perl">
+open my $fh, 'test.txt' or die $!;
 warn eof($fh);
 my @test = <$fh>;
 warn eof($fh);
@@ -174,7 +186,8 @@ Warning: something's wrong at script.pl line 6.
 </code></pre>
 
 #### Пример
-<pre><code class="perl">$ cat script.pl 
+<pre><code class="perl">
+$ cat script.pl 
 #!/usr/bin/env perl
 
 use strict;
@@ -220,7 +233,8 @@ f11bd83a259b3f32e9076d03570a236e
 
 ### Проверка результата работы программы open
 
-<pre><code class="perl">open my $fh, 'Такого файла не существует!' || die $!;
+<pre><code class="perl">
+open my $fh, 'Такого файла не существует!' || die $!;
 $ perl script.pl 
 
 open my $fh, 'Такого файла не существует!' or die $!;
@@ -268,7 +282,8 @@ $? - 16
 
 ## Обработка сигалов
 
-<pre><code class="shell">{
+<pre><code class="shell">
+{
     local $SIG{INT} = 'IGNORE';
 
     sleep 3;
