@@ -17,7 +17,7 @@ styles: [books.css]
         </ul>
     </div>
     <p>Код. Тайный язык информатики</p>
-    <p>start - 27.10.2018</p>
+    <p></p>
 </div>
 
 <div class="item">
@@ -296,7 +296,7 @@ styles: [books.css]
 
 <br>
 
-<h2>etc</h2>
+<h2>DevOps</h2>
 
 <div class="item">
     <img src="/doc/static/img/books/highload.png" alt="Высоконагруженные приложения. Программирование, масштабирование, поддержка" title="Высоконагруженные приложения. Программирование, масштабирование, поддержка">
@@ -308,8 +308,18 @@ styles: [books.css]
     <p>Высоконагруженные приложения. Программирование, масштабирование, поддержка</p>
 </div>
 
+<div class="item">
+    <img src="/doc/static/img/books/docker.png" alt="Использование Docker" title="Использование Docker">
+    <div class="links">
+        <ul>
+            <li><a href="https://yadi.sk/i/7p_McOZ6HeHlsw" target="_blank">Скачать 2017г. 354 с. PDF</a></li>
+        </ul>
+    </div>
+    <p>Использование Docker</p>
+    <p>2019-07-04</p>
+</div>
 
-
+<h2>etc</h2>
 
 <div class="item">
     <img src="/doc/static/img/books/blank.jpg" alt="text" title="text">
